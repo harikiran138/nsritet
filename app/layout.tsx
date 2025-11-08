@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,10 +11,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const roboto = Roboto({ 
+const robotoSlab = Roboto_Slab({ 
   weight: ['300', '400', '500', '700'],
   subsets: ["latin"],
-  variable: '--font-roboto',
+  variable: '--font-heading',
   display: 'swap',
 });
 
@@ -34,7 +34,11 @@ export const metadata: Metadata = {
     title: "NSRIET - Excellence in Engineering Education",
     description: "Premier engineering institution committed to academic excellence and innovation",
   },
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#003366",
 };
 
@@ -45,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${roboto.variable} antialiased`}>
+      <body className={`${inter.variable} ${robotoSlab.variable} antialiased`}>
         <ThemeProvider>
           <Navbar />
           <main className="mt-[120px] lg:mt-[140px]">

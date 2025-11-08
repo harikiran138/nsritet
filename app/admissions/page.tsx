@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FileText, Calendar, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { FileText, Calendar, Users, CheckCircle } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
-import Link from 'next/link';
+import CourseCard from '@/components/CourseCard';
+import Image from 'next/image';
 
 const courses = [
   {
@@ -11,117 +12,134 @@ const courses = [
     code: 'CSE',
     duration: '4 Years',
     seats: 180,
-    eligibility: '60% in 10+2 with PCM',
+    eligibility: 'Minimum 60% in 10+2 with Physics, Chemistry, Mathematics',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
   },
   {
-    name: 'Electronics & Communication',
+    name: 'Electronics & Communication Engineering',
     code: 'ECE',
     duration: '4 Years',
     seats: 120,
-    eligibility: '60% in 10+2 with PCM',
+    eligibility: 'Minimum 60% in 10+2 with Physics, Chemistry, Mathematics',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
   },
   {
     name: 'Mechanical Engineering',
     code: 'ME',
     duration: '4 Years',
     seats: 120,
-    eligibility: '60% in 10+2 with PCM',
+    eligibility: 'Minimum 60% in 10+2 with Physics, Chemistry, Mathematics',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop',
   },
   {
     name: 'Civil Engineering',
     code: 'CE',
     duration: '4 Years',
     seats: 90,
-    eligibility: '60% in 10+2 with PCM',
+    eligibility: 'Minimum 60% in 10+2 with Physics, Chemistry, Mathematics',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop',
   },
   {
-    name: 'Electrical Engineering',
-    code: 'EE',
+    name: 'Electrical & Electronics Engineering',
+    code: 'EEE',
     duration: '4 Years',
     seats: 60,
-    eligibility: '60% in 10+2 with PCM',
+    eligibility: 'Minimum 60% in 10+2 with Physics, Chemistry, Mathematics',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop',
   },
   {
     name: 'Information Technology',
     code: 'IT',
     duration: '4 Years',
     seats: 60,
-    eligibility: '60% in 10+2 with PCM',
+    eligibility: 'Minimum 60% in 10+2 with Physics, Chemistry, Mathematics',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop',
   },
 ];
 
 const admissionProcess = [
-  { step: '1', title: 'Online Application', desc: 'Fill the application form' },
-  { step: '2', title: 'Document Verification', desc: 'Submit required documents' },
-  { step: '3', title: 'Entrance Exam', desc: 'Appear for entrance test' },
-  { step: '4', title: 'Counseling', desc: 'Attend counseling session' },
-  { step: '5', title: 'Admission', desc: 'Complete admission formalities' },
+  { step: '1', title: 'Online Application', desc: 'Complete the application form with required details' },
+  { step: '2', title: 'Document Verification', desc: 'Submit educational certificates and identification' },
+  { step: '3', title: 'Entrance Examination', desc: 'Appear for institutional entrance test or JEE Main' },
+  { step: '4', title: 'Counseling Session', desc: 'Attend counseling for branch allocation' },
+  { step: '5', title: 'Fee Payment & Admission', desc: 'Complete formalities and confirm admission' },
 ];
 
 export default function AdmissionsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-corporate-blue to-corporate-lightBlue dark:from-gray-900 dark:to-blue-900 text-white">
-        <div className="section-container">
+      <section className="relative py-16 md:py-24 bg-corporate-navy">
+        <div className="section-container px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center"
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
           >
-            <h1 className="text-5xl font-bold mb-6">Admissions 2024-25</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-              Begin your journey towards excellence. Applications are now open!
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Admissions 2024-25</h1>
+            <p className="text-xl text-gray-200 mb-8 font-light leading-relaxed">
+              Applications are now open for undergraduate engineering programs. Secure your future with quality education.
             </p>
-            <button className="px-8 py-4 bg-white text-corporate-blue font-semibold rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl">
-              Apply Now
+            <button className="px-8 py-4 bg-corporate-blue text-white font-semibold hover:bg-opacity-90 transition-colors">
+              Apply Online
             </button>
           </motion.div>
         </div>
       </section>
 
-      {/* Course Cards */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="section-container">
+      {/* Programs */}
+      <section className="py-16 bg-corporate-background dark:bg-gray-800">
+        <div className="section-container px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-corporate-blue dark:text-white mb-4">
-                Programs Offered
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
-                Choose from our diverse range of engineering programs
-              </p>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
+              Undergraduate Programs
+            </h2>
+            <p className="text-corporate-textSecondary dark:text-gray-300 text-lg mb-12 max-w-3xl">
+              AICTE-approved Bachelor of Engineering programs with industry-aligned curriculum
+            </p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((course, index) => (
-              <AnimatedSection key={course.code} delay={index * 0.1}>
-                <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all border-t-4 border-corporate-lightBlue dark:border-blue-400">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center font-bold text-corporate-lightBlue dark:text-blue-400">
-                      {course.code}
+              <CourseCard key={course.code} {...course} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Admission Process */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="section-container px-8">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
+              Admission Process
+            </h2>
+            <p className="text-corporate-textSecondary dark:text-gray-300 text-lg mb-12">
+              Follow these steps to complete your admission
+            </p>
+          </AnimatedSection>
+
+          <div className="max-w-4xl">
+            {admissionProcess.map((process, index) => (
+              <AnimatedSection key={process.step} delay={index * 0.1}>
+                <div className="flex gap-6 mb-8 last:mb-0">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-corporate-blue text-white flex items-center justify-center font-bold text-lg">
+                      {process.step}
                     </div>
-                    <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold rounded-full">
-                      {course.seats} Seats
-                    </span>
+                    {index < admissionProcess.length - 1 && (
+                      <div className="w-0.5 h-full bg-corporate-border mt-2"></div>
+                    )}
                   </div>
-                  <h3 className="text-xl font-bold text-corporate-blue dark:text-white mb-3">
-                    {course.name}
-                  </h3>
-                  <div className="space-y-2 text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    <p className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      Duration: {course.duration}
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4" />
-                      {course.eligibility}
+                  <div className="flex-1 pb-8">
+                    <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-2">
+                      {process.title}
+                    </h3>
+                    <p className="text-corporate-textSecondary dark:text-gray-400">
+                      {process.desc}
                     </p>
                   </div>
-                  <button className="w-full py-2 bg-corporate-lightBlue text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-                    View Details
-                  </button>
                 </div>
               </AnimatedSection>
             ))}
@@ -129,73 +147,30 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      {/* Admission Process */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="section-container">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-corporate-blue dark:text-white mb-4">
-                Admission Process
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
-                Simple steps to secure your seat at NSRIET
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {admissionProcess.map((process, index) => (
-                <AnimatedSection key={process.step} delay={index * 0.15}>
-                  <div className="flex gap-6 mb-8 last:mb-0">
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 bg-corporate-lightBlue text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
-                        {process.step}
-                      </div>
-                      {index < admissionProcess.length - 1 && (
-                        <div className="w-1 h-full bg-blue-200 dark:bg-blue-900 mt-2"></div>
-                      )}
-                    </div>
-                    <div className="flex-1 pb-8">
-                      <h3 className="text-2xl font-bold text-corporate-blue dark:text-white mb-2">
-                        {process.title}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {process.desc}
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Important Dates */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="section-container">
+      <section className="py-16 bg-corporate-background dark:bg-gray-800">
+        <div className="section-container px-8">
           <AnimatedSection>
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-2xl p-8 border-l-8 border-orange-500">
-              <h2 className="text-3xl font-bold text-orange-800 dark:text-orange-300 mb-6">
+            <div className="bg-white dark:bg-gray-900 border border-corporate-border p-8">
+              <h2 className="text-2xl font-bold text-corporate-navy dark:text-white mb-6">
                 Important Dates
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-2">Application Start Date</h4>
-                  <p className="text-gray-700 dark:text-gray-300">1st January 2025</p>
+                <div className="border-l-4 border-corporate-blue pl-4">
+                  <h4 className="font-bold text-corporate-navy dark:text-white mb-1">Application Start</h4>
+                  <p className="text-corporate-textSecondary dark:text-gray-400">1st January 2025</p>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-2">Application Deadline</h4>
-                  <p className="text-gray-700 dark:text-gray-300">31st March 2025</p>
+                <div className="border-l-4 border-corporate-blue pl-4">
+                  <h4 className="font-bold text-corporate-navy dark:text-white mb-1">Application Deadline</h4>
+                  <p className="text-corporate-textSecondary dark:text-gray-400">31st March 2025</p>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-2">Entrance Exam Date</h4>
-                  <p className="text-gray-700 dark:text-gray-300">15th April 2025</p>
+                <div className="border-l-4 border-corporate-blue pl-4">
+                  <h4 className="font-bold text-corporate-navy dark:text-white mb-1">Entrance Examination</h4>
+                  <p className="text-corporate-textSecondary dark:text-gray-400">15th April 2025</p>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-2">Counseling Dates</h4>
-                  <p className="text-gray-700 dark:text-gray-300">1st - 15th May 2025</p>
+                <div className="border-l-4 border-corporate-blue pl-4">
+                  <h4 className="font-bold text-corporate-navy dark:text-white mb-1">Counseling Dates</h4>
+                  <p className="text-corporate-textSecondary dark:text-gray-400">1st - 15th May 2025</p>
                 </div>
               </div>
             </div>

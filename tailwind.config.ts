@@ -24,15 +24,17 @@ const config: Config = {
           950: '#172554',
         },
         corporate: {
-          blue: '#003366',
-          lightBlue: '#0066cc',
-          gray: '#4a5568',
-          lightGray: '#f7fafc',
+          navy: '#002B5B',
+          blue: '#007ACC',
+          background: '#F5F7FA',
+          textPrimary: '#1A1A1A',
+          textSecondary: '#5A5A5A',
+          border: '#E4E7EB',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Roboto', 'sans-serif'],
+        heading: ['Roboto Slab', 'Roboto', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',
