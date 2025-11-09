@@ -129,13 +129,17 @@ export default function Home() {
       <NotificationTicker />
 
       {/* Hero Section - Corporate Minimal */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden bg-corporate-navy">
+      <section 
+        className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden bg-corporate-navy"
+        role="banner"
+        aria-label="NSRIET Campus Hero Section"
+      >
         <div className="absolute inset-0">
           <Image
             src="/hero-bg.png"
-            alt="Learn by Doing Lead by Becoming - NSRIET Campus"
+            alt="Panoramic view of the NSRIET campus, showcasing modern architecture under a clear blue sky."
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
             quality={90}
           />
