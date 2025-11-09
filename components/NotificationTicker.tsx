@@ -13,7 +13,7 @@ const notifications = [
 
 export default function NotificationTicker() {
   return (
-    <div className="bg-yellow-50 dark:bg-yellow-900/20 border-y border-yellow-200 dark:border-yellow-800 py-3 overflow-hidden">
+    <div className="bg-yellow-50 dark:bg-yellow-900/20 border-y border-yellow-200 dark:border-yellow-800 py-1 overflow-hidden">
       <div className="section-container flex items-center gap-4">
         <div className="flex items-center gap-2 text-yellow-800 dark:text-yellow-200 font-semibold flex-shrink-0">
           <Bell className="w-5 h-5 animate-pulse" />
