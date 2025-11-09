@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Sans_Pro } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const sourceSansPro = Source_Sans_Pro({ 
+const outfit = Outfit({ 
   weight: ['300', '400', '600', '700'],
   subsets: ["latin"],
-  variable: '--font-source-sans',
+  variable: '--font-outfit',
   display: 'swap',
 });
 
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sourceSansPro.variable} antialiased`}>
+      <body className={`${outfit.variable} antialiased`}>
         <ThemeProvider>
           <Navbar />
           <main className="mt-[120px] lg:mt-[140px]">
