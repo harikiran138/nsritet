@@ -9,6 +9,8 @@ interface HeroSectionProps {
   title: string;
   subtitle?: string;
   description?: string;
+  tagline?: string;
+  taglineHighlight?: string;
   primaryCTA?: {
     text: string;
     href: string;
@@ -20,45 +22,49 @@ interface HeroSectionProps {
   backgroundImage?: string;
   height?: string;
   overlayOpacity?: number;
+  showTagline?: boolean;
 }
 
 export default function HeroSection({
   title,
   subtitle,
   description,
+  tagline,
+  taglineHighlight,
   primaryCTA,
   secondaryCTA,
   backgroundImage = '/hero-bg.png',
-  height = 'min-h-[600px] md:min-h-[700px]',
-  overlayOpacity = 0.4,
+  height = 'min-h-[650px] md:min-h-[750px] lg:min-h-[800px]',
+  overlayOpacity = 0.35,
+  showTagline = false,
 }: HeroSectionProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
 
   return (
     <section
-      className={`relative ${height} flex items-center justify-center overflow-hidden bg-corporate-navy`}
+      className={`relative ${height} flex items-center justify-center overflow-hidden bg-gradient-to-br from-corporate-navy via-blue-900 to-blue-800`}
       role="banner"
       aria-label="Page Hero Section"
     >
-      {/* Background Image */}
+      {/* Background Image with Parallax */}
       <div className="absolute inset-0">
         <Image
           src={backgroundImage}
@@ -66,18 +72,21 @@ export default function HeroSection({
           fill
           className="object-cover object-center"
           priority
-          quality={90}
+          quality={95}
         />
       </div>
 
-      {/* Overlay */}
+      {/* Multi-layer Overlay for better contrast */}
       <div
         className="absolute inset-0 bg-black"
         style={{ opacity: overlayOpacity }}
       />
 
       {/* Gradient Overlay (for better text contrast) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+      
+      {/* Accent gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-900/40" />
 
       {/* Content */}
       <div className="section-container relative z-10 px-8 py-16 md:py-24">
@@ -85,12 +94,12 @@ export default function HeroSection({
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl"
+          className="max-w-5xl"
         >
           {/* Subtitle Badge */}
           {subtitle && (
             <motion.div variants={itemVariants}>
-              <div className="inline-block mb-4 px-4 py-2 bg-corporate-blue/20 text-blue-200 rounded-full text-sm font-semibold border border-blue-400/30 backdrop-blur-sm">
+              <div className="inline-block mb-6 px-4 py-2 bg-blue-500/30 text-blue-100 rounded-full text-xs md:text-sm font-semibold border border-blue-400/50 backdrop-blur-md">
                 {subtitle}
               </div>
             </motion.div>
@@ -99,16 +108,37 @@ export default function HeroSection({
           {/* Main Title */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 text-white leading-tight tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 text-white leading-tight tracking-tighter"
           >
             {title}
           </motion.h1>
+
+          {/* Tagline with Highlight (Learn by Doing, Lead by Becoming) */}
+          {showTagline && tagline && (
+            <motion.div
+              variants={itemVariants}
+              className="mb-8 max-w-3xl"
+            >
+              <p className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-relaxed">
+                {tagline.split(taglineHighlight || '').map((part, idx) => (
+                  <span key={idx}>
+                    {part}
+                    {idx < tagline.split(taglineHighlight || '').length - 1 && (
+                      <span className="bg-gradient-to-r from-blue-400 to-pink-500 bg-clip-text text-transparent">
+                        {taglineHighlight}
+                      </span>
+                    )}
+                  </span>
+                ))}
+              </p>
+            </motion.div>
+          )}
 
           {/* Description */}
           {description && (
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-100 font-light leading-relaxed max-w-2xl"
+              className="text-lg md:text-xl lg:text-2xl mb-10 text-gray-100 font-light leading-relaxed max-w-2xl"
             >
               {description}
             </motion.p>
@@ -118,21 +148,21 @@ export default function HeroSection({
           {(primaryCTA || secondaryCTA) && (
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               {primaryCTA && (
                 <Link
                   href={primaryCTA.href}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-corporate-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-2xl transition-all shadow-lg hover:scale-110 duration-300 group"
                 >
                   {primaryCTA.text}
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               )}
               {secondaryCTA && (
                 <Link
                   href={secondaryCTA.href}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/20 transition-all backdrop-blur-sm"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/15 text-white font-semibold rounded-lg border-2 border-white/40 hover:bg-white/25 transition-all backdrop-blur-sm hover:border-white/60 duration-300"
                 >
                   {secondaryCTA.text}
                 </Link>
@@ -144,22 +174,10 @@ export default function HeroSection({
 
       {/* Floating Elements (Decorative) */}
       <motion.div
-        className="absolute top-10 right-10 w-32 h-32 bg-corporate-blue/5 rounded-full blur-3xl"
+        className="absolute top-20 right-20 w-40 h-40 bg-blue-400/10 rounded-full blur-3xl"
         animate={{
-          y: [0, 20, 0],
-          x: [0, 10, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-      <motion.div
-        className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl"
-        animate={{
-          y: [0, -20, 0],
-          x: [0, -10, 0],
+          y: [0, 30, 0],
+          x: [0, 15, 0],
         }}
         transition={{
           duration: 8,
@@ -167,6 +185,33 @@ export default function HeroSection({
           ease: 'easeInOut',
         }}
       />
+      <motion.div
+        className="absolute bottom-20 left-20 w-48 h-48 bg-pink-500/5 rounded-full blur-3xl"
+        animate={{
+          y: [0, -30, 0],
+          x: [0, -15, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        animate={{ y: [0, 10, 0] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center pt-2">
+          <div className="w-1 h-2 bg-white/60 rounded-full"></div>
+        </div>
+      </motion.div>
     </section>
   );
 }

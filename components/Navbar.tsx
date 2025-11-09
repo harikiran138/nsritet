@@ -72,21 +72,21 @@ export default function Navbar() {
       }`}
     >
       {/* Top Header */}
-      <div className="bg-corporate-blue dark:bg-gray-800 text-white py-1 hidden lg:block">
-        <div className="section-container">
-          <div className="flex items-center justify-between text-sm">
-            <div className="font-bold tracking-wide">NSRIET</div>
-            <div className="flex items-center gap-1">
+      <div className="bg-gradient-to-r from-corporate-navy to-corporate-blue dark:from-gray-800 dark:to-gray-900 text-white py-2 hidden lg:block shadow-sm">
+        <div className="section-container px-8">
+          <div className="flex items-center justify-between text-xs md:text-sm">
+            <div className="font-black tracking-widest text-blue-200">NSRIT ENGINEERING COLLEGE</div>
+            <div className="flex items-center gap-3">
               {topLinks.map((link, index) => (
                 <div key={link.name} className="flex items-center">
                   <Link
                     href={link.href}
-                    className="hover:text-blue-200 transition-colors px-2"
+                    className="hover:text-blue-200 transition-colors px-2 font-semibold hover:underline"
                   >
                     {link.name}
                   </Link>
                   {index < topLinks.length - 1 && (
-                    <span className="text-blue-300">|</span>
+                    <span className="text-blue-400/60">|</span>
                   )}
                 </div>
               ))}
@@ -96,30 +96,30 @@ export default function Navbar() {
       </div>
 
       {/* Main Header */}
-      <div className="section-container py-2">
+      <div className="section-container px-8 py-2 md:py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Image
               src="/main-logo1.png"
               alt="NSRIET Logo"
-              width={48}
-              height={48}
+              width={52}
+              height={52}
               className="object-contain"
               priority
             />
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-corporate-blue dark:text-white">
-                NSRIET
+              <h1 className="text-2xl font-black text-corporate-navy dark:text-white leading-tight">
+                NSRIT
               </h1>
-              <p className="text-xs text-gray-600 dark:text-gray-300">
-                Excellence in Education
+              <p className="text-xs text-corporate-textSecondary dark:text-gray-400 font-semibold tracking-wide">
+                Excellence in Engineering
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <div
                 key={link.name}
@@ -131,22 +131,29 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="text-gray-700 dark:text-gray-200 hover:text-corporate-lightBlue dark:hover:text-blue-400 font-medium transition-colors flex items-center gap-1"
+                  className="text-gray-700 dark:text-gray-200 hover:text-corporate-blue dark:hover:text-blue-400 font-bold transition-colors flex items-center gap-1 px-3 py-2 rounded-md group hover:bg-blue-50 dark:hover:bg-gray-800/50"
                 >
                   {link.name}
-                  {link.submenu && <ChevronDown className="w-4 h-4" />}
+                  {link.submenu && (
+                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                  )}
                 </Link>
                 {link.submenu && activeSubmenu === link.name && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: -15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden min-w-[220px]"
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 shadow-2xl rounded-xl overflow-hidden min-w-[240px] border border-blue-100 dark:border-gray-700"
                   >
-                    {link.submenu.map((sublink) => (
+                    {link.submenu.map((sublink, idx) => (
                       <Link
                         key={sublink.name}
                         href={sublink.href}
-                        className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors"
+                        className={`block px-5 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-corporate-blue dark:hover:text-blue-400 transition-colors font-semibold ${
+                          idx !== link.submenu.length - 1
+                            ? 'border-b border-gray-100 dark:border-gray-700'
+                            : ''
+                        }`}
                       >
                         {sublink.name}
                       </Link>

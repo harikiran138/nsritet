@@ -59,7 +59,7 @@ export default function EventCarousel({ events, autoSlide = true, interval = 500
             <div className="grid md:grid-cols-2 gap-0 min-h-[400px]">
               <div className="relative aspect-video md:aspect-auto">
                 <Image
-                  src={events[currentIndex].image || `https://source.unsplash.com/800x600/?${events[currentIndex].category.toLowerCase()},event,college`}
+                  src={events[currentIndex].image || `https://images.unsplash.com/800x600/?${events[currentIndex].category.toLowerCase()},event,college`}
                   alt={events[currentIndex].title}
                   fill
                   className="object-cover"

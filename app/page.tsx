@@ -131,11 +131,13 @@ export default function Home() {
 
       {/* Hero Section */}
       <HeroSection
-        title="NSRIT Engineering College"
+        title="NSRIT"
         subtitle="Excellence in Technical Education"
+        tagline="Learn by Doing. Lead by Becoming."
+        showTagline={true}
         description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
         backgroundImage="/hero-bg.png"
-        overlayOpacity={0.4}
+        overlayOpacity={0.35}
         primaryCTA={{
           text: 'Apply for Admission',
           href: '/admissions',
