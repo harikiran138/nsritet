@@ -18,6 +18,7 @@ import AnimatedCounter from '@/components/AnimatedCounter';
 import NotificationTicker from '@/components/NotificationTicker';
 import ImageGallery from '@/components/ImageGallery';
 import EventCarousel from '@/components/EventCarousel';
+import HeroSection from '@/components/HeroSection';
 import Image from 'next/image';
 
 const stats = [
@@ -128,56 +129,22 @@ export default function Home() {
       {/* Notification Ticker */}
       <NotificationTicker />
 
-      {/* Hero Section - Corporate Minimal */}
-      <section 
-        className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden bg-corporate-navy"
-        role="banner"
-        aria-label="NSRIET Campus Hero Section"
-      >
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-bg.png"
-            alt="Panoramic view of the NSRIET campus, showcasing modern architecture under a clear blue sky."
-            fill
-            className="object-cover object-center"
-            priority
-            quality={90}
-          />
-        </div>
-        
-        {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        
-        <div className="section-container relative z-10 px-8 py-16 md:py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-              NSRIET Engineering College
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 font-light leading-relaxed">
-              Empowering Excellence in Technical Education
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/admissions"
-                className="px-8 py-4 bg-corporate-blue text-white font-semibold rounded hover:bg-opacity-90 transition-all shadow-lg"
-              >
-                Apply for Admission
-              </Link>
-              <Link
-                href="/academics"
-                className="px-8 py-4 bg-white text-corporate-navy font-semibold rounded hover:bg-gray-100 transition-all"
-              >
-                Explore Programs
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSection
+        title="NSRIT Engineering College"
+        subtitle="Excellence in Technical Education"
+        description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
+        backgroundImage="/hero-bg.png"
+        overlayOpacity={0.4}
+        primaryCTA={{
+          text: 'Apply for Admission',
+          href: '/admissions',
+        }}
+        secondaryCTA={{
+          text: 'Explore Programs',
+          href: '/academics',
+        }}
+      />
 
       {/* Stats Section - Clean Grid */}
       <section className="py-16 bg-white dark:bg-gray-900">

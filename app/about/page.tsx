@@ -3,27 +3,20 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Building2, Users, BookOpen, Award, Lightbulb } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
+import HeroSection from '@/components/HeroSection';
 import Image from 'next/image';
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Section - Corporate Flat */}
-      <section className="relative py-16 md:py-24 bg-corporate-navy">
-        <div className="section-container px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">About NSRIET</h1>
-            <p className="text-xl text-gray-200 leading-relaxed font-light">
-              A legacy of excellence in engineering education since establishment, committed to producing skilled professionals and innovative leaders.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSection
+        title="About NSRIT"
+        subtitle="Our Institution"
+        description="A legacy of excellence in engineering education, committed to producing skilled professionals and innovative leaders who shape the future of technology."
+        backgroundImage="/hero-bg.png"
+        overlayOpacity={0.5}
+      />
 
       {/* Vision & Mission - Enterprise Grid */}
       <section id="vision" className="py-16 bg-white dark:bg-gray-900">

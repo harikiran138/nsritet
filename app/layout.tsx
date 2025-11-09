@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+import InstitutionHeader from "@/components/InstitutionHeader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${sourceSans.variable} antialiased`}>
         <ThemeProvider>
+          <InstitutionHeader />
           <Navbar />
           <main className="mt-[100px] lg:mt-[120px]">
             {children}

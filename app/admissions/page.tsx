@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FileText, Calendar, Users, CheckCircle } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 import CourseCard from '@/components/CourseCard';
+import HeroSection from '@/components/HeroSection';
 import Image from 'next/image';
 
 const courses = [
@@ -68,25 +69,18 @@ const admissionProcess = [
 export default function AdmissionsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-16 md:py-24 bg-corporate-navy">
-        <div className="section-container px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Admissions 2024-25</h1>
-            <p className="text-xl text-gray-200 mb-8 font-light leading-relaxed">
-              Applications are now open for undergraduate engineering programs. Secure your future with quality education.
-            </p>
-            <button className="px-8 py-4 bg-corporate-blue text-white font-semibold hover:bg-opacity-90 transition-colors">
-              Apply Online
-            </button>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSection
+        title="Admissions 2024-25"
+        subtitle="Begin Your Engineering Journey"
+        description="Applications are now open for undergraduate engineering programs. Secure your future with world-class technical education and industry-aligned curriculum."
+        backgroundImage="/hero-bg.png"
+        overlayOpacity={0.45}
+        primaryCTA={{
+          text: 'Apply Online',
+          href: '#',
+        }}
+      />
 
       {/* Programs */}
       <section className="py-16 bg-corporate-background dark:bg-gray-800">
