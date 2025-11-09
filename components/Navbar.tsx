@@ -72,7 +72,7 @@ export default function Navbar() {
       }`}
     >
       {/* Top Header */}
-      <div className="bg-corporate-blue dark:bg-gray-800 text-white py-2 hidden lg:block">
+      <div className="bg-corporate-blue dark:bg-gray-800 text-white py-1 hidden lg:block">
         <div className="section-container">
           <div className="flex items-center justify-between text-sm">
             <div className="font-bold tracking-wide">NSRIET</div>
@@ -96,15 +96,15 @@ export default function Navbar() {
       </div>
 
       {/* Main Header */}
-      <div className="section-container py-4">
+      <div className="section-container py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/main-logo1.png"
               alt="NSRIET Logo"
-              width={60}
-              height={60}
+              width={48}
+              height={48}
               className="object-contain"
               priority
             />

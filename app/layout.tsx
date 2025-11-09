@@ -46,7 +46,7 @@ export default function RootLayout({
       <body className={`${sourceSans.variable} antialiased`}>
         <ThemeProvider>
           <Navbar />
-          <main className="mt-[120px] lg:mt-[140px]">
+          <main className="mt-[100px] lg:mt-[120px]">
             {children}
           </main>
           <Footer />
