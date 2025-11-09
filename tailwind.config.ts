@@ -33,8 +33,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Roboto Slab', 'Roboto', 'serif'],
+        sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',

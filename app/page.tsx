@@ -130,16 +130,19 @@ export default function Home() {
 
       {/* Hero Section - Corporate Minimal */}
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden bg-corporate-navy">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1920&h=1080&fit=crop"
-            alt="NSRIET Campus"
+            src="/hero-bg.png"
+            alt="Learn by Doing Lead by Becoming - NSRIET Campus"
             fill
-            className="object-cover grayscale"
+            className="object-cover"
             priority
             quality={90}
           />
         </div>
+        
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
         
         <div className="section-container relative z-10 px-8 py-16 md:py-24">
           <motion.div

@@ -28,7 +28,7 @@ const navLinks = [
   { name: 'Governance', href: '/governance' },
   { name: 'Admissions', href: '/admissions' },
   { name: 'Academics', href: '/academics' },
-  { name: 'Institute Innovation Council', href: '/iic' },
+  { name: 'IIC', href: '/iic' },
   { name: 'Industry Connect', href: '/industry' },
   { name: 'CDC', href: '/cdc' },
   { name: 'Quick Links', href: '/quick-links' },

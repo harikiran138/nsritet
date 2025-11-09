@@ -1,20 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Roboto_Slab } from "next/font/google";
+import { Source_Sans_Pro } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const inter = Inter({ 
+const sourceSansPro = Source_Sans_Pro({ 
+  weight: ['300', '400', '600', '700'],
   subsets: ["latin"],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const robotoSlab = Roboto_Slab({ 
-  weight: ['300', '400', '500', '700'],
-  subsets: ["latin"],
-  variable: '--font-heading',
+  variable: '--font-source-sans',
   display: 'swap',
 });
 
@@ -49,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${robotoSlab.variable} antialiased`}>
+      <body className={`${sourceSansPro.variable} antialiased`}>
         <ThemeProvider>
           <Navbar />
           <main className="mt-[120px] lg:mt-[140px]">
