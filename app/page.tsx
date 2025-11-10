@@ -133,10 +133,10 @@ export default function Home() {
           text: 'Apply for Admission',
           href: '/admissions',
         }}
-        secondaryCTA={{
-          text: 'Explore Programs',
-          href: '/academics',
-        }}
+        // secondaryCTA={{
+        //   text: 'Explore Programs',
+        //   href: '/academics',
+        // }}
       />
 
   {/* Stats Section - Clean Grid */}
