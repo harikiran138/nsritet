@@ -124,7 +124,7 @@ export default function Home() {
       <NotificationTicker />
 
       {/* Hero Section */}
-      <HeroSection
+      {/* <HeroSection
         title="NSRIT Engineering College"
         subtitle="Excellence in Technical Education"
         description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
@@ -137,7 +137,7 @@ export default function Home() {
         //   text: 'Explore Programs',
         //   href: '/academics',
         // }}
-      />
+      /> */
 
   {/* Stats Section - Clean Grid */}
   <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
