@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
   GraduationCap, 
@@ -11,7 +10,6 @@ import {
   Lightbulb,
   TrendingUp,
   ArrowRight,
-  Bell
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedCounter from '@/components/AnimatedCounter';
@@ -19,7 +17,7 @@ import NotificationTicker from '@/components/NotificationTicker';
 import ImageGallery from '@/components/ImageGallery';
 import EventCarousel from '@/components/EventCarousel';
 import HeroSection from '@/components/HeroSection';
-import Image from 'next/image';
+// 'Image' is intentionally not imported here (images are handled in ImageGallery/EventCarousel components)
 
 const stats = [
   { icon: GraduationCap, value: 5000, suffix: '+', label: 'Students Enrolled' },
@@ -86,11 +84,7 @@ const galleryImages = [
     alt: 'Executive Boardroom',
     title: 'Administrative Block',
   },
-  {
-    src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop',
-    alt: 'Students in Lecture Hall',
-    title: 'Academic Sessions',
-  },
+  // removed a broken upstream Unsplash image (returned 404 during dev server fetchs)
   {
     src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop',
     alt: 'Modern Lecture Theatre',
@@ -131,13 +125,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <HeroSection
-        title="NSRIT"
+        title="NSRIT Engineering College"
         subtitle="Excellence in Technical Education"
-        tagline="Learn by Doing. Lead by Becoming."
-        showTagline={true}
         description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
         backgroundImage="/hero-bg.png"
-        overlayOpacity={0.35}
         primaryCTA={{
           text: 'Apply for Admission',
           href: '/admissions',
@@ -148,34 +139,51 @@ export default function Home() {
         }}
       />
 
-      {/* Stats Section - Clean Grid */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="section-container px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <AnimatedSection key={stat.label} delay={index * 0.1}>
-                <div className="text-center border border-corporate-border rounded p-6 hover:shadow-md transition-shadow">
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-corporate-background rounded mb-4">
-                    <stat.icon className="w-7 h-7 text-corporate-blue" />
-                  </div>
-                  <div className="text-4xl font-bold text-corporate-navy dark:text-white mb-2">
-                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-corporate-textSecondary dark:text-gray-400 font-medium text-sm">
-                    {stat.label}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+  {/* Stats Section - Clean Grid */}
+  <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
+    {/* Decorative gradient background */}
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50 pointer-events-none dark:from-blue-950 dark:opacity-20"></div>
+    
+    <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
+      <AnimatedSection>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
+            NSRIET By Numbers
+          </h2>
+          <p className="text-corporate-textSecondary dark:text-gray-400 text-lg max-w-2xl mx-auto">
+            Proudly delivering excellence and innovation
+          </p>
         </div>
-      </section>
+      </AnimatedSection>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {stats.map((stat, index) => (
+          <AnimatedSection key={stat.label} delay={index * 0.1}>
+            <div className="card flex flex-col items-center justify-center text-center hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-lg mb-4 group-hover:scale-110 transition-transform">
+                <stat.icon className="w-8 h-8 text-corporate-blue" />
+              </div>
+              <div className="text-4xl md:text-5xl font-bold text-corporate-navy dark:text-white mb-2">
+                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+              </div>
+              <div className="text-corporate-textSecondary dark:text-gray-400 font-medium text-sm">
+                {stat.label}
+              </div>
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
+    </div>
+  </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-corporate-background dark:bg-gray-800">
-        <div className="section-container px-8">
+      <section className="py-20 md:py-28 bg-corporate-background dark:bg-gray-800 relative">
+        {/* Decorative gradient */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 pointer-events-none"></div>
+        
+        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection>
-            <div className="max-w-3xl mb-12">
+            <div className="max-w-3xl mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
                 Why Choose NSRIET
               </h2>
@@ -185,11 +193,11 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.1}>
-                <div className="bg-white dark:bg-gray-900 p-6 rounded border border-corporate-border hover:shadow-lg transition-all">
-                  <div className="w-12 h-12 bg-corporate-background dark:bg-gray-800 rounded flex items-center justify-center mb-4">
+                <div className="card group hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 hover:-translate-y-1 transition-all">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <feature.icon className="w-6 h-6 text-corporate-blue" />
                   </div>
                   <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-3">
@@ -205,31 +213,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="section-container px-8">
-          <AnimatedSection>
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
-                Upcoming Events
-              </h2>
-              <p className="text-corporate-textSecondary dark:text-gray-300 text-lg">
-                Stay informed about academic activities and institutional programs
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.2}>
-            <EventCarousel events={upcomingEvents} autoSlide={true} interval={7000} />
-          </AnimatedSection>
+  {/* Events Section */}
+  <section className="py-20 md:py-28 bg-surface">
+    <div className="section-container px-4 sm:px-6 lg:px-8">
+      <AnimatedSection>
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
+            Upcoming Events
+          </h2>
+          <p className="text-corporate-textSecondary dark:text-gray-300 text-lg">
+            Stay informed about academic activities and institutional programs
+          </p>
         </div>
-      </section>
+      </AnimatedSection>
+
+      <AnimatedSection delay={0.2}>
+        <EventCarousel events={upcomingEvents} autoSlide={true} interval={7000} />
+      </AnimatedSection>
+    </div>
+  </section>
 
       {/* Campus Gallery */}
-      <section className="py-16 bg-corporate-background dark:bg-gray-800">
-        <div className="section-container px-8">
+      <section className="py-20 md:py-28 bg-corporate-background dark:bg-gray-800">
+        <div className="section-container px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="max-w-3xl mb-12">
+            <div className="max-w-3xl mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
                 Infrastructure & Facilities
               </h2>
@@ -246,19 +254,26 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-corporate-navy">
-        <div className="section-container px-8">
+      <section className="py-20 md:py-28 relative overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-corporate-navy via-blue-900 to-corporate-dark"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        </div>
+
+        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection>
             <div className="text-center text-white max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 Begin Your Engineering Journey
               </h2>
-              <p className="text-xl mb-8 text-gray-200 font-light">
+              <p className="text-xl mb-8 text-blue-100 font-light leading-relaxed">
                 Join a community of aspiring engineers and innovators. Applications open for 2024-25 academic year.
               </p>
               <Link
                 href="/admissions"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-blue text-white font-semibold rounded hover:bg-opacity-90 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-corporate-navy font-semibold rounded-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 Apply Now <ArrowRight className="w-5 h-5" />
               </Link>

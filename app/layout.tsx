@@ -46,9 +46,29 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${sourceSans.variable} antialiased`}>
         <ThemeProvider>
+          {/* Top utility bar */}
+          <div className="bg-corporate-blue text-white text-sm py-3">
+            <div className="section-container py-3 hidden lg:flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="font-bold tracking-wide px-2">NSRIET</div>
+              </div>
+              <div className="flex items-center gap-3">
+                <a href="/notifications" className="px-2 hover:opacity-90">Circular Notification</a>
+                <span className="opacity-60">|</span>
+                <a href="/events" className="px-2 hover:opacity-90">Upcoming Events</a>
+                <span className="opacity-60">|</span>
+                <a href="/feedback" className="px-2 hover:opacity-90">Feedback</a>
+                <span className="opacity-60">|</span>
+                <a href="/news" className="px-2 hover:opacity-90">News Bulletin</a>
+                <span className="opacity-60">|</span>
+                <a href="/careers" className="px-2 hover:opacity-90">Career Opportunities</a>
+              </div>
+            </div>
+          </div>
+
           <InstitutionHeader />
           <Navbar />
-          <main className="mt-[100px] lg:mt-[120px]">
+          <main>
             {children}
           </main>
           <Footer />

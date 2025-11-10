@@ -90,38 +90,44 @@ export default function IICPage() {
 
   return (
     <>
-      <section className="relative py-20 bg-gradient-to-br from-corporate-blue to-corporate-lightBlue dark:from-gray-900 dark:to-blue-900 text-white">
-        <div className="section-container">
+      <section className="relative py-24 md:py-32 bg-gradient-to-br from-corporate-navy via-blue-900 to-corporate-dark text-white overflow-hidden">
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        
+        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+              <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
                 <Lightbulb className="w-12 h-12 text-yellow-300" />
               </div>
             </div>
-            <h1 className="text-5xl font-bold mb-6">Institute Innovation Council</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Institute Innovation Council
+            </h1>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Fostering a culture of innovation, entrepreneurship, and creative problem-solving
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-20 md:py-28 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-4xl font-bold text-corporate-blue dark:text-white mb-6">
                 About IIC
               </h2>
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-muted text-lg leading-relaxed mb-6">
                 The Institute Innovation Council (IIC) at NSRIET is established under the Ministry of Education&apos;s 
                 Innovation Cell (MIC) to systematically foster the culture of innovation and start-up ecosystem in our institution.
               </p>
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+              <p className="text-muted text-lg leading-relaxed">
                 We organize workshops, hackathons, ideation sessions, and mentorship programs to nurture innovative ideas 
                 and transform them into viable solutions that address real-world challenges.
               </p>
@@ -153,7 +159,7 @@ export default function IICPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section className="py-20 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -171,7 +177,7 @@ export default function IICPage() {
               <AnimatedSection key={event.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+                  className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
                 >
                   <div className={`h-2 bg-gradient-to-r ${event.color}`} />
                   <div className="p-6">
@@ -189,7 +195,7 @@ export default function IICPage() {
                         </p>
                       </div>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="text-muted">
                       {event.description}
                     </p>
                   </div>
@@ -200,7 +206,7 @@ export default function IICPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+  <section className="py-20 bg-card">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -216,7 +222,7 @@ export default function IICPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <AnimatedSection key={project.title} delay={index * 0.1}>
-                <div className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-base">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-corporate-blue dark:text-white mb-1">
@@ -230,7 +236,7 @@ export default function IICPage() {
                       {project.status}
                     </span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  <p className="text-muted mb-4">
                     {project.description}
                   </p>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-300 dark:border-gray-600">
@@ -246,7 +252,7 @@ export default function IICPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section className="py-20 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -264,7 +270,7 @@ export default function IICPage() {
               <AnimatedSection key={program.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center"
+                  className="bg-card p-8 rounded-xl shadow-lg text-center"
                 >
                   <div className="w-16 h-16 bg-corporate-lightBlue dark:bg-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-6">
                     {program.icon}
@@ -272,10 +278,10 @@ export default function IICPage() {
                   <h3 className="text-xl font-bold text-corporate-blue dark:text-white mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  <p className="text-muted mb-4">
                     {program.description}
                   </p>
-                  <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <div className="pt-4 border-t border-base">
                     <span className="text-3xl font-bold text-corporate-lightBlue dark:text-blue-400">
                       {program.participants}
                     </span>

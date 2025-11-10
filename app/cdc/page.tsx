@@ -138,27 +138,33 @@ export default function CDCPage() {
 
   return (
     <>
-      <section className="relative py-20 bg-gradient-to-br from-corporate-blue to-corporate-lightBlue dark:from-gray-900 dark:to-blue-900 text-white">
-        <div className="section-container">
+      <section className="relative py-24 md:py-32 bg-gradient-to-br from-corporate-navy via-blue-900 to-corporate-dark text-white overflow-hidden">
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        
+        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+              <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
                 <Briefcase className="w-12 h-12" />
               </div>
             </div>
-            <h1 className="text-5xl font-bold mb-6">Career Development Cell</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Career Development Cell
+            </h1>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Empowering students with skills, opportunities, and guidance for successful careers
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+  <section className="py-20 bg-card">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -192,7 +198,7 @@ export default function CDCPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section className="py-20 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -210,7 +216,7 @@ export default function CDCPage() {
               <AnimatedSection key={recruiter.name} delay={index * 0.05}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center"
+                  className="bg-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all text-center"
                 >
                   <div className="w-16 h-16 bg-gradient-to-br from-corporate-blue to-corporate-lightBlue dark:from-blue-600 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Building2 className="w-8 h-8 text-white" />
@@ -231,7 +237,7 @@ export default function CDCPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+  <section className="py-20 bg-card">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -247,7 +253,7 @@ export default function CDCPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {trainingPrograms.map((program, index) => (
               <AnimatedSection key={program.title} delay={index * 0.1}>
-                <div className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-base">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-corporate-lightBlue dark:bg-blue-600 rounded-lg flex items-center justify-center text-white">
                       {program.icon}
@@ -278,7 +284,7 @@ export default function CDCPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section className="py-20 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -296,7 +302,7 @@ export default function CDCPage() {
               <AnimatedSection key={testimonial.name} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all h-full"
+                  className="bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all h-full"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-corporate-blue to-corporate-lightBlue dark:from-blue-600 dark:to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-lg">
@@ -316,7 +322,7 @@ export default function CDCPage() {
                       {testimonial.company} • {testimonial.package}
                     </p>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 italic">
+                  <p className="text-muted italic">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                 </motion.div>
@@ -326,7 +332,7 @@ export default function CDCPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+  <section className="py-20 bg-card">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">

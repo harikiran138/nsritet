@@ -31,9 +31,9 @@ export default function CourseCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="bg-white dark:bg-gray-900 rounded border border-corporate-border overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-surface rounded border border-corporate-border overflow-hidden hover:shadow-lg transition-shadow"
     >
-      <div className="relative h-40 overflow-hidden bg-gray-200 dark:bg-gray-800">
+  <div className="relative h-40 overflow-hidden bg-surface">
         <Image
           src={image || defaultImage}
           alt={name}

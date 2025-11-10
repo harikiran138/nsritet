@@ -46,7 +46,7 @@ export default function EventCarousel({ events, autoSlide = true, interval = 500
 
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded border border-corporate-border bg-white dark:bg-gray-900 shadow-lg">
+  <div className="overflow-hidden rounded border border-corporate-border bg-surface shadow-lg">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -59,7 +59,7 @@ export default function EventCarousel({ events, autoSlide = true, interval = 500
             <div className="grid md:grid-cols-2 gap-0 min-h-[400px]">
               <div className="relative aspect-video md:aspect-auto">
                 <Image
-                  src={events[currentIndex].image || `https://images.unsplash.com/800x600/?${events[currentIndex].category.toLowerCase()},event,college`}
+                  src={events[currentIndex].image || `https://source.unsplash.com/800x600/?${events[currentIndex].category.toLowerCase()},event,college`}
                   alt={events[currentIndex].title}
                   fill
                   className="object-cover"
@@ -79,7 +79,7 @@ export default function EventCarousel({ events, autoSlide = true, interval = 500
                 <h3 className="text-2xl md:text-3xl font-bold text-corporate-navy dark:text-white mb-4">
                   {events[currentIndex].title}
                 </h3>
-                <p className="text-corporate-textSecondary dark:text-gray-300 leading-relaxed mb-6">
+                <p className="text-muted leading-relaxed mb-6">
                   {events[currentIndex].description}
                 </p>
                 <button className="inline-flex items-center gap-2 px-6 py-3 bg-corporate-blue text-white hover:bg-opacity-90 transition-colors w-fit font-semibold">
@@ -93,7 +93,7 @@ export default function EventCarousel({ events, autoSlide = true, interval = 500
 
         <button
           onClick={goToPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 text-corporate-navy dark:text-white p-3 border border-corporate-border shadow-md hover:shadow-lg transition-shadow z-10"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-card text-corporate-navy dark:text-white p-3 border border-corporate-border shadow-md hover:shadow-lg transition-shadow z-10"
           aria-label="Previous event"
         >
           <ChevronLeft className="w-6 h-6" />
@@ -101,7 +101,7 @@ export default function EventCarousel({ events, autoSlide = true, interval = 500
 
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 text-corporate-navy dark:text-white p-3 border border-corporate-border shadow-md hover:shadow-lg transition-shadow z-10"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-card text-corporate-navy dark:text-white p-3 border border-corporate-border shadow-md hover:shadow-lg transition-shadow z-10"
           aria-label="Next event"
         >
           <ChevronRight className="w-6 h-6" />

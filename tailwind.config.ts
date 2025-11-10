@@ -24,17 +24,12 @@ const config: Config = {
           950: '#172554',
         },
         corporate: {
-          navy: '#0047BA',
+          navy: '#002B5B',
           blue: '#007ACC',
-          lightBlue: '#2196F3',
           background: '#F5F7FA',
           textPrimary: '#1A1A1A',
           textSecondary: '#5A5A5A',
           border: '#E4E7EB',
-        },
-        accent: {
-          pink: '#FF007A',
-          magenta: '#FF1493',
         }
       },
       fontFamily: {

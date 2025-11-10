@@ -2,17 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
 
-const topLinks = [
-  { name: 'Circular Notification', href: '/notifications' },
-  { name: 'Upcoming Events', href: '/events' },
-  { name: 'Feedback', href: '/feedback' },
-  { name: 'News Bulletin', href: '/news' },
-  { name: 'Career Opportunities', href: '/careers' },
-];
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -36,7 +28,6 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   
@@ -53,73 +44,18 @@ export default function Navbar() {
 
   const isDark = mounted && typeof window !== 'undefined' && document.documentElement.classList.contains('dark');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // no scroll behaviour needed for the blue navbar — it remains static under the InstitutionHeader
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
+      initial={{ y: -10 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white dark:bg-gray-900 shadow-lg'
-          : 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm'
-      }`}
+      className={`relative z-40 bg-corporate-blue text-white`}
     >
-      {/* Top Header */}
-      <div className="bg-gradient-to-r from-corporate-navy to-corporate-blue dark:from-gray-800 dark:to-gray-900 text-white py-2 hidden lg:block shadow-sm">
-        <div className="section-container px-8">
-          <div className="flex items-center justify-between text-xs md:text-sm">
-            <div className="font-black tracking-widest text-blue-200">NSRIT ENGINEERING COLLEGE</div>
-            <div className="flex items-center gap-3">
-              {topLinks.map((link, index) => (
-                <div key={link.name} className="flex items-center">
-                  <Link
-                    href={link.href}
-                    className="hover:text-blue-200 transition-colors px-2 font-semibold hover:underline"
-                  >
-                    {link.name}
-                  </Link>
-                  {index < topLinks.length - 1 && (
-                    <span className="text-blue-400/60">|</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <div className="section-container px-8 py-2 md:py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Image
-              src="/main-logo1.png"
-              alt="NSRIET Logo"
-              width={52}
-              height={52}
-              className="object-contain"
-              priority
-            />
-            <div className="hidden md:block">
-              <h1 className="text-2xl font-black text-corporate-navy dark:text-white leading-tight">
-                NSRIT
-              </h1>
-              <p className="text-xs text-corporate-textSecondary dark:text-gray-400 font-semibold tracking-wide">
-                Excellence in Engineering
-              </p>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+      <div className="section-container py-2 relative">
+        <div className="flex items-center justify-between py-3">
+          {/* Desktop Navigation - centered */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <div
                 key={link.name}
@@ -131,29 +67,35 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="text-gray-700 dark:text-gray-200 hover:text-corporate-blue dark:hover:text-blue-400 font-bold transition-colors flex items-center gap-1 px-3 py-2 rounded-md group hover:bg-blue-50 dark:hover:bg-gray-800/50"
+                  className="text-white hover:opacity-80 font-medium transition-opacity flex items-center gap-1 py-2"
                 >
                   {link.name}
                   {link.submenu && (
-                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        activeSubmenu === link.name ? 'rotate-180' : ''
+                      }`}
+                    />
                   )}
                 </Link>
-                {link.submenu && activeSubmenu === link.name && (
+                {link.submenu && (
                   <motion.div
-                    initial={{ opacity: 0, y: -15 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={
+                      activeSubmenu === link.name
+                        ? { opacity: 1, y: 0 }
+                        : { opacity: 0, y: -10 }
+                    }
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 shadow-2xl rounded-xl overflow-hidden min-w-[240px] border border-blue-100 dark:border-gray-700"
+                    className={`absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden min-w-[220px] border border-gray-200 dark:border-gray-700 ${
+                      activeSubmenu === link.name ? 'pointer-events-auto' : 'pointer-events-none'
+                    }`}
                   >
-                    {link.submenu.map((sublink, idx) => (
+                    {link.submenu.map((sublink) => (
                       <Link
                         key={sublink.name}
                         href={sublink.href}
-                        className={`block px-5 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-corporate-blue dark:hover:text-blue-400 transition-colors font-semibold ${
-                          idx !== link.submenu.length - 1
-                            ? 'border-b border-gray-100 dark:border-gray-700'
-                            : ''
-                        }`}
+                        className="block px-4 py-3 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors font-medium text-sm border-b border-gray-100 dark:border-gray-700 last:border-b-0"
                       >
                         {sublink.name}
                       </Link>
@@ -162,37 +104,39 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            
-            {/* Theme Toggle */}
+          </div>
+
+          {/* Theme toggle - positioned right within the container */}
+          <div className="absolute right-4 hidden lg:flex">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
               aria-label="Toggle theme"
             >
               {isDark ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
+                <Sun className="w-5 h-5 text-yellow-400" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
+                <Moon className="w-5 h-5 text-white" />
               )}
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-3 absolute right-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
               aria-label="Toggle theme"
             >
               {isDark ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
+                <Sun className="w-5 h-5 text-yellow-400" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
+                <Moon className="w-5 h-5 text-white" />
               )}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-700 dark:text-gray-200"
+              className="p-2 text-white"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -208,14 +152,14 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700"
+            className="lg:hidden bg-surface border-t border-base"
           >
-            <div className="section-container py-4 space-y-2">
+            <div className="px-4 sm:px-6 lg:px-8 py-4 space-y-2">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
                     href={link.href}
-                    className="block py-2 text-gray-700 dark:text-gray-200 hover:text-corporate-lightBlue dark:hover:text-blue-400 font-medium"
+                    className="block py-2 text-muted hover:text-corporate-lightBlue font-medium"
                     onClick={() => !link.submenu && setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -226,7 +170,7 @@ export default function Navbar() {
                         <Link
                           key={sublink.name}
                           href={sublink.href}
-                          className="block py-1 text-sm text-gray-600 dark:text-gray-400 hover:text-corporate-lightBlue dark:hover:text-blue-400"
+                          className="block py-1 text-sm text-muted hover:text-corporate-lightBlue"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {sublink.name}

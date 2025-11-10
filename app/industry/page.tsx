@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Building2, Handshake, Briefcase, Users, Award, TrendingUp, GraduationCap, Rocket } from 'lucide-react';
+import { Building2, Handshake, Briefcase, Users, Award, GraduationCap, Rocket } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 
 export default function IndustryPage() {
@@ -131,53 +131,59 @@ export default function IndustryPage() {
 
   return (
     <>
-      <section className="relative py-20 bg-gradient-to-br from-corporate-blue to-corporate-lightBlue dark:from-gray-900 dark:to-blue-900 text-white">
-        <div className="section-container">
+      <section className="relative py-24 md:py-32 bg-gradient-to-br from-corporate-navy via-blue-900 to-corporate-dark text-white overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        
+        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+              <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
                 <Handshake className="w-12 h-12" />
               </div>
             </div>
-            <h1 className="text-5xl font-bold mb-6">Industry Connect & Collaborations</h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Building strong partnerships with leading industries for mutual growth and innovation
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Industry Connect & Collaborations
+            </h1>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Building strong partnerships with leading industries for mutual growth, innovation, and student success
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="section-container">
+      <section className="py-20 md:py-28 bg-surface">
+        <div className="section-container px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-corporate-blue dark:text-white mb-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-corporate-navy dark:text-white mb-4">
                 Our Industry Partners
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
-                Collaborating with 100+ leading organizations across sectors
+              <p className="text-corporate-textSecondary dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                Collaborating with 100+ leading organizations across sectors for mutual growth
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {partners.map((partner, index) => (
               <AnimatedSection key={partner.name} delay={index * 0.05}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-gray-200 dark:border-gray-700 text-center shadow-md hover:shadow-xl transition-all"
+                  className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-700 text-center shadow-sm hover:shadow-lg transition-all"
                 >
-                  <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
-                    <Building2 className="w-8 h-8 text-corporate-blue dark:text-blue-400" />
+                  <div className="w-14 h-14 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm">
+                    <Building2 className="w-7 h-7 text-corporate-blue dark:text-blue-400" />
                   </div>
-                  <h3 className="font-bold text-corporate-blue dark:text-white text-lg mb-1">
+                  <h3 className="font-bold text-corporate-navy dark:text-white mb-1">
                     {partner.name}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-xs text-corporate-textSecondary dark:text-gray-400 font-medium">
                     {partner.category}
                   </p>
                 </motion.div>
@@ -187,7 +193,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section className="py-20 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -205,7 +211,7 @@ export default function IndustryPage() {
               <AnimatedSection key={mou.company} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-corporate-blue dark:border-blue-500"
+                  className="bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border-l-4 border-corporate-blue dark:border-blue-500"
                 >
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-corporate-lightBlue dark:bg-blue-600 rounded-lg flex items-center justify-center text-white">
@@ -220,7 +226,7 @@ export default function IndustryPage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-muted">
                     {mou.description}
                   </p>
                 </motion.div>
@@ -230,7 +236,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+  <section className="py-20 bg-card">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -256,7 +262,7 @@ export default function IndustryPage() {
                   <h3 className="text-2xl font-bold text-corporate-blue dark:text-white mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  <p className="text-muted mb-6">
                     {program.description}
                   </p>
                   <div className="grid grid-cols-2 gap-4 pt-4 border-t border-blue-300 dark:border-blue-700">
@@ -264,13 +270,13 @@ export default function IndustryPage() {
                       <p className="text-2xl font-bold text-corporate-blue dark:text-blue-400">
                         {program.companies}+
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Companies</p>
+                      <p className="text-sm text-muted">Companies</p>
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-corporate-blue dark:text-blue-400">
                         {program.students}+
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Students</p>
+                      <p className="text-sm text-muted">Students</p>
                     </div>
                   </div>
                 </div>
@@ -280,7 +286,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section className="py-20 bg-surface">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -296,7 +302,7 @@ export default function IndustryPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {guestLectures.map((lecture, index) => (
               <AnimatedSection key={lecture.speaker} delay={index * 0.1}>
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+                <div className="bg-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-corporate-lightBlue dark:bg-blue-600 rounded-full flex items-center justify-center text-white">
                       <Users className="w-6 h-6" />
@@ -305,7 +311,7 @@ export default function IndustryPage() {
                       <h3 className="text-lg font-bold text-corporate-blue dark:text-white mb-2">
                         {lecture.speaker}
                       </h3>
-                      <p className="text-gray-700 dark:text-gray-300 mb-3">
+                      <p className="text-muted mb-3">
                         {lecture.topic}
                       </p>
                       <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
@@ -321,7 +327,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800">
+  <section className="py-20 bg-card">
         <div className="section-container">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -339,7 +345,7 @@ export default function IndustryPage() {
               <AnimatedSection key={project.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
+                  className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 p-6 rounded-xl border border-base"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl font-bold text-corporate-blue dark:text-white flex-1">
@@ -355,7 +361,7 @@ export default function IndustryPage() {
                   </div>
                   <div className="flex items-center gap-2 mb-3">
                     <Building2 className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="text-muted">
                       {project.partner}
                     </p>
                   </div>
