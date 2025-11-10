@@ -123,19 +123,20 @@ export default function Home() {
       {/* Notification Ticker */}
       <NotificationTicker />
 
-      {/* Hero Section */}
-      {/*
+      {/* Hero Section - Background image with text overlay and CTA buttons */}
       <HeroSection
         title="NSRIT Engineering College"
-        subtitle="Excellence in Technical Education"
         description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
         backgroundImage="/hero-bg.png"
         primaryCTA={{
           text: 'Apply for Admission',
           href: '/admissions',
         }}
+        secondaryCTA={{
+          text: 'Explore Programs',
+          href: '/academics',
+        }}
       />
-      */}
 
       {/* Stats Section - Clean Grid */}
       <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
