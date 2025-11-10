@@ -28,7 +28,7 @@ export default function HeroSection({
   description,
   primaryCTA,
   secondaryCTA,
-  backgroundImage = '/hero-bg.png',
+  backgroundImage = 'https://images.unsplash.com/photo-1557683316-973673baf926',
   height = 'min-h-[750px] md:min-h-[850px]',
   backgroundVariant = 'image',
 }: HeroSectionProps) {

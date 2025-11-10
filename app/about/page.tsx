@@ -1,7 +1,11 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
 import { Eye, Target } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About NSRIET | Our History, Vision, and Leadership',
+  description: 'Learn about N S Raju Institute of Engineering & Technology (NSRIET), our history of academic excellence, our vision for the future, and the leadership team that guides us.',
+};
 
 export default function AboutPage() {
   return (

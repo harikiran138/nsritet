@@ -1,7 +1,11 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
 import { Download, Send } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Admissions at NSRIET | Apply Now',
+  description: 'Find out how to apply for admission to NSRIET. We offer a range of undergraduate and postgraduate programs. Start your application today!',
+};
 
 export default function AdmissionsPage() {
   return (

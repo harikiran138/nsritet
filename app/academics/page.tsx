@@ -1,7 +1,11 @@
-'use client';
-
+import type { Metadata } from 'next';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
 import { Download } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Academics at NSRIET | Programs, Curriculum, and Faculty',
+  description: 'Explore the academic programs, curriculum, and faculty at NSRIET. We offer a wide range of undergraduate and postgraduate programs designed to prepare students for successful careers.',
+};
 
 export default function AcademicsPage() {
   return (

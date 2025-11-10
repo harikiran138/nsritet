@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image component
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { navigationItems, MenuItem } from '@/lib/navigation';
 
@@ -62,19 +63,48 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} className="relative z-40 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white shadow-lg">
+      <div className="bg-corporate-dark border-b-[3px] border-corporate-blue">
+        <div className="section-container py-2 flex justify-between items-center text-sm text-white">
+          <div>
+            <span className="font-bold">NSRIET</span>
+          </div>
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link href="#" className="hover:text-corporate-lightBlue">Circular Notification</Link>
+            <span>|</span>
+            <Link href="#" className="hover:text-corporate-lightBlue">Upcoming Events</Link>
+            <span>|</span>
+            <Link href="/quick-links/feedback" className="hover:text-corporate-lightBlue">Feedback</Link>
+            <span>|</span>
+            <Link href="#" className="hover:text-corporate-lightBlue">News Bulletin</Link>
+            <span>|</span>
+            <Link href="/cdc/career-guidance" className="hover:text-corporate-lightBlue">Career Opportunities</Link>
+          </div>
+        </div>
+      </div>
+      {/* Logo at the top */}
+      <div className="py-3">
+        <Link href="/">
+          <div className="relative h-20 w-full">
+            <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />
+          </div>
+        </Link>
+      </div>
+
       <div className="section-container py-2 relative">
-        <div className="flex items-center justify-between py-3">
+        <div className="flex items-center justify-between">
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">
             {navigationItems.map((item) => (
-              <div key={item.name} className="relative">
-                <button
-                  onClick={() => item.submenu && toggleDesktopMenu(item.name)}
-                  className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-2.5 px-4 rounded-md hover:bg-white/10"
-                >
-                  <Link href={item.href}>{item.name}</Link>
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.submenu && toggleDesktopMenu(item.name)}
+                onMouseLeave={() => item.submenu && toggleDesktopMenu('')}
+              >
+                <Link href={item.href} className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-2.5 px-4 rounded-md hover:bg-white/10">
+                  {item.name}
                   {item.submenu && <ChevronDown className={`w-4 h-4 transition-transform ${openDesktopMenu === item.name ? 'rotate-180' : ''}`} />}
-                </button>
+                </Link>
                 {item.submenu && openDesktopMenu === item.name && (
                   <div className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700">
                     {item.submenu.map((subItem) => (
