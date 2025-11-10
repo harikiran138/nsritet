@@ -1,117 +1,73 @@
 'use client';
 
-import PageTemplate from '@/components/PageTemplate';
-import { Building, Users, Briefcase } from 'lucide-react';
+import ThreeSectionPage from '@/components/ThreeSectionPage';
 
 export default function NadimalliInformaticsPage() {
   return (
-    <PageTemplate
+    <ThreeSectionPage
       title="Nadimpalli Informatics LLP"
-      subtitle="Institutional partner supporting excellence in technology education"
-      sections={[
-        {
-          title: 'Organization Overview',
-          description: 'Our committed institutional partner',
-          icon: <Building className="w-6 h-6" />,
-          content: (
-            <div className="space-y-6">
-              <p className="text-lg text-corporate-textSecondary dark:text-gray-400 leading-relaxed">
-                Nadimpalli Informatics LLP is a forward-thinking technology organization dedicated to fostering excellence in engineering education. As an institutional partner of NSRIET, they contribute significantly to academic programs, industry collaboration, and student development initiatives.
-              </p>
-              <div className="grid md:grid-cols-3 gap-4">
+      subtitle="The founding organization behind NSRIET"
+      section1={{
+        title: 'About the Organization',
+        content: (
+          <div className="space-y-4">
+            <p>
+              Nadimpalli Informatics LLP is the parent organization that established and continues to support NSRIET's mission of providing quality engineering education.
+            </p>
+            <p>
+              Founded with a commitment to education and technology, the organization operates multiple educational institutions dedicated to developing skilled professionals.
+            </p>
+          </div>
+        ),
+      }}
+      section2={{
+        title: 'Vision & Values',
+        content: (
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-4">Core Values</h3>
+              <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { metric: '15+', label: 'Years of Partnership' },
-                  { metric: '500+', label: 'Students Supported' },
-                  { metric: '20+', label: 'Industry Projects' },
-                ].map((stat, idx) => (
-                  <div key={idx} className="p-6 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 text-center">
-                    <div className="text-3xl font-bold text-corporate-blue mb-2">{stat.metric}</div>
-                    <p className="text-xs text-corporate-navy dark:text-white font-semibold">{stat.label}</p>
+                  { title: 'Excellence', desc: 'Commitment to quality in all endeavors' },
+                  { title: 'Innovation', desc: 'Fostering creativity and new ideas' },
+                  { title: 'Integrity', desc: 'Ethical practices in all operations' },
+                  { title: 'Inclusivity', desc: 'Equal opportunities for all stakeholders' },
+                ].map((value) => (
+                  <div key={value.title} className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
+                    <h4 className="font-bold text-corporate-navy dark:text-white mb-2">{value.title}</h4>
+                    <p className="text-sm text-corporate-textSecondary dark:text-gray-400">{value.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
-          ),
-        },
-        {
-          title: 'Contribution & Support',
-          description: 'Areas of institutional support',
-          icon: <Briefcase className="w-6 h-6" />,
-          content: (
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  area: 'Research & Innovation',
-                  items: ['Funded research projects', 'Lab equipment support', 'Publication assistance']
-                },
-                {
-                  area: 'Student Programs',
-                  items: ['Internship opportunities', 'Scholarship funding', 'Career mentorship']
-                },
-                {
-                  area: 'Curriculum Development',
-                  items: ['Industry-focused courses', 'Project design', 'Skill training']
-                },
-                {
-                  area: 'Infrastructure',
-                  items: ['Lab setup & maintenance', 'Technology upgrades', 'Facility development']
-                },
-              ].map((section, idx) => (
-                <div key={idx} className="p-6 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
-                  <h4 className="font-bold text-corporate-navy dark:text-white mb-4">{section.area}</h4>
-                  <ul className="space-y-2">
-                    {section.items.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <span className="w-2 h-2 bg-corporate-blue rounded-full"></span>
-                        <span className="text-corporate-textSecondary dark:text-gray-400 text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+          </div>
+        ),
+      }}
+      section3={{
+        title: 'Institutional Network & Contact',
+        content: (
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Associated Institutions</h3>
+              <ul className="space-y-2 text-corporate-navy dark:text-gray-200">
+                <li>• NSRIET - Engineering College</li>
+                <li>• School of Management & Business</li>
+                <li>• Professional Development Centre</li>
+                <li>• Research & Innovation Hub</li>
+              </ul>
             </div>
-          ),
-        },
-        {
-          title: 'Contact & Collaboration',
-          description: 'Partnership opportunities and contact information',
-          icon: <Users className="w-6 h-6" />,
-          content: (
-            <div className="space-y-6">
-              <div className="p-6 bg-blue-50 dark:bg-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-700">
-                <h4 className="font-bold text-corporate-navy dark:text-white mb-4">Contact Details</h4>
-                <div className="space-y-3 text-sm text-corporate-textSecondary dark:text-gray-400">
-                  <div>
-                    <p className="font-semibold text-corporate-navy dark:text-white">Organization</p>
-                    Nadimpalli Informatics LLP
-                  </div>
-                  <div>
-                    <p className="font-semibold text-corporate-navy dark:text-white">Email</p>
-                    info@nadimpalli-informatics.com
-                  </div>
-                  <div>
-                    <p className="font-semibold text-corporate-navy dark:text-white">Phone</p>
-                    +91-XXXXXXXXXX
-                  </div>
-                  <div>
-                    <p className="font-semibold text-corporate-navy dark:text-white">Website</p>
-                    <a href="#" className="text-corporate-blue hover:opacity-80">www.nadimpalli-informatics.com</a>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6 bg-cyan-50 dark:bg-cyan-900/30 rounded-lg border border-cyan-200 dark:border-cyan-700">
-                <h4 className="font-bold text-corporate-navy dark:text-white mb-3">Collaboration Opportunities</h4>
-                <p className="text-corporate-textSecondary dark:text-gray-400 text-sm mb-4">
-                  Nadimpalli Informatics actively welcomes new partnerships and collaboration opportunities with educational institutions, research organizations, and industry bodies.
-                </p>
-                <button className="px-4 py-2 bg-corporate-blue text-white rounded-lg hover:opacity-90 transition-opacity text-sm font-medium">
-                  Propose Collaboration
-                </button>
+            <div>
+              <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Connect With Us</h3>
+              <div className="space-y-2">
+                <a href="#" className="block text-corporate-blue hover:underline font-medium">🌐 Organization Website</a>
+                <a href="#" className="block text-corporate-blue hover:underline font-medium">📧 Corporate Email</a>
+                <a href="#" className="block text-corporate-blue hover:underline font-medium">📞 Contact Information</a>
+                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Corporate Profile</a>
               </div>
             </div>
-          ),
-        },
-      ]}
+          </div>
+        ),
+      }}
     />
   );
 }

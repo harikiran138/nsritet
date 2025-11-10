@@ -128,10 +128,10 @@ export default function Home() {
         // title="NSRIT Engineering College"
         // description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
         backgroundImage="/hero-bg.png"
-        primaryCTA={{
-          text: 'Apply for Admission',
-          href: '/admissions',
-        }}
+        // primaryCTA={{
+        //   text: 'Apply for Admission',
+        //   href: '/admissions',
+        // }}
         // secondaryCTA={{
         //   text: 'Explore Programs',
         //   href: '/academics',
