@@ -75,7 +75,7 @@ export default function LeadershipPage() {
           <div className="p-6 bg-blue-50 dark:bg-blue-900/30 rounded-lg border border-blue-200 dark:border-blue-700">
             <h4 className="font-bold text-corporate-navy dark:text-white mb-4">Office Hours & Contact</h4>
             <p className="text-corporate-textSecondary dark:text-gray-400 text-sm mb-4">
-              Leadership is accessible to students, faculty, and parents. Schedule an appointment through the principal's office or write to us with your feedback and suggestions.
+              Leadership is accessible to students, faculty, and parents. Schedule an appointment through the principal&apos;s office or write to us with your feedback and suggestions.
             </p>
             <div className="space-y-2 text-sm text-corporate-textSecondary dark:text-gray-400">
               <p><span className="font-semibold">Email:</span> principal@nsriet.edu.in</p>

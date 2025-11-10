@@ -44,7 +44,7 @@ export default function PostgraduatePage() {
             <div className="p-6 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
               <h4 className="font-bold text-corporate-navy dark:text-white mb-4">MBA Eligibility</h4>
               <ul className="space-y-2 text-corporate-textSecondary dark:text-gray-400 text-sm">
-                <li>• Bachelor's degree in any discipline</li>
+                <li>• Bachelor&apos;s degree in any discipline</li>
                 <li>• CAT/MAT/XAT score required</li>
                 <li>• Work experience (preferred, not mandatory)</li>
                 <li>• Personal interview & merit assessment</li>

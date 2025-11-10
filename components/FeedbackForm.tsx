@@ -83,6 +83,7 @@ export default function FeedbackForm() {
       // Reset success message after 4 seconds
       setTimeout(() => setStatus('idle'), 4000);
     } catch (err) {
+      console.error("Feedback submission error:", err);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 4000);
     }

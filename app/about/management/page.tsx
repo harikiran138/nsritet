@@ -48,7 +48,7 @@ export default function ManagementPage() {
             <div>
               <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Administrative Offices</h3>
               <ul className="space-y-2 text-corporate-navy dark:text-gray-200">
-                <li>• Principal's Office</li>
+                <li>• Principal&apos;s Office</li>
                 <li>• Academic Office</li>
                 <li>• Admissions Office</li>
                 <li>• Finance & Accounts</li>

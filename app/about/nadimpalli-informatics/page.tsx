@@ -12,7 +12,7 @@ export default function NadimalliInformaticsPage() {
         content: (
           <div className="space-y-4">
             <p>
-              Nadimpalli Informatics LLP is the parent organization that established and continues to support NSRIET's mission of providing quality engineering education.
+              Nadimpalli Informatics LLP is the parent organization that established and continues to support NSRIET&apos;s mission of providing quality engineering education.
             </p>
             <p>
               Founded with a commitment to education and technology, the organization operates multiple educational institutions dedicated to developing skilled professionals.

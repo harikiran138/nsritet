@@ -15,36 +15,31 @@ export const navigationItems: MenuItem[] = [
     href: '/',
   },
   {
-    name: 'Academics',
-    href: '/academics',
-    submenu: [
-      {
-        name: 'Programs',
-        href: '#',
-        submenu: [
-          { name: 'Computer Science & Engineering', href: '/academics/programs/cse' },
-          { name: 'CSE (Artificial Intelligence & Machine Learning)', href: '/academics/programs/cse-aiml' },
-          { name: 'ECE', href: '/academics/programs/ece' },
-          { name: 'EEE', href: '/academics/programs/eee' },
-          { name: 'Mechanical Engineering', href: '/academics/programs/mechanical' },
-          { name: 'Master of Business Administration', href: '/academics/programs/mba' },
-        ],
-      },
-      { name: 'Competency Based Curriculum', href: '/academics/curriculum' },
-      { name: 'Best Practices', href: '/academics/best-practices' },
-      { name: 'LMS', href: '/academics/lms' },
-      { name: 'Academic Calendar', href: '/academics/calendar' },
-      { name: 'Knowledge Resource Centre', href: '/academics/resources' },
-    ],
-  },
-  {
-    name: 'About',
+    name: 'About Us',
     href: '/about',
     submenu: [
       { name: 'History', href: '/about/history' },
       { name: 'Management', href: '/about/management' },
       { name: 'Leadership', href: '/about/leadership' },
       { name: 'Nadimpalli Informatics LLP', href: '/about/nadimpalli-informatics' },
+    ],
+  },
+  {
+    name: 'Governance',
+    href: '/governance',
+    submenu: [
+      { name: 'Organogram', href: '/governance/organogram' },
+      { name: 'Governing Body', href: '/governance/governing-body' },
+      { name: 'Institutional Committees', href: '/governance/committees' },
+    ],
+  },
+  {
+    name: 'Admissions',
+    href: '/admissions',
+    submenu: [
+      { name: 'Why NSRIET?', href: '/admissions/why-nsriet' },
+      { name: 'Undergraduate Programs', href: '/admissions/undergraduate' },
+      { name: 'Postgraduate Programs', href: '/admissions/postgraduate' },
     ],
   },
   {
@@ -63,22 +58,8 @@ export const navigationItems: MenuItem[] = [
     ],
   },
   {
-    name: 'Admissions',
-    href: '/admissions',
-    submenu: [
-      { name: 'Why NSRIET?', href: '/admissions/why-nsriet' },
-      { name: 'Undergraduate Programs', href: '/admissions/undergraduate' },
-      { name: 'Postgraduate Programs', href: '/admissions/postgraduate' },
-    ],
-  },
-  {
-    name: 'Governance',
-    href: '/governance',
-    submenu: [
-      { name: 'Organogram', href: '/governance/organogram' },
-      { name: 'Governing Body', href: '/governance/governing-body' },
-      { name: 'Institutional Committees', href: '/governance/committees' },
-    ],
+    name: 'Industry Institute Linkage',
+    href: '/industry-institute-linkage',
   },
   {
     name: 'Quick Links',
@@ -92,4 +73,5 @@ export const navigationItems: MenuItem[] = [
       { name: 'Partner Institution', href: '/quick-links/partners' },
     ],
   },
+
 ];

@@ -56,7 +56,7 @@ export default function ProgramsPage() {
               NSRIET offers a diverse range of undergraduate and postgraduate programs designed to meet industry standards and prepare students for successful careers.
             </p>
             <p>
-              Our curriculum emphasizes theoretical knowledge combined with practical experience, ensuring students graduate with both technical expertise and soft skills required in today's competitive job market.
+              Our curriculum emphasizes theoretical knowledge combined with practical experience, ensuring students graduate with both technical expertise and soft skills required in today&apos;s competitive job market.
             </p>
           </div>
         ),
