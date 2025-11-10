@@ -82,7 +82,7 @@ export default function Navbar() {
         </div>
       </div>
       {/* Logo at the top */}
-      <div className="py-3">
+      <div className="pt-[10px] pb-3">
         <Link href="/">
           <div className="relative h-20 w-full">
             <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />
@@ -90,7 +90,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="section-container py-2 relative">
+      <div className="section-container pt-[6px] pb-2 relative">
         <div className="flex items-center justify-between">
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">
@@ -101,7 +101,7 @@ export default function Navbar() {
                 onMouseEnter={() => item.submenu && toggleDesktopMenu(item.name)}
                 onMouseLeave={() => item.submenu && toggleDesktopMenu('')}
               >
-                <Link href={item.href} className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-2.5 px-4 rounded-md hover:bg-white/10">
+                <Link href={item.href} className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-[7px] px-4 rounded-md hover:bg-white/10">
                   {item.name}
                   {item.submenu && <ChevronDown className={`w-4 h-4 transition-transform ${openDesktopMenu === item.name ? 'rotate-180' : ''}`} />}
                 </Link>
