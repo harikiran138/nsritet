@@ -20,10 +20,10 @@ export const navigationItems: MenuItem[] = [
     submenu: [
       {
         name: 'Programs',
-        href: '/academics/programs',
+        href: '#',
         submenu: [
           { name: 'Computer Science & Engineering', href: '/academics/programs/cse' },
-          { name: 'CSE (AI & ML)', href: '/academics/programs/cse-aiml' },
+          { name: 'CSE (Artificial Intelligence & Machine Learning)', href: '/academics/programs/cse-aiml' },
           { name: 'ECE', href: '/academics/programs/ece' },
           { name: 'EEE', href: '/academics/programs/eee' },
           { name: 'Mechanical Engineering', href: '/academics/programs/mechanical' },

@@ -52,6 +52,7 @@ function DropdownMenu({ items, level = 0, isOpen = false }: DropdownMenuProps) {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileActiveSubmenu, setMobileActiveSubmenu] = useState<string | null>(null);
+  const [mobileActiveSubSubmenu, setMobileActiveSubSubmenu] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -69,6 +70,11 @@ export default function Navbar() {
 
   const toggleMobileSubmenu = (name: string) => {
     setMobileActiveSubmenu(mobileActiveSubmenu === name ? null : name);
+    setMobileActiveSubSubmenu(null); // Close sub-submenu when parent is toggled
+  };
+
+  const toggleMobileSubSubmenu = (name: string) => {
+    setMobileActiveSubSubmenu(mobileActiveSubSubmenu === name ? null : name);
   };
 
   return (
@@ -229,26 +235,50 @@ export default function Navbar() {
                         >
                           {link.submenu.map((sublink) => (
                             <div key={sublink.name}>
-                              <Link
-                                href={sublink.href}
-                                className="block py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-corporate-blue dark:hover:text-blue-400 font-medium"
-                                onClick={() => setIsMenuOpen(false)}
-                              >
-                                {sublink.name}
-                              </Link>
+                              <div className="flex items-center justify-between">
+                                <Link
+                                  href={sublink.href}
+                                  className="block py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-corporate-blue dark:hover:text-blue-400 font-medium flex-1"
+                                  onClick={() => !sublink.submenu && setIsMenuOpen(false)}
+                                >
+                                  {sublink.name}
+                                </Link>
+                                {sublink.submenu && (
+                                  <button
+                                    onClick={() => toggleMobileSubSubmenu(sublink.name)}
+                                    className="px-2 py-2 text-gray-700 dark:text-gray-300"
+                                    aria-label={`Toggle ${sublink.name} submenu`}
+                                  >
+                                    <ChevronDown
+                                      className={`w-4 h-4 transition-transform ${
+                                        mobileActiveSubSubmenu === sublink.name ? 'rotate-180' : ''
+                                      }`}
+                                    />
+                                  </button>
+                                )}
+                              </div>
                               {sublink.submenu && (
-                                <div className="pl-3 space-y-1 border-l border-gray-300 dark:border-gray-700">
-                                  {sublink.submenu.map((subsublink) => (
-                                    <Link
-                                      key={subsublink.name}
-                                      href={subsublink.href}
-                                      className="block py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-corporate-blue dark:hover:text-blue-400"
-                                      onClick={() => setIsMenuOpen(false)}
+                                <AnimatePresence>
+                                  {mobileActiveSubSubmenu === sublink.name && (
+                                    <motion.div
+                                      initial={{ opacity: 0, height: 0 }}
+                                      animate={{ opacity: 1, height: 'auto' }}
+                                      exit={{ opacity: 0, height: 0 }}
+                                      className="pl-3 space-y-1 overflow-hidden border-l border-gray-300 dark:border-gray-700"
                                     >
-                                      {subsublink.name}
-                                    </Link>
-                                  ))}
-                                </div>
+                                      {sublink.submenu.map((subsublink) => (
+                                        <Link
+                                          key={subsublink.name}
+                                          href={subsublink.href}
+                                          className="block py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-corporate-blue dark:hover:text-blue-400"
+                                          onClick={() => setIsMenuOpen(false)}
+                                        >
+                                          {subsublink.name}
+                                        </Link>
+                                      ))}
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
                               )}
                             </div>
                           ))}

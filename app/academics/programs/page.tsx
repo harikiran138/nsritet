@@ -1,47 +1,47 @@
 'use client';
 
 import Link from 'next/link';
+import { navigationItems } from '@/lib/navigation';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
 import { GraduationCap, Code, Zap, Cog, BookOpen } from 'lucide-react';
 
-const programs = [
-  {
+const programDetails: { [key: string]: { icon: React.ElementType; description: string } } = {
+  '/academics/programs/cse': {
     icon: Code,
-    name: 'Computer Science & Engineering',
-    href: '/academics/programs/cse',
     description: 'Modern computer science education with focus on software development and systems.',
   },
-  {
+  '/academics/programs/cse-aiml': {
     icon: Code,
-    name: 'CSE (AI & Machine Learning)',
-    href: '/academics/programs/cse-aiml',
     description: 'Specialized program in artificial intelligence and machine learning technologies.',
   },
-  {
+  '/academics/programs/ece': {
     icon: Zap,
-    name: 'Electronics & Communication Engineering',
-    href: '/academics/programs/ece',
     description: 'Learn cutting-edge communication systems and electronic circuit design.',
   },
-  {
+  '/academics/programs/eee': {
     icon: Zap,
-    name: 'Electrical & Electronics Engineering',
-    href: '/academics/programs/eee',
     description: 'Comprehensive education in power systems and electrical engineering.',
   },
-  {
+  '/academics/programs/mechanical': {
     icon: Cog,
-    name: 'Mechanical Engineering',
-    href: '/academics/programs/mechanical',
     description: 'Design, analysis, and manufacturing of mechanical systems.',
   },
-  {
+  '/academics/programs/mba': {
     icon: BookOpen,
-    name: 'Master of Business Administration',
-    href: '/academics/programs/mba',
     description: 'Postgraduate business education for future leaders.',
   },
-];
+};
+
+const academicsMenu = navigationItems.find(item => item.href === '/academics');
+const programsMenu = academicsMenu?.submenu?.find(item => item.href === '/academics/programs');
+
+const programs = programsMenu?.submenu?.map(item => {
+  const details = programDetails[item.href] || { icon: GraduationCap, description: 'A leading program in its field.' };
+  return {
+    ...item,
+    ...details,
+  };
+}) || [];
 
 export default function ProgramsPage() {
   return (
