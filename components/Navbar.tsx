@@ -144,7 +144,7 @@ export default function Navbar() {
           </div>
 
           {/* Theme toggle - positioned right */}
-          <div className="absolute right-4 hidden lg:flex">
+          {/* <div className="absolute right-4 hidden lg:flex">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -157,11 +157,11 @@ export default function Navbar() {
                 <Moon className="w-5 h-5 text-white" />
               )}
             </button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3 absolute right-4">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
               aria-label="Toggle theme"
@@ -172,7 +172,7 @@ export default function Navbar() {
               ) : (
                 <Moon className="w-5 h-5 text-white" />
               )}
-            </button>
+            </button> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-white"
