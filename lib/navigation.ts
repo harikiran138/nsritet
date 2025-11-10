@@ -35,6 +35,29 @@ export const navigationItems: MenuItem[] = [
     ],
   },
   {
+    name: 'Academics',
+    href: '/academics',
+    submenu: [
+      {
+        name: 'Programs',
+        href: '#',
+        submenu: [
+          { name: 'Computer Science & Engineering', href: '/academics/programs/cse' },
+          { name: 'CSE (Artificial Intelligence & Machine Learning)', href: '/academics/programs/cse-aiml' },
+          { name: 'ECE', href: '/academics/programs/ece' },
+          { name: 'EEE', href: '/academics/programs/eee' },
+          { name: 'Mechanical Engineering', href: '/academics/programs/mechanical' },
+          { name: 'Master of Business Administration', href: '/academics/programs/mba' },
+        ],
+      },
+      { name: 'Competency Based Curriculum', href: '/academics/curriculum' },
+      { name: 'Best Practices', href: '/academics/best-practices' },
+      { name: 'LMS', href: '/academics/lms' },
+      { name: 'Academic Calendar', href: '/academics/calendar' },
+      { name: 'Knowledge Resource Centre', href: '/academics/resources' },
+    ],
+  },
+  {
     name: 'Admissions',
     href: '/admissions',
     submenu: [
@@ -74,5 +97,4 @@ export const navigationItems: MenuItem[] = [
       { name: 'Partner Institution', href: '/quick-links/partners' },
     ],
   },
-
 ];
