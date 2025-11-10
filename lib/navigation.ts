@@ -20,6 +20,7 @@ export const navigationItems: MenuItem[] = [
     submenu: [
       { name: 'History', href: '/about/history' },
       { name: 'Management', href: '/about/management' },
+      { name: 'Vision & Mission', href: '/about/vision-mission' },
       { name: 'Leadership', href: '/about/leadership' },
       { name: 'Nadimpalli Informatics LLP', href: '/about/nadimpalli-informatics' },
     ],
