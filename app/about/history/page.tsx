@@ -8,67 +8,35 @@ export default function HistoryPage() {
       title="Our History"
       subtitle="A journey of excellence and growth"
       section1={{
-        title: 'Institutional Journey',
+        title: 'Establishment and Accreditation',
         content: (
           <div className="space-y-4">
-            <p>
-              NSRIET was established with a vision to provide quality engineering education and contribute to national development.
-            </p>
-            <p>
-              Since its inception, the institution has grown into a premier engineering college with state-of-the-art facilities, dedicated faculty, and a strong commitment to academic excellence.
+            <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
+              N S Raju Institute of Engineering & Technology (NSRIET), formerly known as Vizag Institute of Technology, was established in 2008 under the Oxford Educational Society. The institution is now managed by the Nadimpalli Satyanarayana Raju Institute of Technology (NSRIT), Sontyam, Visakhapatnam—an institution accredited by the National Assessment and Accreditation Council (NAAC) with an ‘A’ Grade, and with its eligible undergraduate programs in CSE, ECE, and EEE accredited by the National Board of Accreditation (NBA) under Tier-I.
             </p>
           </div>
         ),
       }}
       section2={{
-        title: 'Milestones & Achievements',
+        title: 'Commitment to Quality Education',
         content: (
-          <div className="space-y-6">
-            <div className="space-y-4">
-              {[
-                { year: '2012', event: 'Founded as an AICTE-approved engineering college' },
-                { year: '2015', event: 'Achieved NBA accreditation for engineering programs' },
-                { year: '2018', event: 'Established Research and Innovation Centre' },
-                { year: '2020', event: 'Expanded into postgraduate programs (MBA)' },
-                { year: '2023', event: 'Launched AI & ML specialization program' },
-                { year: '2024', event: 'Achieved NAAC accreditation' },
-              ].map((milestone) => (
-                <div key={milestone.year} className="flex gap-6 items-start">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900">
-                      <span className="text-corporate-blue font-bold">{milestone.year}</span>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-corporate-navy dark:text-white font-medium">{milestone.event}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-4">
+            <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
+              NSRIET is committed to providing quality education, holistic development, and industry-aligned technical competencies, built upon a strong foundation of ethics, values, and cultural heritage. The institute places significant emphasis on integrating classroom learning with hands-on practical exposure, live projects, and industry-supported learning environments, enabling students to apply theoretical concepts to real-time situations during their course of study itself.
+            </p>
+            <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
+              The primary objective of the institution is to nurture competent and socially responsible technology professionals who can contribute effectively to the economic, industrial, and societal development of the nation. NSRIET fosters a vibrant academic ecosystem that promotes innovation, research culture, and leadership qualities among students.
+            </p>
           </div>
         ),
       }}
       section3={{
-        title: 'Heritage & Recognition',
+        title: 'Fostering Future-Ready Professionals',
         content: (
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Accreditations</h3>
-              <ul className="space-y-2 text-corporate-navy dark:text-gray-200">
-                <li>• AICTE Approval</li>
-                <li>• NBA Accreditation</li>
-                <li>• NAAC Accreditation</li>
-                <li>• ISO 9001:2015 Certified</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Key Documents</h3>
-              <div className="space-y-2">
-                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Institution History</a>
-                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 NAAC Report</a>
-                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Recognitions</a>
-              </div>
-            </div>
+          <div className="space-y-4">
+            <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
+              We focus on imparting futuristic skillsets in emerging and cutting-edge technologies, supported by active research initiatives in science, engineering, and technology. A strong linkage with industry partners forms one of our core strengths, enabling seamless industry–academia collaboration, enhanced employability, and career progression for students. The institute encourages freedom of thought, creativity, personal growth, and instills human values, environmental consciousness, and a deep sense of social responsibility.
+            </p>
           </div>
         ),
       }}
