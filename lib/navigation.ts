@@ -85,7 +85,7 @@ export const navigationItems: MenuItem[] = [
     href: '/quick-links',
     submenu: [
       { name: 'Campus Life', href: '/quick-links/campus-life' },
-      { name: 'Feedback', href: '/feedback' },
+      { name: 'Feedback', href: '/quick-links/feedback' },
       { name: 'Clubs & Societies', href: '/quick-links/clubs' },
       { name: 'Institution Policy Documents', href: '/quick-links/policies' },
       { name: 'NSS', href: '/quick-links/nss' },
