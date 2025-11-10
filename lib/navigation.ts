@@ -12,7 +12,7 @@ export interface MenuItem {
 export const navigationItems: MenuItem[] = [
   {
     name: 'Home',
-    href: '/home',
+    href: '/',
   },
   {
     name: 'About Us',

@@ -1,12 +1,26 @@
 'use client';
 
-import { redirect } from 'next/navigation';
-import { useEffect } from 'react';
+import NotificationTicker from '@/components/NotificationTicker';
+import HeroSection from '@/components/HeroSection';
+import Highlights from '@/components/Highlights';
+import QuickAccessCards from '@/components/QuickAccessCards';
 
-export default function Page() {
-  useEffect(() => {
-    redirect('/home');
-  }, []);
+export default function Home() {
+  return (
+    <>
+      {/* Notification Ticker */}
+      <NotificationTicker />
 
-  return null;
+      {/* Hero Section - Background image with text overlay and CTA buttons */}
+      <HeroSection
+        backgroundImage="/hero-bg.png"
+      />
+
+      {/* Highlights Section */}
+      <Highlights />
+
+      {/* Quick Access Cards Section */}
+      <QuickAccessCards />
+    </>
+  );
 }
