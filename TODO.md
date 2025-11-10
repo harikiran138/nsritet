@@ -1,6 +1,6 @@
-# TODO: Remove "Apply for Admission" button in Hero Section
+# TODO: Commit the theme toggle button element
 
 ## Tasks
-- [x] Edit app/page.tsx to comment out the primaryCTA property in the HeroSection component
+- [ ] Find the theme toggle button in the Navbar component
 - [ ] Commit the changes to git
 - [ ] Verify the changes in the running local server

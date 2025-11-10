@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, Award, Users, BookOpen, Lightbulb } from 'lucide-react';
+import { GraduationCap, Calendar, Award, Users, BookOpen, Lightbulb, ArrowRight } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
 
 const departments = [
@@ -129,11 +130,33 @@ export default function AcademicsPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-    </>
-  );
+                </div>
+                </div>
+                </AnimatedSection>
+                </div>
+                </section>
+
+                    {/* CTA Section */}
+       <section className="py-16 md:py-24 bg-surface">
+         <div className="section-container px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <div className="text-center">
+               <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-6">
+                 Explore Our Programs
+               </h2>
+               <p className="text-corporate-textSecondary dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                 Discover detailed information about all our undergraduate and postgraduate programs
+               </p>
+               <Link
+                 href="/academics/programs"
+                 className="inline-flex items-center gap-2 px-8 py-4 bg-corporate-blue text-white font-semibold rounded-lg hover:opacity-90 transition-all duration-300 hover:scale-105"
+               >
+                 View All Programs <ArrowRight className="w-5 h-5" />
+               </Link>
+             </div>
+           </AnimatedSection>
+         </div>
+       </section>
+     </>
+   );
 }
