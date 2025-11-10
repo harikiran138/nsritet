@@ -6,49 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
 import { navigationItems } from '@/lib/navigation';
 
-interface DropdownMenuProps {
-  items: typeof navigationItems;
-  level?: number;
-  isOpen?: boolean;
-}
-
-function DropdownMenu({ items, level = 0, isOpen = false }: DropdownMenuProps) {
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-
-  if (level > 1) return null;
-
-  return (
-    <>
-      {items.map((item) => (
-        <div key={item.name} className="relative group">
-          <Link
-            href={item.href}
-            className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors font-medium text-sm border-b border-gray-100 dark:border-gray-700 last:border-b-0 group-hover:bg-blue-50 dark:group-hover:bg-gray-700"
-          >
-            <span className="flex items-center justify-between">
-              {item.name}
-              {item.submenu && (
-                <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
-              )}
-            </span>
-          </Link>
-
-          {item.submenu && (
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              whileHover={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.15 }}
-              className="absolute left-full top-0 ml-1 bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden min-w-[240px] border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
-            >
-              <DropdownMenu items={item.submenu} level={level + 1} />
-            </motion.div>
-          )}
-        </div>
-      ))}
-    </>
-  );
-}
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileActiveSubmenu, setMobileActiveSubmenu] = useState<string | null>(null);
@@ -125,10 +82,10 @@ export default function Navbar() {
 
                         {sublink.submenu && (
                           <motion.div
-                            initial={{ opacity: 0, x: -10 }}
-                            whileHover={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: -10 }}
+                            whileHover={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.15 }}
-                            className="absolute left-full top-0 ml-2 bg-white dark:bg-gray-850 shadow-2xl rounded-lg overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all"
+                            className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-850 shadow-2xl rounded-lg overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all"
                           >
                             {sublink.submenu.map((subsublink) => (
                               <Link
