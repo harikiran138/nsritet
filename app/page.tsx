@@ -124,7 +124,8 @@ export default function Home() {
       <NotificationTicker />
 
       {/* Hero Section */}
-      {/* <HeroSection
+      {/*
+      <HeroSection
         title="NSRIT Engineering College"
         subtitle="Excellence in Technical Education"
         description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
@@ -133,48 +134,45 @@ export default function Home() {
           text: 'Apply for Admission',
           href: '/admissions',
         }}
-        // secondaryCTA={{
-        //   text: 'Explore Programs',
-        //   href: '/academics',
-        // }}
-      /> */
+      />
+      */}
 
-  {/* Stats Section - Clean Grid */}
-  <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
-    {/* Decorative gradient background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50 pointer-events-none dark:from-blue-950 dark:opacity-20"></div>
-    
-    <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
-      <AnimatedSection>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
-            NSRIET By Numbers
-          </h2>
-          <p className="text-corporate-textSecondary dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Proudly delivering excellence and innovation
-          </p>
-        </div>
-      </AnimatedSection>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        {stats.map((stat, index) => (
-          <AnimatedSection key={stat.label} delay={index * 0.1}>
-            <div className="card flex flex-col items-center justify-center text-center hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-lg mb-4 group-hover:scale-110 transition-transform">
-                <stat.icon className="w-8 h-8 text-corporate-blue" />
-              </div>
-              <div className="text-4xl md:text-5xl font-bold text-corporate-navy dark:text-white mb-2">
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-              </div>
-              <div className="text-corporate-textSecondary dark:text-gray-400 font-medium text-sm">
-                {stat.label}
-              </div>
+      {/* Stats Section - Clean Grid */}
+      <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
+        {/* Decorative gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50 pointer-events-none dark:from-blue-950 dark:opacity-20"></div>
+        
+        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
+                NSRIET By Numbers
+              </h2>
+              <p className="text-corporate-textSecondary dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                Proudly delivering excellence and innovation
+              </p>
             </div>
           </AnimatedSection>
-        ))}
-      </div>
-    </div>
-  </section>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {stats.map((stat, index) => (
+              <AnimatedSection key={stat.label} delay={index * 0.1}>
+                <div className="card flex flex-col items-center justify-center text-center hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-800 transition-all group">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-lg mb-4 group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-8 h-8 text-corporate-blue" />
+                  </div>
+                  <div className="text-4xl md:text-5xl font-bold text-corporate-navy dark:text-white mb-2">
+                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-corporate-textSecondary dark:text-gray-400 font-medium text-sm">
+                    {stat.label}
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-20 md:py-28 bg-corporate-background dark:bg-gray-800 relative">
@@ -213,25 +211,25 @@ export default function Home() {
         </div>
       </section>
 
-  {/* Events Section */}
-  <section className="py-20 md:py-28 bg-surface">
-    <div className="section-container px-4 sm:px-6 lg:px-8">
-      <AnimatedSection>
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
-            Upcoming Events
-          </h2>
-          <p className="text-corporate-textSecondary dark:text-gray-300 text-lg">
-            Stay informed about academic activities and institutional programs
-          </p>
-        </div>
-      </AnimatedSection>
+      {/* Events Section */}
+      <section className="py-20 md:py-28 bg-surface">
+        <div className="section-container px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
+                Upcoming Events
+              </h2>
+              <p className="text-corporate-textSecondary dark:text-gray-300 text-lg">
+                Stay informed about academic activities and institutional programs
+              </p>
+            </div>
+          </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <EventCarousel events={upcomingEvents} autoSlide={true} interval={7000} />
-      </AnimatedSection>
-    </div>
-  </section>
+          <AnimatedSection delay={0.2}>
+            <EventCarousel events={upcomingEvents} autoSlide={true} interval={7000} />
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* Campus Gallery */}
       <section className="py-20 md:py-28 bg-corporate-background dark:bg-gray-800">
