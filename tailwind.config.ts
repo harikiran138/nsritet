@@ -28,15 +28,15 @@ const config: Config = {
           blue: '#0066cc',
           dark: '#001a33',
           lightBlue: '#3399ff',
-          background: '#f5f7fa',
-          textPrimary: '#1a1a1a',
+          background: '#f8f9fa',
+          textPrimary: '#212529',
           textSecondary: '#5a5a5a',
           border: '#e4e7eb',
         }
       },
       fontFamily: {
-        sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',

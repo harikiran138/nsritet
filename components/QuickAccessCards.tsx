@@ -19,9 +19,15 @@ const cardData = [
   },
   {
     icon: Briefcase,
-    title: 'Placements',
+    title: 'CDC',
     description: 'Learn about our successful placement records and career opportunities.',
-    href: '/cdc/placements',
+    href: '/cdc',
+  },
+  {
+    icon: Users,
+    title: 'Governance',
+    description: 'Learn about our transparent and effective leadership.',
+    href: '/governance',
   },
 ];
 
@@ -30,7 +36,7 @@ export default function QuickAccessCards() {
     <section className="py-20 md:py-28 bg-surface">
       <div className="section-container px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {cardData.map((card, index) => (
               <AnimatedSection key={card.title} delay={index * 0.1}>
                 <Link href={card.href}>
