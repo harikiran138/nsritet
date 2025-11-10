@@ -18,9 +18,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setMounted(true);
     // Force light mode
-    const initialTheme: Theme = 'light';
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    setTheme('light');
+    document.documentElement.classList.remove('dark');
   }, []);
 
   const toggleTheme = () => {
