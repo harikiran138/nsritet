@@ -1,7 +1,7 @@
 'use client';
 
 import ThreeSectionPage from '@/components/ThreeSectionPage';
-import { Eye, Target, Users } from 'lucide-react';
+import { Eye, Target } from 'lucide-react';
 
 export default function AboutPage() {
   return (

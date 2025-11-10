@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, BookOpen, GraduationCap, Briefcase } from 'lucide-react';
+import { ArrowRight, BookOpen, GraduationCap, Briefcase, Users } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const cardData = [

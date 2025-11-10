@@ -1,7 +1,7 @@
 'use client';
 
 import ThreeSectionPage from '@/components/ThreeSectionPage';
-import { BookOpen, Users, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 export default function AcademicsPage() {
   return (

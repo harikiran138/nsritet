@@ -1,7 +1,7 @@
 'use client';
 
 import ThreeSectionPage from '@/components/ThreeSectionPage';
-import { Briefcase, TrendingUp, Phone } from 'lucide-react';
+import { TrendingUp, Phone } from 'lucide-react';
 
 export default function CDCPage() {
   return (
