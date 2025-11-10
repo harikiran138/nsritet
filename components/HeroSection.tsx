@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   description?: string;
   primaryCTA?: {

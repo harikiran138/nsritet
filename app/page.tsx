@@ -125,8 +125,8 @@ export default function Home() {
 
       {/* Hero Section - Background image with text overlay and CTA buttons */}
       <HeroSection
-        title="NSRIT Engineering College"
-        description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
+        // title="NSRIT Engineering College"
+        // description="Empowering the Next Generation of Engineering Leaders Through Innovation, Research, and Industry Collaboration"
         backgroundImage="/hero-bg.png"
         primaryCTA={{
           text: 'Apply for Admission',
