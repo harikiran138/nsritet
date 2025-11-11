@@ -77,7 +77,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav ref={navRef} className="relative z-40 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white shadow-lg">
+    <nav ref={navRef} className="relative z-40 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white shadow-lg font-['Arial_Narrow']">
       <div className="bg-corporate-dark">
         <div className="section-container py-2 flex justify-between items-center text-sm text-white">
           <div>
@@ -97,7 +97,7 @@ export default function Navbar() {
         </div>
       </div>
       {/* Logo at the top */}
-      <div className="pb-3">
+      <div className="pb-1">
         <Link href="/">
           <div className="relative h-20 w-full">
             <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />

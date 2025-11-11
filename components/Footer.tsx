@@ -49,7 +49,7 @@ export default function Footer() {
               src="/main-logo1.png"
               alt="NSRIET Logo"
               width={80}
-              height={65}
+              height={50}
               className="mb-4 bg-white/10 rounded-lg p-2 backdrop-blur-sm"
             />
             <h3 className="font-bold text-xl mb-4">NSRIET</h3>
