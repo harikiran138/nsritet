@@ -26,7 +26,7 @@ export default function Highlights() {
       title: 'JNTU GV Affiliation',
       description: 'University Affiliated JNTU GV',
       meta: 'Academic Excellence',
-      imgSrc: '/images/about/AICTE.jpg',
+      imgSrc: '/images/about/JNTUGV.JPG',
     },
     {
       category: 'Faculty',
@@ -35,7 +35,7 @@ export default function Highlights() {
       description: 'Learn from the best minds in the industry and academia.',
       meta: 'Expert Mentorship',
       imgSrc:
-        'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80',
+        '/images/about/Faculty.jpeg',
     },
     {
       category: 'Training',
