@@ -4,8 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   weight: ['300', '400', '600', '700'],
   subsets: ["latin"],
   variable: '--font-poppins',
