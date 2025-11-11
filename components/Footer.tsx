@@ -33,7 +33,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-16 pb-0">
+    <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-16 pb-0 relative">
+      <div className="absolute inset-0 h-[70%] w-full bg-cover bg-center opacity-10 text-transparent" style={{ backgroundImage: 'url(/footer-bg.jpg)' }}></div>
       {/* Main Footer Content */}
       <div className="section-container px-4 sm:px-6 lg:px-8 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
@@ -48,7 +49,7 @@ export default function Footer() {
               src="/main-logo1.png"
               alt="NSRIET Logo"
               width={80}
-              height={80}
+              height={65}
               className="mb-4 bg-white/10 rounded-lg p-2 backdrop-blur-sm"
             />
             <h3 className="font-bold text-xl mb-4">NSRIET</h3>
