@@ -1,5 +1,6 @@
 'use client';
 
+import { title } from "process";
 import React from "react";
 
 /**
@@ -70,8 +71,9 @@ export default function Highlights() {
     {
       category: "Accreditation",
       icon: "fa-certificate",
+      title: "AICTE Approved Programs",
       description:
-        "All our technical programs are recognized and approved by the All India Council for Technical Education (AICTE), ensuring the highest educational standards.",
+        "All our technical programs are approved by AICTE.",
       meta: "Certified & Verified",
       imgSrc:
         "https://images.unsplash.com/photo-1581091215367-59ab6c65b44d?auto=format&fit=crop&w=800&q=80",
@@ -79,8 +81,9 @@ export default function Highlights() {
     {
       category: "University",
       icon: "fa-university",
+      title: "JNTU GV Affiliation",
       description:
-        "Our institution is proudly affiliated with Jawaharlal Nehru Technological University – Gurajada Vizianagaram (JNTU-GV), providing a strong academic foundation.",
+        "University Affiliated JNTU GV",
       meta: "Academic Excellence",
       imgSrc:
         "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
@@ -88,8 +91,9 @@ export default function Highlights() {
     {
       category: "Faculty",
       icon: "fa-users",
+      title: "Experienced Faculty",
       description:
-        "Learn from a team of highly qualified, dedicated, and experienced faculty who blend academic insight with real-world expertise.",
+        "Learn from the best minds in the industry and academia.",
       meta: "Expert Mentorship",
       imgSrc:
         "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80",
@@ -97,8 +101,9 @@ export default function Highlights() {
     {
       category: "Training",
       icon: "fa-industry",
+      title: "Industry Integrated Training",
       description:
-        "Gain hands-on exposure with industry-aligned training programs designed to enhance employability and ensure consistent placements in top companies.",
+        "Consistently high placement rates in top companies.",
       meta: "High Placement Record",
       imgSrc:
         "https://images.unsplash.com/photo-1551836022-3b11f1f4b52f?auto=format&fit=crop&w=800&q=80",
