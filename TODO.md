@@ -1,6 +1,3 @@
-# TODO: Commit the theme toggle button element
+# TODO: Fix Navigation Dropdown Hover Issue
 
-## Tasks
-- [x] Find the theme toggle button in the Navbar component
-- [x] Commit the changes to git
-- [x] Verify the changes in the running local server
+- [x] Modify Navbar.tsx to add timeout delay for dropdown closing on hover leave, allowing cursor to reach the dropdown menu.
