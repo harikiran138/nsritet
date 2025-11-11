@@ -4,25 +4,25 @@ import { Award, ShieldCheck, TrendingUp, Users } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const highlights = [
-  {
-    icon: Award,
-    title: 'NAAC Accredited',
-    description: "Awarded 'A' Grade for excellence in higher education.",
-  },
-  {
+    {
     icon: ShieldCheck,
     title: 'AICTE Approved',
     description: 'All our technical programs are approved by AICTE.',
   },
   {
-    icon: TrendingUp,
-    title: 'Top Placements',
-    description: 'Consistently high placement rates in top companies.',
+    icon: Award,
+    title: 'Affiliated to JNTU GV',
+    description: "University Affiliated JNTU GV",
   },
-  {
+   {
     icon: Users,
     title: 'Experienced Faculty',
     description: 'Learn from the best minds in the industry and academia.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Industry Integrated Training',
+    description: 'Consistently high placement rates in top companies.',
   },
 ];
 
