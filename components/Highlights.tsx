@@ -1,6 +1,5 @@
 'use client';
 
-import { title } from "process";
 import React from "react";
 
 /**
@@ -75,8 +74,7 @@ export default function Highlights() {
       description:
         "All our technical programs are approved by AICTE.",
       meta: "Certified & Verified",
-      imgSrc:
-        "https://images.unsplash.com/photo-1581091215367-59ab6c65b44d?auto=format&fit=crop&w=800&q=80",
+      imgSrc: "/images/about/AICTE.jpg",
     },
     {
       category: "University",
@@ -86,7 +84,7 @@ export default function Highlights() {
         "University Affiliated JNTU GV",
       meta: "Academic Excellence",
       imgSrc:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
+        "/images/about/JNTUGV.jpg",
     },
     {
       category: "Faculty",
