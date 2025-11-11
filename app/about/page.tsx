@@ -11,15 +11,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <HeroSection
-        title="About N.S.R.I.E.T"
-        description="N.S.Raju Institute of Engineering & Technology (NSRIET) is a premier institution dedicated to providing quality education in engineering and management. We are committed to nurturing a vibrant academic community that fosters innovation, research, and holistic development."
-        backgroundImage="/IMG_1374.jpg" // Path to the image
-        height="min-h-[500px]"
-      />
       <ThreeSectionPage
         title="About Us"
         subtitle="A legacy of excellence in engineering education"
+        heroImage="/IMG_1374.jpg"
         section1={{
           title: 'About Overview',
           content: (
