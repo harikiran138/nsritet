@@ -97,7 +97,7 @@ export default function Highlights() {
               <h3 className="font-semibold text-gray-900 text-base mb-1">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-2">
+              <p className="text-gray-600 text-sm leading-relaxed mb-2 text-justify">
                 {item.description}
               </p>
 
