@@ -84,7 +84,7 @@ export default function Highlights() {
         "University Affiliated JNTU GV",
       meta: "Academic Excellence",
       imgSrc:
-        "/images/about/JNTUGV.jpg",
+        "/images/about/JNTUGV.JPG",
     },
     {
       category: "Faculty",
