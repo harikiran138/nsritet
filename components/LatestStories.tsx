@@ -12,7 +12,7 @@ const blogPosts = [
     readTime: '5 min read',
     title: 'Three-Day FDP on 21st Century Pedagogy and Experiential Learning',
     desc: 'NSRIT (Autonomous) hosted a three-day FDP in collaboration with the Council for Skills and Competencies (CSC India) and Wadhwani Foundation. The program focused on innovative teaching methodologies, hands-on learning approaches, and skill-based education to enhance faculty engagement and classroom transformation.',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644',
+    image: '/images/about/1762843017460.gif',
     buttonText: 'Read More',
   },
   {
@@ -22,7 +22,7 @@ const blogPosts = [
     readTime: '4 min read',
     title: 'Inauguration of NSRIET Internal Smart India Hackathon 2025 (24-Hour Edition)',
     desc: 'NSRIET Dakamarri proudly inaugurated the Internal Smart India Hackathon 2025. Students from CSE and CSE (AI & ML) departments showcased innovation and teamwork, developing real-world solutions in a vibrant 24-hour coding marathon.',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7',
+    image: '/images/about/sihimage.jpeg',
     buttonText: 'View Highlights',
   },
   {
@@ -32,7 +32,7 @@ const blogPosts = [
     readTime: '3 min read',
     title: "Engineer's Day Celebrations 2025 at NSRIET Dakamarri",
     desc: "Engineer's Day 2025 was celebrated with enthusiasm at NSRIET Dakamarri, in collaboration with JNTU Gurajada Vizianagaram and NSRIT's Industry-Institute Linkage and Training & Placement Cell.",
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
+    image: '/images/about/1757935764672.jpeg',
     buttonText: 'Explore More',
   },
 ];
@@ -192,9 +192,6 @@ const LatestStories = () => {
                 Stay updated with the latest happenings at NSRIET
               </p>
             </div>
-            <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-              Subscribe
-            </Button>
           </div>
           
           {/* Divider */}
