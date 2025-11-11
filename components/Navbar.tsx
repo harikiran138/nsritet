@@ -43,9 +43,24 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleDesktopMenu = (name: string) => {
     setOpenDesktopMenu(openDesktopMenu === name ? null : name);
+  };
+
+  const handleMouseEnter = (name: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setOpenDesktopMenu(name);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenDesktopMenu(null);
+    }, 300); // 300ms delay
   };
 
   useEffect(() => {
@@ -98,15 +113,19 @@ export default function Navbar() {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.submenu && toggleDesktopMenu(item.name)}
-                onMouseLeave={() => item.submenu && toggleDesktopMenu('')}
+                onMouseEnter={() => item.submenu && handleMouseEnter(item.name)}
+                onMouseLeave={() => item.submenu && handleMouseLeave()}
               >
                 <Link href={item.href} className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-[7px] px-4 rounded-md hover:bg-white/10">
                   {item.name}
                   {item.submenu && <ChevronDown className={`w-4 h-4 transition-transform ${openDesktopMenu === item.name ? 'rotate-180' : ''}`} />}
                 </Link>
                 {item.submenu && openDesktopMenu === item.name && (
-                  <div className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700">
+                  <div
+                    className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700"
+                    onMouseEnter={() => handleMouseEnter(item.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     {item.submenu.map((subItem) => (
                       <div key={subItem.name} className="relative group/submenu">
                         <Link
