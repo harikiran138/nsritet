@@ -58,8 +58,8 @@ export default function ThreeSectionPage({
       {/* Hero Section */}
       {heroImage ? (
         <div
-          className="relative h-80 md:h-96 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="relative h-80 md:h-96 bg-cover"
+          style={{ backgroundImage: `url(${heroImage})`, backgroundPosition: 'center 70%' }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative h-full flex items-center justify-center">
