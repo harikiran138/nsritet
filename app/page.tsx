@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import Highlights from '@/components/Highlights';
 import LatestStories from '@/components/LatestStories';
 import QuickAccessCards from '@/components/QuickAccessCards';
+import NSRIETLocation from '@/components/NSRIETLocation';
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Quick Access Cards Section */}
       <QuickAccessCards />
+
+      {/* NSRIET Location Section */}
+      <NSRIETLocation />
     </>
   );
 }
