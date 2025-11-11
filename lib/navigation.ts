@@ -51,7 +51,7 @@ export const navigationItems: MenuItem[] = [
       },
       { name: 'Competency Based Curriculum', href: '/academics/competency-based-curriculum' },
       { name: 'Best Practices', href: '/academics/best-practices' },
-      { name: 'LMS', href: '/academics/lms' },
+      { name: 'LMS', href: 'https://canvas.instructure.com/login/canvas' },
       { name: 'Academic Calendar', href: '/academics/calendar' },
       { name: 'Knowledge Resource Centre', href: '/academics/krc' },
     ],

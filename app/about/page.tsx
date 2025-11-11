@@ -16,7 +16,7 @@ export default function AboutPage() {
         subtitle="A legacy of excellence in engineering education"
         heroImage="/IMG_1374.jpg"
         section1={{
-          title: 'About Overview',
+          title: 'Overview',
           content: (
             <div className="space-y-4">
               <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
