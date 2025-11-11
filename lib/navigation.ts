@@ -85,7 +85,6 @@ export const navigationItems: MenuItem[] = [
     href: '/industry-linkage',
     submenu: [
       { name: 'MoUs & Collaborations', href: '/industry-linkage/mous' },
-      { name: 'Research & Development Partners', href: '/industry-linkage/rd-partners' },
       { name: 'Industry Visits & Internships', href: '/industry-linkage/visits' },
       { name: 'Startups & Innovation Support', href: '/industry-linkage/startups' },
     ],
