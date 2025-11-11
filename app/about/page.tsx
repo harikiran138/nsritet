@@ -14,7 +14,7 @@ export default function AboutPage() {
       <HeroSection
         title="About N.S.R.I.E.T"
         description="N.S.Raju Institute of Engineering & Technology (NSRIET) is a premier institution dedicated to providing quality education in engineering and management. We are committed to nurturing a vibrant academic community that fosters innovation, research, and holistic development."
-        backgroundImage="/images/about/About us page.jpeg" // Path to the image
+        backgroundImage="/IMG_1374.jpg" // Path to the image
         height="min-h-[500px]"
       />
       <ThreeSectionPage
