@@ -78,7 +78,7 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} className="relative z-40 bg-gradient-to-r from-corporate-navy to-corporate-blue text-white shadow-lg">
-      <div className="bg-corporate-dark border-b-[3px] border-corporate-blue">
+      <div className="bg-corporate-dark">
         <div className="section-container py-2 flex justify-between items-center text-sm text-white">
           <div>
             <span className="font-bold">NSRIET</span>
