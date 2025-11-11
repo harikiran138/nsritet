@@ -10,7 +10,7 @@ export default function VisionMissionPage() {
       section1={{
         title: 'Our Vision',
         content: (
-          <div className="space-y-4">
+          <div className="space-y-2">
             <p>
               To be a premier institution in engineering and management education, renowned for our academic excellence, research, and innovation.
             </p>
@@ -23,7 +23,7 @@ export default function VisionMissionPage() {
       section2={{
         title: 'Our Mission',
         content: (
-          <div className="space-y-4">
+          <div className="space-y-2">
             <ul className="list-disc list-inside space-y-2">
               <li>To provide a high-quality academic experience with a well-rounded curriculum.</li>
               <li>To foster a culture of research, innovation, and lifelong learning.</li>

@@ -10,7 +10,7 @@ export default function NadimalliInformaticsPage() {
       section1={{
         title: 'About the Organization',
         content: (
-          <div className="space-y-4">
+          <div className="space-y-2">
             <p>
               Nadimpalli Informatics LLP is the parent organization that established and continues to support NSRIET&apos;s mission of providing quality engineering education.
             </p>
@@ -23,7 +23,7 @@ export default function NadimalliInformaticsPage() {
       section2={{
         title: 'Vision & Values',
         content: (
-          <div className="space-y-6">
+          <div className="space-y-2">
             <div>
               <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-4">Core Values</h3>
               <div className="grid md:grid-cols-2 gap-4">

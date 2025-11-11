@@ -107,7 +107,7 @@ export default function ThreeSectionPage({
       )}
 
       {/* Section 1: Overview / Introduction */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      <section className="py-4 md:py-6 bg-white dark:bg-gray-900">
         <div className="section-container px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <motion.div
@@ -134,7 +134,7 @@ export default function ThreeSectionPage({
       </section>
 
       {/* Section 2: Key Features / Details */}
-      <section className="py-16 md:py-24 bg-corporate-background dark:bg-gray-800 relative">
+      <section className="py-4 md:py-6 bg-corporate-background dark:bg-gray-800 relative">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
@@ -165,7 +165,7 @@ export default function ThreeSectionPage({
       </section>
 
       {/* Section 3: Resources / Contact / Downloads */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      <section className="py-4 md:py-6 bg-white dark:bg-gray-900">
         <div className="section-container px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <motion.div

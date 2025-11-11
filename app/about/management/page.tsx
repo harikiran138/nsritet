@@ -10,7 +10,7 @@ export default function ManagementPage() {
       section1={{
         title: 'Administrative Leadership',
         content: (
-          <div className="space-y-4">
+          <div className="space-y-2">
             <p>
               NSRIET is led by a team of experienced administrators and educational professionals committed to institutional excellence and student success.
             </p>
@@ -23,7 +23,7 @@ export default function ManagementPage() {
       section2={{
         title: 'Governance Structure',
         content: (
-          <div className="space-y-6">
+          <div className="space-y-2">
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { role: 'Principal', name: 'Dr. [Name]', qualification: 'PhD, 25+ years of experience' },
