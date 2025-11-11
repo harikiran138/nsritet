@@ -54,21 +54,10 @@ export default function Highlights() {
           Highlights
         </h2>
 
-        <button className="border border-gray-300 text-gray-700 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
-          Explore More
-        </button>
       </div>
 
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap gap-4 mb-10 text-gray-500 text-sm font-medium">
-        <button className="text-black font-semibold border-b-2 border-black pb-1">
-          Overview
-        </button>
-        <button className="hover:text-black">Accreditation</button>
-        <button className="hover:text-black">Faculty</button>
-        <button className="hover:text-black">Training</button>
-        <button className="hover:text-black">University</button>
-      </div>
+
 
       {/* Highlights Grid */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
