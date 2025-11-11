@@ -8,6 +8,9 @@ import QuickAccessCards from '@/components/QuickAccessCards';
 export default function Home() {
   return (
     <>
+      {/* Notification Ticker */}
+      <NotificationTicker />
+
       {/* Video Background */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <video
@@ -18,7 +21,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: -1 }}
         >
-          <source src="/video/Blue and White Photo Research Process Flow Chart.mp4" type="video/mp4" />
+          <source src="/Video/Blue and White Photo Research Process Flow Chart.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -35,9 +38,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* Notification Ticker */}
-      <NotificationTicker />
 
       {/* Hero Section - Background image with text overlay and CTA buttons */}
       <HeroSection
