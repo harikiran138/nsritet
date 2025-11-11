@@ -59,7 +59,7 @@ export default function HeroSection({
       aria-label="Page Hero Section"
     >
       {/* Background Image - Full coverage, no overlay */}
-      {backgroundVariant === 'image' && (
+      {/*backgroundVariant === 'image' && (
         <div className="absolute inset-0">
           <Image
             src={backgroundImage}
@@ -70,7 +70,7 @@ export default function HeroSection({
             quality={90}
           />
         </div>
-      )}
+      )*/}
 
       {/* Gradient variant - light background with image at bottom */}
       {backgroundVariant === 'gradient' && (
