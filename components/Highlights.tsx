@@ -34,8 +34,7 @@ export default function Highlights() {
       title: 'Experienced Faculty',
       description: 'Learn from the best minds in the industry and academia.',
       meta: 'Expert Mentorship',
-      imgSrc:
-        '/images/about/Faculty.jpeg',
+      imgSrc: '/images/about/Faculty.jpeg',
     },
     {
       category: 'Training',
@@ -43,8 +42,7 @@ export default function Highlights() {
       title: 'Industry Integrated Training',
       description: 'Consistently high placement rates in top companies.',
       meta: 'High Placement Record',
-      imgSrc:
-        'https://images.unsplash.com/photo-1551836022-3b11f1f4b52f?auto=format&fit=crop&w=800&q=80',
+      imgSrc: '/images/about/Training.jpeg',
     },
   ];
 
@@ -84,9 +82,8 @@ export default function Highlights() {
               <Image
                 src={item.imgSrc}
                 alt={item.title}
-                width={200}
-                height={150}
-                className="object-contain max-w-full max-h-full"
+                fill
+                className={item.category === 'Accreditation' || item.category === 'University' ? 'object-contain' : 'object-cover'}
               />
             </div>
 
