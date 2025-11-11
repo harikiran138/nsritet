@@ -83,21 +83,21 @@ export default function Navbar() {
           <div>
             <span className="font-bold">NSRIET</span>
           </div>
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link href="#" className="hover:text-corporate-lightBlue">Circular Notification</Link>
-            <span>|</span>
-            <Link href="#" className="hover:text-corporate-lightBlue">Upcoming Events</Link>
-            <span>|</span>
-            <Link href="/quick-links/feedback" className="hover:text-corporate-lightBlue">Feedback</Link>
-            <span>|</span>
-            <Link href="#" className="hover:text-corporate-lightBlue">News Bulletin</Link>
-            <span>|</span>
-            <Link href="/cdc/career-guidance" className="hover:text-corporate-lightBlue">Career Opportunities</Link>
+          <div className="hidden lg:flex items-center space-x-4 text-base font-medium">
+            <Link href="#" className="hover:text-corporate-lightBlue transition-colors">Circular Notification</Link>
+            <span className="text-white/60">|</span>
+            <Link href="#" className="hover:text-corporate-lightBlue transition-colors">Upcoming Events</Link>
+            <span className="text-white/60">|</span>
+            <Link href="/quick-links/feedback" className="hover:text-corporate-lightBlue transition-colors">Feedback</Link>
+            <span className="text-white/60">|</span>
+            <Link href="#" className="hover:text-corporate-lightBlue transition-colors">News Bulletin</Link>
+            <span className="text-white/60">|</span>
+            <Link href="/cdc/career-guidance" className="hover:text-corporate-lightBlue transition-colors">Career Opportunities</Link>
           </div>
         </div>
       </div>
       {/* Logo at the top */}
-      <div className="pt-[10px] pb-3">
+      <div className="pb-3">
         <Link href="/">
           <div className="relative h-20 w-full">
             <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />
