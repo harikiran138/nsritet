@@ -54,7 +54,7 @@ export default function HeroSection({
 
   return (
     <section
-      className={`relative ${height} flex flex-col items-center justify-end overflow-hidden bg-white`}
+      className={`relative ${height} flex flex-col items-center justify-center overflow-hidden bg-white`}
       role="banner"
       aria-label="Page Hero Section"
     >
