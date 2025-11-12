@@ -56,6 +56,8 @@ const FeaturedStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
 
   return (
     <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+      {/* Image Container */}
+      <div className="relative overflow-hidden bg-gray-200 h-80 lg:h-96 w-full">
         <Image
           src={post.image}
           alt={post.title}
