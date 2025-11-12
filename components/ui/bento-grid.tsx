@@ -59,12 +59,12 @@ const itemsSample: BentoItem[] = [
 
 function BentoGrid({ items = itemsSample }: BentoGridProps) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-3 p-4 max-w-7xl mx-auto">
             {items.map((item, index) => (
                 <div
                     key={index}
                     className={cn(
-                        "group relative p-4 rounded-xl overflow-hidden transition-all duration-300",
+                        "group relative p-4 rounded-xl overflow-hidden transition-all duration-300 h-52",
                         "border border-gray-100/80 dark:border-white/10 bg-white dark:bg-black",
                         "hover:shadow-[0_2px_12px_rgba(0,0,0,0.03)] dark:hover:shadow-[0_2px_12px_rgba(255,255,255,0.03)]",
                         "hover:-translate-y-0.5 will-change-transform",
