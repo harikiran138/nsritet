@@ -10,7 +10,7 @@ export default function ManagementPage() {
       section1={{
         title: 'Administrative Leadership',
         content: (
-          <div className="space-y-2">
+          <div className="space-y-4">
             <p>
               NSRIET is led by a team of experienced administrators and educational professionals committed to institutional excellence and student success.
             </p>
@@ -23,7 +23,7 @@ export default function ManagementPage() {
       section2={{
         title: 'Governance Structure',
         content: (
-          <div className="space-y-2">
+          <div className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { role: 'Principal', name: 'Dr. [Name]', qualification: 'PhD, 25+ years of experience' },
@@ -47,7 +47,7 @@ export default function ManagementPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Administrative Offices</h3>
-              <ul className="space-y-2 text-corporate-navy dark:text-gray-200">
+              <ul className="space-y-4 text-corporate-navy dark:text-gray-200">
                 <li>• Principal&apos;s Office</li>
                 <li>• Academic Office</li>
                 <li>• Admissions Office</li>
@@ -56,7 +56,7 @@ export default function ManagementPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Important Documents</h3>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Organizational Chart</a>
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Management Policies</a>
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Contact Directory</a>

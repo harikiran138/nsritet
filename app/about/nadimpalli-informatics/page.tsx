@@ -10,7 +10,7 @@ export default function NadimalliInformaticsPage() {
       section1={{
         title: 'About the Organization',
         content: (
-          <div className="space-y-2">
+          <div className="space-y-4">
             <p>
               Nadimpalli Informatics LLP is the parent organization that established and continues to support NSRIET&apos;s mission of providing quality engineering education.
             </p>
@@ -23,7 +23,7 @@ export default function NadimalliInformaticsPage() {
       section2={{
         title: 'Vision & Values',
         content: (
-          <div className="space-y-2">
+          <div className="space-y-4">
             <div>
               <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-4">Core Values</h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -49,7 +49,7 @@ export default function NadimalliInformaticsPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Associated Institutions</h3>
-              <ul className="space-y-2 text-corporate-navy dark:text-gray-200">
+              <ul className="space-y-4 text-corporate-navy dark:text-gray-200">
                 <li>• NSRIET - Engineering College</li>
                 <li>• School of Management & Business</li>
                 <li>• Professional Development Centre</li>
@@ -58,7 +58,7 @@ export default function NadimalliInformaticsPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Connect With Us</h3>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">🌐 Organization Website</a>
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">📧 Corporate Email</a>
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">📞 Contact Information</a>
