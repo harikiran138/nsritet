@@ -39,6 +39,8 @@ export const viewport: Viewport = {
   themeColor: "#003366",
 };
 
+import StyledComponentsRegistry from '@/lib/registry';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,15 +49,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} font-sans antialiased min-h-screen flex flex-col`}>
-        <ThemeProvider>
-          <header className="sticky top-0 z-50 shadow-md">
-            <Navbar />
-          </header>
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <StyledComponentsRegistry>
+          <ThemeProvider>
+            <header className="sticky top-0 z-50 shadow-md">
+              <Navbar />
+            </header>
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

@@ -5,26 +5,37 @@ import Highlights from '@/components/Highlights';
 import LatestStories from '@/components/LatestStories';
 import AdmissionsSection from '@/components/AdmissionsSection';
 import NSRIETLocation from '@/components/NSRIETLocation';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Background image with text overlay and CTA buttons */}
-      <HeroSection
-        backgroundImage="/hero-bg.png"
-      />
+      {/* --- Hero Section --- */}
+      {/* This section animates on page load, so it's not wrapped in AnimatedSection */}
+            <HeroSection
+              backgroundImage="/hero-bg.png"
 
-      {/* Highlights Section */}
-      <Highlights />
+            />
 
-      {/* Latest Stories & Events Section */}
-      <LatestStories />
+      {/* --- Highlights Section --- */}
+      <AnimatedSection className="py-16 sm:py-20">
+        <Highlights />
+      </AnimatedSection>
 
-      {/* Admissions Section */}
-      <AdmissionsSection />
+      {/* --- Latest Stories & Events Section --- */}
+      <AnimatedSection className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
+        <LatestStories />
+      </AnimatedSection>
 
-      {/* NSRIET Location Section */}
-      <NSRIETLocation />
+      {/* --- Admissions Section --- */}
+      <AnimatedSection className="py-16 sm:py-20">
+        <AdmissionsSection />
+      </AnimatedSection>
+
+      {/* --- NSRIET Location Section --- */}
+      <AnimatedSection className="pb-16 sm:pb-20">
+        <NSRIETLocation />
+      </AnimatedSection>
     </>
   );
 }

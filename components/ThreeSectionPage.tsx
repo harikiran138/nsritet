@@ -107,40 +107,35 @@ export default function ThreeSectionPage({
       )}
 
       {/* Section 1: Overview / Introduction */}
-      <section className="py-4 md:py-6 bg-white dark:bg-gray-900">
+      <section className="py-16 sm:py-20 bg-white dark:bg-gray-900">
         <div className="section-container px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <motion.h2
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-8"
             >
-              <motion.h2
-                variants={itemVariants}
-                className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-8"
-              >
-                {section1.title}
-              </motion.h2>
-              <motion.div
-                variants={itemVariants}
-                className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
-              >
-                {section1.content}
-              </motion.div>
-            </motion.div>
-          </AnimatedSection>
+              {section1.title}
+            </motion.h2>
+            <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
+              {section1.content}
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Section 2: Key Features / Details */}
-      <section className="py-4 md:py-6 bg-corporate-background dark:bg-gray-800 relative">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
+      {section2.content && (
+        <section className="py-16 sm:py-20 bg-corporate-background dark:bg-gray-800 relative">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue rounded-full mix-blend-multiply filter blur-3xl"></div>
+          </div>
 
-        <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
-          <AnimatedSection>
+          <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -153,21 +148,18 @@ export default function ThreeSectionPage({
               >
                 {section2.title}
               </motion.h2>
-              <motion.div
-                variants={itemVariants}
-                className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
-              >
+              <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
                 {section2.content}
-              </motion.div>
+              </div>
             </motion.div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* Section 3: Resources / Contact / Downloads */}
-      <section className="py-4 md:py-6 bg-white dark:bg-gray-900">
-        <div className="section-container px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
+      {section3.content && (
+        <section className="py-16 sm:py-20 bg-white dark:bg-gray-900">
+          <div className="section-container px-4 sm:px-6 lg:px-8">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -180,16 +172,13 @@ export default function ThreeSectionPage({
               >
                 {section3.title}
               </motion.h2>
-              <motion.div
-                variants={itemVariants}
-                className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
-              >
+              <div className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
                 {section3.content}
-              </motion.div>
+              </div>
             </motion.div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
     </>
   );
 }
