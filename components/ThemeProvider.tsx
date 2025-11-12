@@ -12,29 +12,30 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+  // const [theme, setTheme] = useState<Theme>('light');
+  // const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    // Force light mode
-    setTheme('light');
-    document.documentElement.classList.remove('dark');
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  //   // Force light mode
+  //   setTheme('light');
+  //   document.documentElement.classList.remove('dark');
+  // }, []);
 
-  const toggleTheme = () => {
-    // Do nothing to force light mode
-    console.log("Theme switching is disabled. Always in light mode.");
-  };
+  // const toggleTheme = () => {
+  //   // Do nothing to force light mode
+  //   console.log("Theme switching is disabled. Always in light mode.");
+  // };
 
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  // if (!mounted) {
+  //   return <>{children}</>;
+  // }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    // <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    //   {children}
+    // </ThemeContext.Provider>
+    <>{children}</>
   );
 }
 
