@@ -12,7 +12,11 @@ export default function HistoryPage() {
         content: (
           <div className="space-y-4">
             <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
+<<<<<<< Updated upstream
               N S Raju Institute of Engineering & Technology (NSRIET), formerly known as Vizag Institute of Technology, was established in 2008 under the Oxford Educational Society. The institution is now managed by the Nadimpalli Satyanarayana Raju Institute of Technology (NSRIT), Sontyam, Visakhapatnam—an institution accredited by the National Assessment and Accreditation Council (NAAC) with an &apos;A&apos; Grade, and with its eligible undergraduate programs in CSE, ECE, and EEE accredited by the National Board of Accreditation (NBA) under Tier-I.
+=======
+              N S Raju Institute of Engineering & Technology (NSRIET), formerly known as Vizag Institute of Technology, was established in 2008 under the Oxford Educational Society. The institution is now managed by the Nadimpalli Satyanarayana Raju Institute of Technology (NSRIT), Sontyam, Visakhapatnam—an institution accredited by the National Assessment and Accreditation Council (NAAC) with an 'A' Grade, and with its eligible undergraduate programs in CSE, ECE, and EEE accredited by the National Board of Accreditation (NBA) under Tier-I.
+>>>>>>> Stashed changes
             </p>
           </div>
         ),
