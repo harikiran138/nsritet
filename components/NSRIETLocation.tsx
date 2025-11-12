@@ -14,10 +14,10 @@ const NSRIETLocation = () => {
             <span className="text-sm font-semibold text-blue-600">Our Location</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            📍 NSRIT Campus Location
+            📍 NSRIET Campus Location
           </h2>
           <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-            Visit the NS Raju Institute of Engineering and Technology — located in Sontyam, Visakhapatnam. Explore our campus and connect with us easily.
+            Visit the N S Raju Institute of Engineering and Technology (NSRIET) in Dakamarri Village, Bheemunipatnam Mandal, Visakhapatnam, Explore our campus and connect with us easily.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ const NSRIETLocation = () => {
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 hover:shadow-2xl transition-all duration-500">
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Visit Our Campus</h3>
               <p className="text-gray-600 mb-6">
-                N S Raju Institute of Engineering and Technology, Sontyam, Visakhapatnam, Andhra Pradesh - 531173
+                N S Raju Institute of Engineering and Technology (NSRIET) in Bheemunipatnam Mandal, Visakhapatnam, Andhra Pradesh - 531162
               </p>
 
               <div className="space-y-4">
@@ -60,7 +60,7 @@ const NSRIETLocation = () => {
           <div className="relative group h-96 md:h-[480px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
             <iframe
               title="NSRIET Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.5827857920026!2d83.30439231533584!3d17.72385960000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395e0e0e0e0e0d%3A0x0!2sN%20S%20Raju%20Institute%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.902549590485!2d83.4178549751776!3d18.00097358309609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3be39390c34d0d%3A0x8a801b4088e3846f!2sNSRIET!5e1!3m2!1sen!2sin!4v1716886933388!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -79,7 +79,7 @@ const NSRIETLocation = () => {
 
         {/* Bottom Note */}
         <div className="mt-16 text-center text-gray-600 text-sm">
-          <p>© {new Date().getFullYear()} NSRIT College — All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} NSRIET College — All Rights Reserved.</p>
         </div>
       </div>
     </section>
