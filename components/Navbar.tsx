@@ -45,10 +45,6 @@ export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const toggleDesktopMenu = (name: string) => {
-    setOpenDesktopMenu(openDesktopMenu === name ? null : name);
-  };
-
   const handleMouseEnter = (name: string) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
