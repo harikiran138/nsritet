@@ -19,16 +19,16 @@ export default function Footer() {
       { label: 'Admissions', href: '/admissions' },
       { label: 'Academics', href: '/academics' },
       { label: 'Placements', href: '/cdc' },
-      { label: 'Library', href: '/quick-links' },
+      { label: 'Library', href: '/#', external: true },
       { label: 'Grievance', href: '/feedback' },
     ],
     important: [
       { label: 'Governance', href: '/governance' },
-      { label: 'Innovation Council', href: '/iic' },
-      { label: 'Industry Connect', href: '/industry' },
-      { label: 'Notifications', href: '/notifications' },
-      { label: 'Events', href: '/events' },
-      { label: 'Careers', href: '/careers' },
+      { label: 'Innovation Council', href: '/' },
+      { label: 'Industry Connect', href: '/industry-linkage' },
+      { label: 'Notifications', href: '/' },
+      { label: 'Events', href: '/' },
+      { label: 'Careers', href: '/#', external: true },
     ],
   };
 
@@ -37,7 +37,7 @@ export default function Footer() {
       <div className="absolute inset-0 h-[70%] w-full bg-cover bg-center opacity-10 text-transparent" style={{ backgroundImage: 'url(/footer-bg.jpg)' }}></div>
       {/* Main Footer Content */}
       <div className="section-container px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
           {/* About Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,13 +45,6 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Image
-              src="/main-logo1.png"
-              alt="NSRIET Logo"
-              width={80}
-              height={50}
-              className="mb-4 bg-white/10 rounded-lg p-2 backdrop-blur-sm"
-            />
             <h3 className="font-bold text-xl mb-4">NSRIET</h3>
             <p className="text-blue-100 text-sm leading-relaxed">
               Excellence in Engineering Education. Empowering students with knowledge, skills, and innovation for a better tomorrow.
@@ -72,13 +65,25 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                  >
-                    <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
+                    >
+                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
+                    >
+                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -98,13 +103,25 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {footerLinks.important.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                  >
-                    <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
+                    >
+                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
+                    >
+                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
