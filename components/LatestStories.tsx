@@ -173,8 +173,7 @@ const LatestStories = () => {
   const otherPosts = blogPosts.slice(1);
 
   return (
-    <section className="py-10 md:py-16 bg-gradient-to-b from-white via-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section className="py-10 md:py-16 bg-gradient-to-b from-white via-gray-50 to-white px-6 md:px-12">
         {/* Section Header */}
         <div className="mb-8 md:mb-10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 mb-3">
@@ -216,7 +215,6 @@ const LatestStories = () => {
             <p className="text-gray-500 text-sm mt-2">Check back soon for updates and latest happenings at NSRIET.</p>
           </div>
         )}
-      </div>
     </section>
   );
 };
