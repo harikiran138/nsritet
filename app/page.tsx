@@ -3,7 +3,7 @@
 import HeroSection from '@/components/HeroSection';
 import Highlights from '@/components/Highlights';
 import LatestStories from '@/components/LatestStories';
-import QuickAccessCards from '@/components/QuickAccessCards';
+import AdmissionsSection from '@/components/AdmissionsSection';
 import NSRIETLocation from '@/components/NSRIETLocation';
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
       {/* Latest Stories & Events Section */}
       <LatestStories />
 
-      {/* Quick Access Cards Section */}
-      <QuickAccessCards />
+      {/* Admissions Section */}
+      <AdmissionsSection />
 
       {/* NSRIET Location Section */}
       <NSRIETLocation />
