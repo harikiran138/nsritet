@@ -5,6 +5,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
+// --- Animation Variants ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
 interface HeroSectionProps {
   title?: string;
   subtitle?: string;
@@ -32,33 +53,16 @@ export default function HeroSection({
   height = 'min-h-[750px] md:min-h-[850px]',
   backgroundVariant = 'image',
 }: HeroSectionProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  };
-
   return (
-    <section
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
       className={`relative ${height} flex flex-col items-center justify-center overflow-hidden bg-white`}
       role="banner"
       aria-label="Page Hero Section"
     >
-      {/* Background Image - Full coverage, no overlay */}
+      {/* --- Background --- */}
       {backgroundVariant === 'image' && (
         <div className="absolute inset-0">
           <Image
@@ -69,46 +73,39 @@ export default function HeroSection({
             priority
             quality={90}
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
         </div>
       )}
 
-      {/* Gradient variant - light background with image at bottom */}
       {backgroundVariant === 'gradient' && (
-        <>
-          <div className="absolute bottom-0 left-0 right-0 h-2/5 overflow-hidden">
-            <Image
-              src={backgroundImage}
-              alt="Campus foreground"
-              fill
-              className="object-cover object-bottom opacity-100"
-              priority
-              quality={90}
-            />
-          </div>
-        </>
+        <div className="absolute bottom-0 left-0 right-0 h-2/5 overflow-hidden">
+          <Image
+            src={backgroundImage}
+            alt="Campus foreground"
+            fill
+            className="object-cover object-bottom"
+            priority
+            quality={90}
+          />
+        </div>
       )}
 
-      {/* Text Shadow Overlay - subtle gradient at bottom for white text readability */}
-      {backgroundVariant === 'image' && (
-        <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-      )}
-
-      {/* Content - positioned at the bottom, above the image */}
-      <div className="section-container relative z-10 px-8 py-20 md:py-28">
+      {/* --- Content --- */}
+      <div className="relative z-10 px-8 py-24 md:py-32 text-center">
         <motion.div
           variants={containerVariants}
-          initial="hidden"
-          animate="visible"
           className={`max-w-4xl ${backgroundVariant === 'gradient' ? 'text-left' : 'text-center'}`}
         >
-          {/* Subtitle Badge */}
+          {/* Subtitle */}
           {subtitle && (
             <motion.div variants={itemVariants}>
-              <div className={`inline-block mb-4 px-4 py-2 rounded-full text-sm font-semibold border backdrop-blur-sm ${
-                backgroundVariant === 'gradient'
-                  ? 'bg-corporate-blue/10 text-corporate-blue border-corporate-blue/20'
-                  : 'bg-white/20 text-white border-white/50'
-              }`}>
+              <div
+                className={`inline-block mb-4 px-4 py-2 rounded-full text-sm font-semibold border backdrop-blur-sm ${
+                  backgroundVariant === 'gradient'
+                    ? 'bg-corporate-blue/10 text-corporate-blue border-corporate-blue/20'
+                    : 'bg-white/20 text-white border-white/50'
+                }`}
+              >
                 {subtitle}
               </div>
             </motion.div>
@@ -119,10 +116,10 @@ export default function HeroSection({
             variants={itemVariants}
             className={`font-bold mb-6 leading-tight tracking-tight ${
               backgroundVariant === 'gradient'
-                ? 'text-5xl md:text-6xl lg:text-7xl xl:text-7xl text-gray-900'
-                : 'text-4xl md:text-5xl lg:text-6xl xl:text-6xl text-white'
+                ? 'text-5xl md:text-6xl lg:text-7xl text-gray-900'
+                : 'text-4xl md:text-5xl lg:text-6xl text-white'
             }`}
-            style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}
+            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
           >
             {title}
           </motion.h1>
@@ -131,11 +128,9 @@ export default function HeroSection({
           {description && (
             <motion.p
               variants={itemVariants}
-              className={`mb-8 font-light leading-relaxed max-w-3xl text-lg md:text-xl ${
-                backgroundVariant === 'gradient'
-                  ? 'text-gray-700'
-                  : 'text-white/90'
-              } ${backgroundVariant === 'image' ? 'mx-auto' : ''}`}
+              className={`mb-10 font-light leading-relaxed max-w-3xl text-lg md:text-xl mx-auto ${
+                backgroundVariant === 'gradient' ? 'text-gray-700' : 'text-white/90'
+              }`}
             >
               {description}
             </motion.p>
@@ -145,7 +140,9 @@ export default function HeroSection({
           {(primaryCTA || secondaryCTA) && (
             <motion.div
               variants={itemVariants}
-              className={`flex flex-col sm:flex-row gap-4 ${backgroundVariant === 'image' ? 'justify-center' : ''}`}
+              className={`flex flex-col sm:flex-row gap-4 ${
+                backgroundVariant === 'image' ? 'justify-center' : ''
+              }`}
             >
               {primaryCTA && (
                 <Link
@@ -169,31 +166,17 @@ export default function HeroSection({
         </motion.div>
       </div>
 
-      {/* Floating Elements (Decorative) */}
+      {/* --- Decorative Floating Elements --- */}
       <motion.div
         className="absolute top-10 right-10 w-32 h-32 bg-corporate-blue/5 rounded-full blur-3xl"
-        animate={{
-          y: [0, 20, 0],
-          x: [0, 10, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
+        animate={{ y: [0, 20, 0], x: [0, 10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className="absolute bottom-10 left-10 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl"
-        animate={{
-          y: [0, -20, 0],
-          x: [0, -10, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
+        animate={{ y: [0, -20, 0], x: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
-    </section>
+    </motion.section>
   );
 }

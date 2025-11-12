@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCertificate,
@@ -10,93 +11,126 @@ import {
 import Image from 'next/image';
 import React from 'react';
 
+// --- Animation Variants ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const highlights = [
+  {
+    category: 'Accreditation',
+    icon: faCertificate,
+    title: 'AICTE Approved Programs',
+    description: 'All our technical programs are approved by AICTE.',
+    meta: 'Certified & Verified',
+    imgSrc: '/images/about/AICTE.jpg',
+  },
+  {
+    category: 'University',
+    icon: faUniversity,
+    title: 'JNTU GV Affiliation',
+    description: 'University Affiliated JNTU GV',
+    meta: 'Academic Excellence',
+    imgSrc: '/images/about/JNTUGV.JPG',
+  },
+  {
+    category: 'Faculty',
+    icon: faUsers,
+    title: 'Experienced Faculty',
+    description: 'Learn from the best minds in the industry and academia.',
+    meta: 'Expert Mentorship',
+    imgSrc: '/images/about/Faculty.jpeg',
+  },
+  {
+    category: 'Training',
+    icon: faIndustry,
+    title: 'Industry Integrated Training',
+    description: 'Consistently high placement rates in top companies.',
+    meta: 'High Placement Record',
+    imgSrc: '/images/about/Training.jpeg',
+  },
+];
+
 export default function Highlights() {
-  const highlights = [
-    {
-      category: 'Accreditation',
-      icon: faCertificate,
-      title: 'AICTE Approved Programs',
-      description: 'All our technical programs are approved by AICTE.',
-      meta: 'Certified & Verified',
-      imgSrc: '/images/about/AICTE.jpg',
-    },
-    {
-      category: 'University',
-      icon: faUniversity,
-      title: 'JNTU GV Affiliation',
-      description: 'University Affiliated JNTU GV',
-      meta: 'Academic Excellence',
-      imgSrc: '/images/about/JNTUGV.JPG',
-    },
-    {
-      category: 'Faculty',
-      icon: faUsers,
-      title: 'Experienced Faculty',
-      description: 'Learn from the best minds in the industry and academia.',
-      meta: 'Expert Mentorship',
-      imgSrc: '/images/about/Faculty.jpeg',
-    },
-    {
-      category: 'Training',
-      icon: faIndustry,
-      title: 'Industry Integrated Training',
-      description: 'Consistently high placement rates in top companies.',
-      meta: 'High Placement Record',
-      imgSrc: '/images/about/Training.jpeg',
-    },
-  ];
-
   return (
-    <section className="bg-white py-16 px-6 md:px-12">
-      {/* Section Header */}
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Highlights
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+      className="bg-white py-20 px-6 md:px-12"
+    >
+      {/* --- Section Header --- */}
+      <motion.div variants={itemVariants} className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          Key Highlights
         </h2>
+        <p className="text-lg text-gray-600 mt-2">
+          Excellence in every aspect of education.
+        </p>
+      </motion.div>
 
-      </div>
-
-      {/* Category Filter Tabs */}
-
-
-      {/* Highlights Grid */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {/* --- Highlights Grid --- */}
+      <motion.div
+        variants={containerVariants}
+        className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+      >
         {highlights.map((item, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer"
+            variants={itemVariants}
+            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
           >
             {/* Image Section */}
-            <div className="relative w-full h-48 bg-white flex items-center justify-center">
+            <div className="relative w-full h-48 bg-gray-100 flex items-center justify-center">
               <Image
                 src={item.imgSrc}
                 alt={item.title}
                 fill
-                className={item.category === 'Accreditation' || item.category === 'University' ? 'object-contain' : 'object-cover'}
+                className={
+                  item.category === 'Accreditation' || item.category === 'University'
+                    ? 'object-contain p-4'
+                    : 'object-cover'
+                }
               />
             </div>
 
             {/* Text Content */}
-            <div className="p-4">
-              <div className="flex items-center gap-2 mb-2 text-blue-700">
-                <FontAwesomeIcon icon={item.icon} />
-                <span className="text-sm font-semibold">{item.category}</span>
+            <div className="p-6">
+              <div className="flex items-center gap-3 mb-3 text-blue-700">
+                <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
+                <span className="text-sm font-semibold uppercase tracking-wider">
+                  {item.category}
+                </span>
               </div>
 
-              <h3 className="font-semibold text-gray-900 text-base mb-1">
+              <h3 className="font-bold text-gray-900 text-lg mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-2 text-justify">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 {item.description}
               </p>
 
-              <p className="text-gray-500 text-xs font-medium">
-                {item.meta}
-              </p>
+              <p className="text-gray-500 text-xs font-medium">{item.meta}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

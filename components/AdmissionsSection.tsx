@@ -1,7 +1,28 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Cpu, Laptop, Signal, Zap } from 'lucide-react';
+
+// --- Animation Variants ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
 
 // --- Data ---
 const departments = [
@@ -61,13 +82,16 @@ const AdmissionCard = ({ icon: Icon, title, target, isVisible }: { icon: React.E
   const count = useCountUp(target, isVisible);
 
   return (
-    <div className="transform rounded-xl bg-white p-8 text-center shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg">
+    <motion.div
+      variants={itemVariants}
+      className="transform rounded-xl bg-white p-8 text-center shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+    >
       <Icon className="mx-auto mb-4 text-cyan-500" size={48} />
       <div className="font-mono text-6xl font-extrabold text-gray-900">
         {count}
       </div>
       <p className="mt-2 text-lg font-semibold text-gray-600">{title}</p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -80,7 +104,9 @@ export default function AdmissionsSection() {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
       {
         root: null,
@@ -102,19 +128,28 @@ export default function AdmissionsSection() {
   }, []);
 
   return (
-    <section className="bg-gray-50" aria-label="Admissions 2025 Statistics">
-      <div className="mx-auto max-w-6xl py-20">
-        <div className="text-center">
-          <h2 className="text-5xl font-bold text-gray-900">
+    <motion.section
+      ref={sectionRef}
+      initial="hidden"
+      animate={isVisible ? 'visible' : 'hidden'}
+      variants={containerVariants}
+      className="bg-gray-50 py-20 md:py-24"
+      aria-label="Admissions 2025 Statistics"
+    >
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.div variants={itemVariants} className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             Admissions 2025
           </h2>
-          <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-cyan-500" />
-          <p className="mt-2 text-gray-500">Department-wise student intake</p>
-        </div>
+          <div className="mx-auto mt-4 h-1.5 w-24 rounded-full bg-cyan-500" />
+          <p className="mt-4 text-lg text-gray-600">
+            Department-wise student intake capacity.
+          </p>
+        </motion.div>
 
-        <div
-          ref={sectionRef}
-          className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4"
+        <motion.div
+          variants={containerVariants}
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
         >
           {departments.map((dept) => (
             <AdmissionCard
@@ -125,8 +160,8 @@ export default function AdmissionsSection() {
               isVisible={isVisible}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
