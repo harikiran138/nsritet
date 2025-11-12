@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
 import { Eye, Target } from 'lucide-react';
-import HeroSection from '@/components/HeroSection'; // Import HeroSection
+
 
 export const metadata: Metadata = {
   title: 'About NSRIET | Our History, Vision, and Leadership',
