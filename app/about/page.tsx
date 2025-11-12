@@ -1,11 +1,7 @@
-import type { Metadata } from 'next';
-import ThreeSectionPage from '@/components/ThreeSectionPage';
-import { Eye, Target } from 'lucide-react';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'About NSRIET | Our History, Vision, and Leadership',
-  description: 'Learn about N S Raju Institute of Engineering & Technology (NSRIET), our history of academic excellence, our vision for the future, and the leadership team that guides us.',
-};
+import ThreeSectionPage from '@/components/ThreeSectionPage';
+import { BentoGridDemo } from '@/components/ui/bento-grid';
 
 export default function AboutPage() {
   return (
@@ -21,41 +17,16 @@ export default function AboutPage() {
               <p className="leading-relaxed" style={{ lineHeight: '1.5' }}>
                 N S Raju Institute of Engineering & Technology (NSRIET) is a premier institution dedicated to providing quality education in engineering and management. We are committed to nurturing a vibrant academic community that fosters innovation, research, and holistic development.
               </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-8">
+                Vision, Mission, Core Values
+              </h2>
+              <BentoGridDemo />
             </div>
           ),
         }}
         section2={{
-          title: 'Vision, Mission, Core Values',
-          content: (
-            <div className="space-y-6">
-              <div className="card bg-gradient-to-br from-blue-50 to-transparent dark:from-blue-900 dark:to-transparent border-l-4 border-l-corporate-blue">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Eye className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-corporate-navy dark:text-white">
-                    Our Vision
-                  </h3>
-                </div>
-                <p className="text-corporate-textSecondary dark:text-gray-300 leading-relaxed">
-                  To be a globally recognized institution of higher learning, fostering innovation, research, and entrepreneurship.
-                </p>
-              </div>
-              <div className="card bg-gradient-to-br from-blue-50 to-transparent dark:from-blue-900 dark:to-transparent border-l-4 border-l-corporate-blue">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-corporate-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Target className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-corporate-navy dark:text-white">
-                    Our Mission
-                  </h3>
-                </div>
-                <p className="text-corporate-textSecondary dark:text-gray-300 leading-relaxed">
-                  To provide world-class technical education through innovative teaching, cutting-edge research, and strong industry partnerships.
-                </p>
-              </div>
-            </div>
-          ),
+          title: '',
+          content: null,
         }}
         section3={{
           title: 'Leadership',
