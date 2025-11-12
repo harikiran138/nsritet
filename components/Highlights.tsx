@@ -1,6 +1,5 @@
 'use client';
 
-<<<<<<< Updated upstream
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCertificate,
@@ -97,111 +96,6 @@ export default function Highlights() {
             </div>
           </div>
         ))}
-=======
-import { useState } from 'react';
-import { Award, ShieldCheck, Users } from 'lucide-react';
-import Image from 'next/image';
-import AnimatedSection from './AnimatedSection';
-
-const highlights = [
-    {
-    icon: ShieldCheck,
-    title: 'AICTE Approved',
-    description: 'All our technical programs are approved by AICTE.',
-  },
-  {
-    icon: Award,
-    title: 'Affiliated to JNTU GV',
-    description: "University Affiliated JNTU GV",
-  },
-   {
-    icon: Users,
-    title: 'Experienced Faculty',
-    description: 'Learn from the best minds in the industry and academia.',
-  },
-  {
-    image: '/Indsutry Oriented Training.jpg',
-    title: 'Industry Oriented Training',
-    description: 'Consistently high placement rates in top companies.',
-  },
-];
-
-export default function Highlights() {
-  const [selectedHighlight, setSelectedHighlight] = useState<typeof highlights[0] | null>(null);
-
-  return (
-    <section className="py-20 md:py-28 bg-corporate-background dark:bg-gray-800">
-      <div className="section-container px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-4">
-              Our Highlights
-            </h2>
-            <p className="text-corporate-textSecondary dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              A commitment to quality, excellence, and student success.
-            </p>
-          </div>
-        </AnimatedSection>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {highlights.map((highlight, index) => (
-            <AnimatedSection key={highlight.title} delay={index * 0.1}>
-              <div
-                className="card text-center group hover:shadow-lg hover:-translate-y-1 transition-all h-full cursor-pointer"
-                onClick={() => setSelectedHighlight(highlight)}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-full mb-4 group-hover:scale-110 transition-transform">
-                  {highlight.icon ? (
-                    <highlight.icon className="w-8 h-8 text-corporate-blue" />
-                  ) : (
-                    <Image
-                      src={highlight.image}
-                      alt={highlight.title}
-                      width={64}
-                      height={64}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                  )}
-                </div>
-                <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-3">
-                  {highlight.title}
-                </h3>
-                <p className="text-corporate-textSecondary dark:text-gray-400 text-sm leading-relaxed">
-                  {highlight.description}
-                </p>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
-        {selectedHighlight && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg max-w-md w-full mx-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-corporate-navy dark:text-white">
-                  {selectedHighlight.title}
-                </h3>
-                <button
-                  onClick={() => setSelectedHighlight(null)}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                >
-                  ✕
-                </button>
-              </div>
-              {selectedHighlight.image && (
-                <Image
-                  src={selectedHighlight.image}
-                  alt={selectedHighlight.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-              )}
-              <p className="text-corporate-textSecondary dark:text-gray-400">
-                {selectedHighlight.description}
-              </p>
-            </div>
-          </div>
-        )}
->>>>>>> Stashed changes
       </div>
     </section>
   );
