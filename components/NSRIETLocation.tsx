@@ -26,26 +26,6 @@ const NSRIETLocation = () => {
 
         {/* Map + Info Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Google Map */}
-          <div className="relative group h-96 md:h-[480px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-            <iframe
-              title="NSRIET Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.5827857920026!2d83.30439231533584!3d17.72385960000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395e0e0e0e0e0d%3A0x0!2sN%20S%20Raju%20Institute%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            ></iframe>
-
-            {/* Floating Marker Icon */}
-            <div className="absolute top-4 left-4 bg-white rounded-full p-3 shadow-lg">
-              <MapPin className="w-5 h-5 text-blue-600" />
-            </div>
-          </div>
-
           {/* Contact + Info */}
           <div className="flex flex-col justify-center space-y-6">
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 hover:shadow-2xl transition-all duration-500">
@@ -73,6 +53,26 @@ const NSRIETLocation = () => {
                   Open in Google Maps
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Google Map */}
+          <div className="relative group h-96 md:h-[480px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+            <iframe
+              title="NSRIET Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.5827857920026!2d83.30439231533584!3d17.72385960000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395e0e0e0e0e0d%3A0x0!2sN%20S%20Raju%20Institute%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            ></iframe>
+
+            {/* Floating Marker Icon */}
+            <div className="absolute top-4 left-4 bg-white rounded-full p-3 shadow-lg">
+              <MapPin className="w-5 h-5 text-blue-600" />
             </div>
           </div>
         </div>
