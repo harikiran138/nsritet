@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Calendar, ArrowRight, Bookmark } from 'lucide-react';
+import Image from 'next/image';
 
 const blogPosts = [
   {
@@ -57,11 +58,12 @@ const FeaturedStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
     <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
       {/* Image Container */}
       <div className="relative overflow-hidden bg-gray-200 h-80 lg:h-96 w-full">
-        <img
+        <Image
           src={post.image}
           alt={post.title}
+          width={400}
+          height={500}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          loading="lazy"
         />
 
         {/* Category Badge - Top Left */}
@@ -116,11 +118,12 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
     <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
       {/* Image Container */}
       <div className="relative overflow-hidden bg-gray-200 h-40 md:h-40 w-full">
-        <img
+        <Image
           src={post.image}
           alt={post.title}
+          width={320}
+          height={180}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          loading="lazy"
         />
 
         {/* Category Badge Overlay */}
@@ -173,8 +176,7 @@ const LatestStories = () => {
   const otherPosts = blogPosts.slice(1);
 
   return (
-        <section className="py-10 md:py-16 bg-gradient-to-b from-white via-gray-50 to-white px-6      │
-│        md:px-12">  
+        <section className="py-10 md:py-16 bg-gradient-to-b from-white via-gray-50 to-white px-6 md:px-12">
         <div className="mb-8 md:mb-10 text-center">
           <div className="flex flex-col items-center gap-2 mb-3">
             <div className="w-full">
