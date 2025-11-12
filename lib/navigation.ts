@@ -100,6 +100,11 @@ export const navigationItems: MenuItem[] = [
       { name: 'Institution Policy Documents', href: '/quick-links/policies' },
       { name: 'NSS', href: '/quick-links/nss' },
       { name: 'Partner Institution', href: '/quick-links/partners' },
+      { name: 'Grievance', href: '/quick-links/grievance' },
+      { name: 'Innovation Council', href: '/quick-links/innovation-council' },
+      { name: 'Notifications', href: '/quick-links/notifications' },
+      { name: 'Events', href: '/quick-links/events' },
+      { name: 'Careers', href: '/quick-links/careers' },
     ],
   },
 ];

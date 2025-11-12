@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -13,31 +12,37 @@ export default function Footer() {
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
+  // ✅ Updated footer links to match your actual /app directory structure
   const footerLinks = {
     quickLinks: [
       { label: 'About Us', href: '/about' },
       { label: 'Admissions', href: '/admissions' },
       { label: 'Academics', href: '/academics' },
-      { label: 'Placements', href: '/cdc' },
-      { label: 'Library', href: '/#', external: true },
-      { label: 'Grievance', href: '/feedback' },
+      { label: 'Placements', href: '/cdc/placements' },
+      { label: 'Library', href: '/academics/krc' },
+      { label: 'Grievance', href: '/quick-links/grievance' },
     ],
     important: [
       { label: 'Governance', href: '/governance' },
-      { label: 'Innovation Council', href: '/' },
+      { label: 'Innovation Council', href: '/quick-links/innovation-council' },
       { label: 'Industry Connect', href: '/industry-linkage' },
-      { label: 'Notifications', href: '/' },
-      { label: 'Events', href: '/' },
-      { label: 'Careers', href: '/#', external: true },
+      { label: 'Notifications', href: '/quick-links/notifications' },
+      { label: 'Events', href: '/cdc/events' },
+      { label: 'Careers', href: '/quick-links/careers' },
     ],
   };
 
   return (
     <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-16 pb-0 relative">
-      <div className="absolute inset-0 h-[70%] w-full bg-cover bg-center opacity-10 text-transparent" style={{ backgroundImage: 'url(/footer-bg.jpg)' }}></div>
+      <div
+        className="absolute inset-0 h-[70%] w-full bg-cover bg-center opacity-10 text-transparent"
+        style={{ backgroundImage: 'url(/footer-bg.jpg)' }}
+      ></div>
+
       {/* Main Footer Content */}
-      <div className="section-container px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="section-container px-4 sm:px-6 lg:px-8 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
+
           {/* About Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,26 +69,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               {footerLinks.quickLinks.map((link) => (
-                <li key={link.href}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                    >
-                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                    >
-                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {link.label}
-                    </Link>
-                  )}
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
+                  >
+                    <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -102,26 +95,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               {footerLinks.important.map((link) => (
-                <li key={link.href}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                    >
-                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                    >
-                      <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {link.label}
-                    </Link>
-                  )}
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
+                  >
+                    <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -152,7 +133,7 @@ export default function Footer() {
                 <span className="text-blue-100">info@nsriet.edu.in</span>
               </li>
             </ul>
-            
+
             {/* Social Links */}
             <div className="mt-6">
               <h5 className="font-semibold mb-4">Follow Us</h5>
@@ -176,9 +157,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Divider */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative z-10">
         <div className="section-container px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+
             {/* Copyright */}
             <motion.p
               initial={{ opacity: 0 }}
