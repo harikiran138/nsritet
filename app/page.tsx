@@ -5,7 +5,6 @@ import Highlights from '@/components/Highlights';
 import LatestStories from '@/components/LatestStories';
 import AdmissionsSection from '@/components/AdmissionsSection';
 import OverviewSection from '@/components/OverviewSection';
-import NsritMap from '@/components/NsritMap';
 import NSRIETLocation from '@/components/NSRIETLocation';
 import AnimatedSection from '@/components/AnimatedSection';
 
@@ -37,11 +36,6 @@ export default function Home() {
       {/* --- Latest Stories & Events Section --- */}
       <AnimatedSection className="-mt-16 py-12 sm:py-16">
         <LatestStories />
-      </AnimatedSection>
-
-      {/* --- NSRIT Campus Map Section --- */}
-      <AnimatedSection className="py-16 sm:py-20">
-        <NsritMap />
       </AnimatedSection>
 
       {/* --- NSRIET Location Section --- */}
