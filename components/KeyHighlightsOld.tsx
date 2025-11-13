@@ -16,9 +16,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
@@ -31,7 +29,7 @@ const itemVariants = {
   },
 };
 
-const highlights = [
+const services = [
   {
     category: 'Accreditation',
     icon: faCertificate,
@@ -44,7 +42,7 @@ const highlights = [
     category: 'University',
     icon: faUniversity,
     title: 'JNTU GV Affiliation',
-    description: 'University Affiliated JNTU GV',
+    description: 'University Affiliated JNTU GV.',
     meta: 'Academic Excellence',
     imgSrc: '/images/about/JNTUGV.JPG',
   },
@@ -52,7 +50,7 @@ const highlights = [
     category: 'Faculty',
     icon: faUsers,
     title: 'Experienced Faculty',
-    description: 'Learn from the best minds in the industry and academia.',
+    description: 'Learn from the best minds in industry and academia.',
     meta: 'Expert Mentorship',
     imgSrc: '/images/about/Faculty.jpeg',
   },
@@ -66,7 +64,7 @@ const highlights = [
   },
 ];
 
-export default function KeyHighlightsOld() {
+export default function ServicesSection() {
   return (
     <motion.section
       initial="hidden"
@@ -75,28 +73,30 @@ export default function KeyHighlightsOld() {
       variants={containerVariants}
       className="bg-white dark:bg-gray-900 py-20 px-6 md:px-12"
     >
-      {/* --- Section Header --- */}
-      <motion.div variants={itemVariants} className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-          Key Highlights
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
-          Excellence in every aspect of education.
-        </p>
-      </motion.div>
+     {/* --- Section Header --- */}
+<motion.div variants={itemVariants} className="text-center mb-14">
+  <p className="text-lg md:text-xl font-semibold tracking-wider text-black dark:text-white uppercase mb600 dark:text-purple-400 mb-3">
+    Key Highlights
+  </p>
 
-      {/* --- Highlights Grid --- */}
+<h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
+  Excellence in every aspect of education.
+</h2>
+
+</motion.div>
+
+      {/* --- Services Grid --- */}
       <motion.div
         variants={containerVariants}
         className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
       >
-        {highlights.map((item, index) => (
+        {services.map((item, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
             className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
           >
-            {/* Image Section */}
+            {/* Image */}
             <div className="relative w-full h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
               <Image
                 src={item.imgSrc}
@@ -110,7 +110,7 @@ export default function KeyHighlightsOld() {
               />
             </div>
 
-            {/* Text Content */}
+            {/* Text */}
             <div className="p-6">
               <div className="flex items-center gap-3 mb-3 text-blue-700 dark:text-blue-400">
                 <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
@@ -122,11 +122,14 @@ export default function KeyHighlightsOld() {
               <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-2">
                 {item.title}
               </h3>
+
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
                 {item.description}
               </p>
 
-              <p className="text-gray-500 dark:text-gray-400 text-xs font-medium">{item.meta}</p>
+              <p className="text-gray-500 dark:text-gray-400 text-xs font-medium">
+                {item.meta}
+              </p>
             </div>
           </motion.div>
         ))}

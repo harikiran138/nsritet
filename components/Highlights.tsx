@@ -65,7 +65,7 @@ export default function Highlights() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-base tracking-widest font-medium text-purple-500 uppercase"
+          className="text-base tracking-widest font-normal text-purple-500 uppercase"
         >
           KEY HIGHLIGHTS
         </motion.p>
@@ -76,7 +76,7 @@ export default function Highlights() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-          className="text-4xl md:text-5xl font-semibold mt-2 text-slate-900 dark:text-white"
+          className="text-6xl md:text-7xl font-semibold mt-2 text-slate-900 dark:text-white"
         >
           Excellence in every aspect of education.
         </motion.h2>
