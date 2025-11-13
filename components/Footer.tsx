@@ -1,6 +1,6 @@
 'use client';
-
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -32,14 +32,18 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-12 pb-4 relative">
-      <div
-        className="absolute inset-0 h-[50%] w-full bg-cover bg-center opacity-10 text-transparent"
-        style={{ backgroundImage: 'url(/footer-bg.jpg)' }}
-      ></div>
-
+    <footer className="relative text-white pt-12 pb-4">
+      <Image
+        src="/images/about/About us page.jpeg"
+        alt="Footer Background"
+        layout="fill"
+        objectFit="cover"
+        className="z-0"
+      />
+      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      
       {/* Main Footer Content */}
-      <div className="section-container px-4 sm:px-6 lg:px-8 pb-8 relative z-10">
+      <div className="section-container px-4 sm:px-6 lg:px-8 pb-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
 
           {/* About Section */}
@@ -133,7 +137,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Divider */}
-      <div className="border-t border-white/10 relative z-10">
+      <div className="border-t border-white/10 relative z-20">
         <div className="section-container px-4 sm:px-6 lg:px-8 py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
