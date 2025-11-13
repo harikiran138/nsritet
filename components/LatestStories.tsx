@@ -34,7 +34,7 @@ const blogPosts = [
     categoryShort: 'Celebration',
     date: 'Sep 15, 2025',
     readTime: '3 min read',
-    title: "Engineer's Day Celebrations 2025 at NSRIET Dakamarri",
+    title: "Other Events",
     desc: "Engineer's Day 2025 was celebrated with enthusiasm at NSRIET Dakamarri, in collaboration with JNTU Gurajada Vizianagaram and NSRIT's Industry-Institute Linkage and Training & Placement Cell.",
     images: getImagePaths('engineersDay'),
     buttonText: 'Explore More',
