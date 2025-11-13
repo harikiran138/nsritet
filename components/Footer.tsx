@@ -36,9 +36,8 @@ export default function Footer() {
       <Image
         src="/images/about/About us page.jpeg"
         alt="Footer Background"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
+        fill
+        className="z-0 object-cover"
       />
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
       
