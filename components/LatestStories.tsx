@@ -45,7 +45,7 @@ const blogPosts = [
     categoryShort: 'Cultural',
     date: 'Ongoing',
     readTime: '4 min read',
-    title: 'Cultural Values and Divinity: Fostering Holistic Development',
+    title: 'Cultural Diversity and Valued System',
     desc: 'At NSRIET, we believe in nurturing not just technical excellence but also cultural values and spiritual growth. Our campus hosts various cultural events, traditional celebrations, and spiritual activities that help students develop a strong moral compass and appreciation for diverse cultures.',
     images: getImagePaths('cultural'),
     buttonText: 'Learn More',
