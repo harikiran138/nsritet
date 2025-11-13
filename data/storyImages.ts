@@ -61,6 +61,31 @@ export const storyImages = {
     'cultural-4.jpg',
     // Add Cultural Values and Divinity image filenames here
   ],
+  induction: [
+    'PHOTO-2025-11-13-18-16-50.jpg',
+    'WhatsApp Image 2025-11-13 at 13.39.00 (1).jpeg',
+    'WhatsApp Image 2025-11-13 at 13.39.00 (2).jpeg',
+    'WhatsApp Image 2025-11-13 at 13.39.00.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.44 (1).jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.44 (2).jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.44.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.45 (1).jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.45.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.46 (1).jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.46.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.47.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.48.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.49 (1).jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.49.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.50.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.51.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.52 (1).jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.52.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.53.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.54.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.16.55.jpeg',
+    'WhatsApp Image 2025-11-13 at 18.47.53.jpeg',
+  ],
 };
 
 // Helper function to get full image paths
@@ -70,6 +95,7 @@ export const getImagePaths = (folder: keyof typeof storyImages) => {
     hackathon: 'hackathon',
     engineersDay: 'engineers-day',
     cultural: 'cultural',
+    induction: 'induction',
   };
   
   return storyImages[folder].map(
