@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -13,7 +12,6 @@ export default function Footer() {
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
-  // ✅ Updated footer links to match your actual /app directory structure
   const footerLinks = {
     quickLinks: [
       { label: 'About Us', href: '/about' },
@@ -34,44 +32,26 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative text-white pt-24 pb-0 overflow-hidden min-h-[580px]">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/about-us-hero.jpg"
-          alt="Footer Background"
-          fill
-          className="object-cover"
-          priority={false}
-        />
-        {/* Blue overlay with reduced opacity */}
-        <div className="absolute inset-0 bg-blue-900/80"></div>
-      </div>
+    <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-12 pb-4 relative">
+      <div
+        className="absolute inset-0 h-[50%] w-full bg-cover bg-center opacity-10 text-transparent"
+        style={{ backgroundImage: 'url(/footer-bg.jpg)' }}
+      ></div>
 
       {/* Main Footer Content */}
-      <div className="section-container px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
+      <div className="section-container px-4 sm:px-6 lg:px-8 pb-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
 
           {/* About Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
             <h3 className="font-bold text-xl mb-4">NSRIET</h3>
             <p className="text-blue-100 text-sm leading-relaxed">
-              Excellence in Engineering Education. Empowering students with knowledge, skills, and innovation for a better tomorrow.
+              Empowering students with knowledge, skills, and innovation for a better tomorrow.
             </p>
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
             <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
               Quick Links
@@ -79,10 +59,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                  >
+                  <Link href={link.href} className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300">
                     <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {link.label}
                   </Link>
@@ -92,12 +69,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Important Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
             <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
               Important Links
@@ -105,10 +77,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {footerLinks.important.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300"
-                  >
+                  <Link href={link.href} className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300">
                     <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {link.label}
                   </Link>
@@ -118,25 +87,23 @@ export default function Footer() {
           </motion.div>
 
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }}>
             <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
               Contact Info
             </h4>
+
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3 group">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-400 group-hover:scale-110 transition-transform" />
                 <span className="text-blue-100">NSRIET Campus, Education District, City, State - 123456</span>
               </li>
+
               <li className="flex items-center gap-3 group hover:text-white transition-colors">
                 <Phone className="w-5 h-5 flex-shrink-0 text-blue-400 group-hover:scale-110 transition-transform" />
                 <span className="text-blue-100">+91 1234567890</span>
               </li>
+
               <li className="flex items-center gap-3 group hover:text-white transition-colors">
                 <Mail className="w-5 h-5 flex-shrink-0 text-blue-400 group-hover:scale-110 transition-transform" />
                 <span className="text-blue-100">info@nsriet.edu.in</span>
@@ -167,7 +134,7 @@ export default function Footer() {
 
       {/* Bottom Divider */}
       <div className="border-t border-white/10 relative z-10">
-        <div className="section-container px-4 sm:px-6 lg:px-8 py-8">
+        <div className="section-container px-4 sm:px-6 lg:px-8 py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
             {/* Copyright */}
@@ -178,7 +145,8 @@ export default function Footer() {
               viewport={{ once: true }}
               className="text-sm text-blue-200"
             >
-              © {new Date().getFullYear()} NSRIET. All rights reserved. | <span className="font-medium">Engineering Excellence</span>
+              © {new Date().getFullYear()} NSRIET. All rights reserved. |{' '}
+              <span className="font-medium">Engineering Excellence</span>
             </motion.p>
 
             {/* Bottom Links */}
@@ -189,17 +157,12 @@ export default function Footer() {
               viewport={{ once: true }}
               className="flex flex-wrap gap-4 md:gap-6 md:justify-end text-sm"
             >
-              <Link
-                href="/privacy"
-                className="text-blue-200 hover:text-white hover:underline transition-colors group flex items-center gap-1"
-              >
+              <Link href="/privacy" className="text-blue-200 hover:text-white hover:underline transition-colors group flex items-center gap-1">
                 Privacy Policy
                 <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
-              <Link
-                href="/terms"
-                className="text-blue-200 hover:text-white hover:underline transition-colors group flex items-center gap-1"
-              >
+
+              <Link href="/terms" className="text-blue-200 hover:text-white hover:underline transition-colors group flex items-center gap-1">
                 Terms of Service
                 <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
