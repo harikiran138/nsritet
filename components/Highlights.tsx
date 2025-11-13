@@ -1,14 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCertificate,
-  faUniversity,
-  faUsers,
-  faIndustry,
-} from '@fortawesome/free-solid-svg-icons';
-import Image from 'next/image';
 import React from 'react';
 
 // --- Animation Variants ---
@@ -17,13 +9,13 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.25,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
@@ -33,104 +25,97 @@ const itemVariants = {
 
 const highlights = [
   {
-    category: 'Accreditation',
-    icon: faCertificate,
     title: 'AICTE Approved Programs',
+    subtitle: 'Certified & Verified',
     description: 'All our technical programs are approved by AICTE.',
-    meta: 'Certified & Verified',
-    imgSrc: '/images/about/AICTE.jpg',
+    iconColor1: '#8B5CF6',
+    iconColor2: '#C4B5FD',
   },
   {
-    category: 'University',
-    icon: faUniversity,
     title: 'JNTU GV Affiliation',
-    description: 'University Affiliated JNTU GV',
-    meta: 'Academic Excellence',
-    imgSrc: '/images/about/JNTUGV.JPG',
+    subtitle: 'University',
+    description: 'University Affiliated JNTU GV.',
+    iconColor1: '#06B6D4',
+    iconColor2: '#A5F3FC',
   },
   {
-    category: 'Faculty',
-    icon: faUsers,
     title: 'Experienced Faculty',
+    subtitle: 'Faculty',
     description: 'Learn from the best minds in the industry and academia.',
-    meta: 'Expert Mentorship',
-    imgSrc: '/images/about/Faculty.jpeg',
+    iconColor1: '#EC4899',
+    iconColor2: '#F9A8D4',
   },
   {
-    category: 'Training',
-    icon: faIndustry,
     title: 'Industry Integrated Training',
+    subtitle: 'Training',
     description: 'Consistently high placement rates in top companies.',
-    meta: 'High Placement Record',
-    imgSrc: '/images/about/Training.jpeg',
+    iconColor1: '#F97316',
+    iconColor2: '#FDBA74',
   },
 ];
 
 export default function Highlights() {
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
-      className="bg-white py-20 px-6 md:px-12"
-    >
-      {/* --- Section Header --- */}
-      <motion.div variants={itemVariants} className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-          Key Highlights
-        </h2>
-        <p className="text-lg text-gray-600 mt-2">
+    <section className="py-24 bg-white dark:bg-gray-900 font-sans">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* TOP LABEL */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="text-sm tracking-widest font-medium text-purple-500 uppercase"
+        >
+          KEY HIGHLIGHTS
+        </motion.p>
+
+        {/* TITLE */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
+          className="text-3xl md:text-4xl font-semibold mt-2 text-slate-900 dark:text-white"
+        >
           Excellence in every aspect of education.
-        </p>
-      </motion.div>
+        </motion.h2>
 
-      {/* --- Highlights Grid --- */}
-      <motion.div
-        variants={containerVariants}
-        className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
-      >
-        {highlights.map((item, index) => (
-          <motion.div
-            key={index}
-            variants={itemVariants}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-          >
-            {/* Image Section */}
-            <div className="relative w-full h-48 bg-gray-100 flex items-center justify-center">
-              <Image
-                src={item.imgSrc}
-                alt={item.title}
-                fill
-                className={
-                  item.category === 'Accreditation' || item.category === 'University'
-                    ? 'object-contain p-4'
-                    : 'object-cover'
-                }
-              />
-            </div>
-
-            {/* Text Content */}
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-3 text-blue-700">
-                <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
-                <span className="text-sm font-semibold uppercase tracking-wider">
-                  {item.category}
-                </span>
+        {/* CARDS CONTAINER */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mt-20"
+        >
+          {highlights.map((itemData, index) => (
+            <motion.div key={index} variants={itemVariants} className="text-center">
+              {/* WIX-STYLE ICON SHAPES */}
+              <div className="flex justify-center mb-6 relative h-20">
+                <div
+                  className="w-12 h-12 rounded-full absolute top-0 left-1/2 -ml-6"
+                  style={{ background: itemData.iconColor1 }}
+                ></div>
+                <div
+                  className="w-8 h-8 rounded-lg absolute top-6 left-1/2 -ml-2"
+                  style={{ background: itemData.iconColor2 }}
+                ></div>
+                <div className="w-2 h-2 rounded-full bg-slate-400 absolute top-16 left-1/2 -ml-1"></div>
               </div>
 
-              <h3 className="font-bold text-gray-900 text-lg mb-2">
-                {item.title}
+              <h3 className="text-lg font-semibold text-slate-800 dark:text-gray-100">
+                {itemData.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                {item.description}
-              </p>
 
-              <p className="text-gray-500 text-xs font-medium">{item.meta}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </motion.section>
+              <p className="text-sm text-purple-500 mt-1">{itemData.subtitle}</p>
+
+              <p className="text-sm text-slate-600 dark:text-gray-300 mt-3 leading-relaxed">
+                {itemData.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }
