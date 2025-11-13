@@ -176,7 +176,7 @@ const LatestStories = () => {
   const otherPosts = blogPosts.slice(1);
 
   return (
-        <section className="py-10 md:py-16 bg-gradient-to-b from-white via-gray-50 to-white px-6 md:px-12">
+        <section className="pt-0 md:pt-0 bg-gradient-to-b from-white via-gray-50 to-white px-6 md:px-12">
         <div className="mb-8 md:mb-10 text-center">
           <div className="flex flex-col items-center gap-2 mb-3">
             <div className="w-full">

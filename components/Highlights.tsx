@@ -56,7 +56,7 @@ const highlights = [
 
 export default function Highlights() {
   return (
-    <section className="py-16 bg-white dark:bg-gray-900 font-sans">
+    <section className="pt-16 pb-0 bg-white dark:bg-gray-900 font-sans">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* TOP LABEL */}
         <motion.p

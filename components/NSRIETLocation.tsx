@@ -31,7 +31,7 @@ const NSRIETLocation = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-zinc-100"
+      className="pt-0 pb-20 md:pb-28 bg-gradient-to-b from-gray-50 to-zinc-100"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* --- Header --- */}
