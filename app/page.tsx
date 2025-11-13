@@ -16,7 +16,7 @@ export default function Home() {
           - Full viewport height with background
           - Animates on page load
           ======================================== */}
-      <HeroSection backgroundImage="/hero-bg.png" />
+      <HeroSection backgroundImage="/Learn by Doing.Lead by Becoming[1].png" />
 
       {/* ========================================
           KEY HIGHLIGHTS SECTION

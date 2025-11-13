@@ -111,14 +111,8 @@ export default function Navbar() {
 
       {/* Logo Section — Exactly like the screenshot */}
 <div className="w-full bg-white py-1 flex items-center justify-center">
-  <div className="relative w-full h-[60px]">
-    <Image
-      src="/main-logo1.png"
-      alt="NSRIET Logo"
-      fill
-      priority
-      className="object-cover"   // stretches width more
-    />
+          <div className="relative h-16 w-full">
+            <Image src="/logo2.png" alt="NSRIET Logo" fill className="object-cover" />
   </div>
 </div>
 
