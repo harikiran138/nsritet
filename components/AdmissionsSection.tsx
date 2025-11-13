@@ -74,11 +74,11 @@ const Counter = ({ target, duration = 2000 }: { target: number; duration?: numbe
 // -------------------------------------------------
 const AdmissionsNumbers = () => {
   const stats = [
-    { number: 420, label: "CSE" },
-    { number: 310, label: "CSM" },
-    { number: 280, label: "ECE" },
-    { number: 190, label: "EEE" },
-    { number: 250, label: "MECHANICAL" },
+    { number: 120, label: "CSE" },
+    { number: 60, label: "CSM" },
+    { number: 120, label: "ECE" },
+    { number: 30, label: "EEE" },
+    { number: 30, label: "MECHANICAL" },
   ];
 
   return (
