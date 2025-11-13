@@ -21,7 +21,7 @@ export default function ManagementPage() {
               name="Shri. N. Satyanarayana Raju"
               title="Chairman, NSRIET"
               description='The well-known Chinese proverb states: "If you are planning for one year, sow rice; for ten years, plant trees; but if you are planning for a lifetime, educate people." In today&apos;s rapidly evolving technological landscape, the demand for skilled and adaptive professionals has never been greater. With this vision, the Oxford Educational Society, under the inspiring leadership of Sri N. Satyanarayana Raju, established the N S Raju Institute of Engineering and Technology (NSRIET) to provide high-quality education in Engineering and Management disciplines. Our objective is to empower young minds with knowledge, creativity, innovation, and professional competence to confidently meet the challenges of the 21st-century technology-driven world.'
-              imageUrl="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
+              imageUrl="/images/Satyanarayana Raju.jpeg"
               githubUrl="#"
               twitterUrl="#"
               youtubeUrl="#"
@@ -44,27 +44,6 @@ export default function ManagementPage() {
         ),
       }}
       section2={{
-        title: 'Governance Structure',
-        content: (
-          <div className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { role: 'Principal', name: 'Dr. [Name]', qualification: 'PhD, 25+ years of experience' },
-                { role: 'Vice Principal (Academic)', name: 'Dr. [Name]', qualification: 'PhD in Engineering' },
-                { role: 'Registrar', name: '[Name]', qualification: 'M.Tech, 15+ years of experience' },
-                { role: 'Finance Officer', name: '[Name]', qualification: 'CA, MBA' },
-              ].map((member) => (
-                <div key={member.role} className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
-                  <h3 className="font-bold text-corporate-navy dark:text-white">{member.role}</h3>
-                  <p className="text-sm text-corporate-navy dark:text-gray-300 mt-2">{member.name}</p>
-                  <p className="text-xs text-corporate-textSecondary dark:text-gray-400 mt-1">{member.qualification}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ),
-      }}
-      section3={{
         title: 'Contact & Policies',
         content: (
           <div className="grid md:grid-cols-2 gap-8">
@@ -85,6 +64,16 @@ export default function ManagementPage() {
                 <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Contact Directory</a>
               </div>
             </div>
+          </div>
+        ),
+      }}
+      section3={{
+        title: 'Our Commitment',
+        content: (
+          <div className="text-center">
+            <p className="text-corporate-navy dark:text-gray-200 text-lg">
+              Our management structure ensures efficient operations while maintaining focus on academic quality, research advancement, and student welfare.
+            </p>
           </div>
         ),
       }}
