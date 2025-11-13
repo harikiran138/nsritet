@@ -134,7 +134,7 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
       </div>
 
       {/* Content Container */}
-      <div className="flex flex-col justify-between flex-grow p-5 md:p-6">
+      <div className="flex flex-col justify-between flex-grow p-3 md:p-4">
         {/* Metadata */}
         <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
           <Calendar className="w-4 h-4" />
@@ -189,11 +189,11 @@ const LatestStories = () => {
 
       {/* ========================================
           STORIES GRID
-          - 4 equal cards with responsive layout
-          - Consistent gap spacing
+          - Wider cards with reduced gap
+          - 3 cards per row on desktop for larger size
           ======================================== */}
       {blogPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-6 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-4">
           {blogPosts.map((post) => (
             <div key={post.id}>
               <StoryCard post={post} />
