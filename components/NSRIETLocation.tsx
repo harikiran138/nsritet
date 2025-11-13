@@ -49,34 +49,111 @@ const NSRIETLocation = () => {
         </motion.div>
 
         {/* --- Map + Info Section --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Contact Form */}
           <motion.div
             variants={itemVariants}
             className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Contact Us</h3>
             <p className="text-gray-600 mb-6">
-              N S Raju Institute of Engineering and Technology (NSRIET), Bheemunipatnam Mandal, Visakhapatnam, Andhra Pradesh - 531162
+              Have questions? Fill out the form below and we'll get back to you soon.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 text-gray-700">
-                <Phone className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-lg">+91 98765 43210</span>
+            
+            <form className="space-y-5">
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  placeholder="Enter your name"
+                />
               </div>
-              <div className="flex items-center gap-4 text-gray-700">
-                <Mail className="w-6 h-6 text-indigo-600" />
-                <span className="font-medium text-lg">info@nsriet.edu.in</span>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  placeholder="your.email@example.com"
+                />
               </div>
-              <a
-                href="https://maps.google.com/?q=N+S+Raju+Institute+of+Engineering+and+Technology+Sontyam"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-6 text-blue-600 font-semibold hover:underline text-lg"
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  placeholder="+91 98765 43210"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Subject *
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  placeholder="How can we help?"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  placeholder="Write your message here..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2"
               >
-                <Navigation className="w-5 h-5" />
-                Open in Google Maps
-              </a>
+                <Mail className="w-5 h-5" />
+                Send Message
+              </button>
+            </form>
+
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-3 text-gray-700">
+                  <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span>+91 98765 43210</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <Mail className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                  <span>info@nsriet.edu.in</span>
+                </div>
+                <div className="flex items-start gap-3 text-gray-700">
+                  <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Sontyam, Visakhapatnam, Andhra Pradesh - 531173</span>
+                </div>
+              </div>
             </div>
           </motion.div>
 
