@@ -70,7 +70,7 @@ const Counter = ({ target, duration = 2000 }: { target: number; duration?: numbe
 };
 
 // -------------------------------------------------
-// New AdmissionsNumbers Section (White Theme)
+// New AdmissionsNumbers Section (Blue Background Theme)
 // -------------------------------------------------
 const AdmissionsNumbers = () => {
   const stats = [
@@ -82,23 +82,23 @@ const AdmissionsNumbers = () => {
   ];
 
   return (
-    <section className="bg-white text-gray-900 py-12 w-full">
+    <section className="w-full">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <p className="text-base tracking-widest font-medium text-cyan-600 uppercase">
+        <p className="text-base tracking-widest font-medium text-cyan-300 uppercase">
           ADMISSIONS 2025
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-semibold mt-2 text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-semibold mt-2 text-white">
           Department-wise student intake capacity
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 md:gap-20 mt-16">
           {stats.map((item, index) => (
             <div key={index} className="text-center">
-              <div className="text-6xl font-bold text-gray-900">
+              <div className="text-6xl font-bold text-white">
                 <Counter target={item.number} />
               </div>
-              <p className="text-base mt-2 text-gray-600 uppercase">{item.label}</p>
+              <p className="text-base mt-2 text-blue-100 uppercase tracking-wide">{item.label}</p>
             </div>
           ))}
         </div>

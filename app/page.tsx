@@ -21,18 +21,19 @@ export default function Home() {
       {/* ========================================
           KEY HIGHLIGHTS SECTION
           - Showcases AICTE, JNTU, Faculty, Training
-          - Equal spacing from hero
+          - Extra spacing from hero
           ======================================== */}
-      <AnimatedSection className="py-20 md:py-24 lg:py-28">
+      <AnimatedSection className="py-24 md:py-28 lg:py-32">
         <KeyHighlightsOld />
       </AnimatedSection>
 
       {/* ========================================
           ADMISSIONS SECTION
+          - Blue gradient background for emphasis
           - Flip counter animations
-          - Consistent vertical rhythm
+          - Seamless visual highlight
           ======================================== */}
-      <AnimatedSection className="py-20 md:py-24 lg:py-28 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <AnimatedSection className="py-24 md:py-28 lg:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-blue-800 dark:via-blue-900 dark:to-indigo-950">
         <AdmissionsSection />
       </AnimatedSection>
 
@@ -41,7 +42,7 @@ export default function Home() {
           - About NSRIET content
           - Balanced two-column layout
           ======================================== */}
-      <AnimatedSection className="py-20 md:py-24 lg:py-28 bg-gray-50 dark:bg-gray-800">
+      <AnimatedSection className="py-24 md:py-28 lg:py-32 bg-gray-50 dark:bg-gray-800">
         <OverviewSection />
       </AnimatedSection>
 
@@ -50,7 +51,7 @@ export default function Home() {
           - 4 equal-sized cards with auto-scroll
           - Smooth entrance animation
           ======================================== */}
-      <AnimatedSection className="py-20 md:py-24 lg:py-28 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+      <AnimatedSection className="py-24 md:py-28 lg:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <LatestStories />
       </AnimatedSection>
 
@@ -58,9 +59,9 @@ export default function Home() {
           LOCATION & CONTACT SECTION
           - Google Maps integration
           - Contact form
-          - Maintains bottom spacing
+          - Extra bottom spacing
           ======================================== */}
-      <AnimatedSection className="py-20 md:py-24 lg:py-28">
+      <AnimatedSection className="py-24 md:py-28 lg:py-32">
         <NSRIETLocation />
       </AnimatedSection>
     </>
