@@ -18,6 +18,7 @@ interface ThreeSectionPageProps {
     content: React.ReactNode;
   };
   heroImage?: string;
+  customHeroClass?: string;
 }
 
 const containerVariants = {
@@ -50,6 +51,7 @@ export default function ThreeSectionPage({
   section2,
   section3,
   heroImage,
+  customHeroClass,
 }: ThreeSectionPageProps) {
   return (
     <>
@@ -79,7 +81,7 @@ export default function ThreeSectionPage({
           </div>
         </div>
       ) : (
-        <div className="bg-gradient-to-r from-corporate-navy via-corporate-blue to-blue-600 text-white py-16 md:py-24 relative overflow-hidden">
+        <div className={`bg-gradient-to-r from-corporate-navy via-corporate-blue to-blue-600 text-white py-16 md:py-24 relative overflow-hidden ${customHeroClass || ''}`}>
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -mr-32 -mt-32 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -ml-32 -mb-32 pointer-events-none"></div>

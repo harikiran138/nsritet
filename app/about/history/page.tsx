@@ -7,6 +7,7 @@ export default function HistoryPage() {
     <ThreeSectionPage
       title="Our History"
       subtitle="A journey of excellence and growth"
+      heroImage="/images/banner.jpeg"
       section1={{
         title: 'Establishment',
         content: (
