@@ -108,14 +108,14 @@ export default function ServicesSection() {
             }}
           >
             {/* Image */}
-            <div className="relative w-full h-[20px] bg-gray-100/50 dark:bg-gray-700/50 flex items-center justify-center">
+            <div className="relative w-full h-32 bg-gray-100/50 dark:bg-gray-700/50 flex items-center justify-center">
               <Image
                 src={item.imgSrc}
                 alt={item.title}
                 fill
                 className={
                   item.category === 'Accreditation' || item.category === 'University'
-                    ? 'object-contain p-0.5'
+                    ? 'object-contain p-2'
                     : 'object-cover'
                 }
               />
