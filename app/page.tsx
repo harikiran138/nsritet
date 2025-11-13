@@ -11,35 +11,56 @@ import AnimatedSection from '@/components/AnimatedSection';
 export default function Home() {
   return (
     <>
-      {/* --- Hero Section --- */}
-      {/* This section animates on page load, so it's not wrapped in AnimatedSection */}
-            <HeroSection
-              backgroundImage="/hero-bg.png"
+      {/* ========================================
+          HERO SECTION
+          - Full viewport height with background
+          - Animates on page load
+          ======================================== */}
+      <HeroSection backgroundImage="/hero-bg.png" />
 
-            />
-
-      {/* --- Key Highlights (Old Style with Images) --- */}
-      <AnimatedSection className="py-16 sm:py-20">
+      {/* ========================================
+          KEY HIGHLIGHTS SECTION
+          - Showcases AICTE, JNTU, Faculty, Training
+          - Equal spacing from hero
+          ======================================== */}
+      <AnimatedSection className="py-20 md:py-24 lg:py-28">
         <KeyHighlightsOld />
       </AnimatedSection>
 
-      {/* --- Admissions Section --- */}
-      <AnimatedSection className="py-16 sm:py-20">
+      {/* ========================================
+          ADMISSIONS SECTION
+          - Flip counter animations
+          - Consistent vertical rhythm
+          ======================================== */}
+      <AnimatedSection className="py-20 md:py-24 lg:py-28 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
         <AdmissionsSection />
       </AnimatedSection>
 
-      {/* --- Overview Section --- */}
-      <AnimatedSection className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800">
+      {/* ========================================
+          OVERVIEW SECTION
+          - About NSRIET content
+          - Balanced two-column layout
+          ======================================== */}
+      <AnimatedSection className="py-20 md:py-24 lg:py-28 bg-gray-50 dark:bg-gray-800">
         <OverviewSection />
       </AnimatedSection>
 
-      {/* --- Latest Stories & Events Section --- */}
-      <AnimatedSection className="-mt-16 py-12 sm:py-16">
+      {/* ========================================
+          LATEST STORIES & EVENTS SECTION
+          - 4 equal-sized cards with auto-scroll
+          - Smooth entrance animation
+          ======================================== */}
+      <AnimatedSection className="py-20 md:py-24 lg:py-28 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <LatestStories />
       </AnimatedSection>
 
-      {/* --- NSRIET Location Section --- */}
-      <AnimatedSection className="pb-12 sm:pb-16">
+      {/* ========================================
+          LOCATION & CONTACT SECTION
+          - Google Maps integration
+          - Contact form
+          - Maintains bottom spacing
+          ======================================== */}
+      <AnimatedSection className="py-20 md:py-24 lg:py-28">
         <NSRIETLocation />
       </AnimatedSection>
     </>

@@ -71,24 +71,30 @@ export default function ServicesSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="bg-white dark:bg-gray-900 py-20 px-6 md:px-12"
+      className="container mx-auto px-6 md:px-12 max-w-7xl"
     >
-     {/* --- Section Header --- */}
-<motion.div variants={itemVariants} className="text-center mb-14">
-  <p className="text-lg md:text-xl font-semibold tracking-wider text-black dark:text-white uppercase mb600 dark:text-purple-400 mb-3">
-    Key Highlights
-  </p>
+      {/* ========================================
+          SECTION HEADER
+          - Centered title with subtitle
+          - Consistent spacing
+          ======================================== */}
+      <motion.div variants={itemVariants} className="text-center mb-16">
+        <p className="text-lg md:text-xl font-semibold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-3">
+          Key Highlights
+        </p>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
+          Excellence in every aspect of education.
+        </h2>
+      </motion.div>
 
-<h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
-  Excellence in every aspect of education.
-</h2>
-
-</motion.div>
-
-      {/* --- Services Grid --- */}
+      {/* ========================================
+          HIGHLIGHTS GRID
+          - 4 equal cards with images
+          - Consistent gap spacing
+          ======================================== */}
       <motion.div
         variants={containerVariants}
-        className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
         {services.map((item, index) => (
           <motion.div

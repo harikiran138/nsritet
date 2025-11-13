@@ -165,39 +165,48 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
 
 const LatestStories = () => {
   return (
-        <section className="pt-0 md:pt-0 bg-gradient-to-b from-white via-gray-50 to-white px-6 md:px-12">
-        <div className="mb-8 md:mb-10 text-center">
-          <div className="flex flex-col items-center gap-2 mb-3">
-            <div className="w-full">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 leading-tight">
-                Latest Stories & Events
-              </h2>
-              <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-                Stay updated with the latest happenings at NSRIET
-              </p>
-            </div>
+    <section className="container mx-auto px-6 md:px-12 max-w-7xl">
+      {/* ========================================
+          SECTION HEADER
+          - Centered title and description
+          - Decorative divider
+          ======================================== */}
+      <div className="mb-12 md:mb-16 text-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-full">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">
+              Latest Stories & Events
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+              Stay updated with the latest happenings at NSRIET
+            </p>
           </div>
-
-          {/* Divider */}
-          <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mt-3 mx-auto"></div>
         </div>
 
-        {/* Main Grid Layout - All Cards Same Size in a Row */}
-        {blogPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-            {blogPosts.map((post) => (
-              <div key={post.id}>
-                <StoryCard post={post} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          /* Empty State */
-          <div className="text-center py-16">
-            <p className="text-gray-600 text-lg font-medium">No stories available at the moment.</p>
-            <p className="text-gray-500 text-sm mt-2">Check back soon for updates and latest happenings at NSRIET.</p>
-          </div>
-        )}
+        {/* Decorative Divider */}
+        <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mt-4 mx-auto"></div>
+      </div>
+
+      {/* ========================================
+          STORIES GRID
+          - 4 equal cards with responsive layout
+          - Consistent gap spacing
+          ======================================== */}
+      {blogPosts.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-6 lg:gap-6">
+          {blogPosts.map((post) => (
+            <div key={post.id}>
+              <StoryCard post={post} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        /* Empty State */
+        <div className="text-center py-20">
+          <p className="text-gray-600 dark:text-gray-400 text-lg font-medium">No stories available at the moment.</p>
+          <p className="text-gray-500 dark:text-gray-500 text-sm mt-2">Check back soon for updates and latest happenings at NSRIET.</p>
+        </div>
+      )}
     </section>
   );
 };
