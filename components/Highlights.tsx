@@ -56,15 +56,15 @@ const highlights = [
 
 export default function Highlights() {
   return (
-    <section className="py-24 bg-white dark:bg-gray-900 font-sans">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="py-16 bg-white dark:bg-gray-900 font-sans">
+      <div className="max-w-7xl mx-auto px-6 text-center">
         {/* TOP LABEL */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-sm tracking-widest font-medium text-purple-500 uppercase"
+          className="text-base tracking-widest font-medium text-purple-500 uppercase"
         >
           KEY HIGHLIGHTS
         </motion.p>
@@ -75,7 +75,7 @@ export default function Highlights() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-          className="text-3xl md:text-4xl font-semibold mt-2 text-slate-900 dark:text-white"
+          className="text-4xl md:text-5xl font-semibold mt-2 text-slate-900 dark:text-white"
         >
           Excellence in every aspect of education.
         </motion.h2>
@@ -103,13 +103,13 @@ export default function Highlights() {
                 <div className="w-2 h-2 rounded-full bg-slate-400 absolute top-16 left-1/2 -ml-1"></div>
               </div>
 
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-gray-100">
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-gray-100">
                 {itemData.title}
               </h3>
 
-              <p className="text-sm text-purple-500 mt-1">{itemData.subtitle}</p>
+              <p className="text-base text-purple-500 mt-1">{itemData.subtitle}</p>
 
-              <p className="text-sm text-slate-600 dark:text-gray-300 mt-3 leading-relaxed">
+              <p className="text-base text-slate-600 dark:text-gray-300 mt-3 leading-relaxed">
                 {itemData.description}
               </p>
             </motion.div>

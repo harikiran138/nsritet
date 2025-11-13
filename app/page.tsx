@@ -23,17 +23,17 @@ export default function Home() {
       </AnimatedSection>
 
       {/* --- Latest Stories & Events Section --- */}
-      <AnimatedSection className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
+      <AnimatedSection className="-mt-16 py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
         <LatestStories />
       </AnimatedSection>
 
       {/* --- Admissions Section --- */}
-      <AnimatedSection className="py-16 sm:py-20">
+      <AnimatedSection className="-mt-16 py-16 sm:py-20">
         <AdmissionsSection />
       </AnimatedSection>
 
       {/* --- NSRIET Location Section --- */}
-      <AnimatedSection className="pb-16 sm:pb-20">
+      <AnimatedSection className="-mt-16 pb-16 sm:pb-20">
         <NSRIETLocation />
       </AnimatedSection>
     </>
