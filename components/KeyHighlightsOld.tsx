@@ -101,7 +101,7 @@ export default function ServicesSection() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className="backdrop-blur-md rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 active:rotate-[1.7deg] border border-white hover:border-black select-none font-bold text-black w-full"
+            className="backdrop-blur-md rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 active:rotate-[1.7deg] border border-white select-none font-bold text-black w-full"
             style={{
               background: 'rgba(217, 217, 217, 0.58)',
               boxShadow: '12px 17px 51px rgba(0, 0, 0, 0.22)',
