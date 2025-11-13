@@ -108,27 +108,27 @@ export function ProfileCard(props: ProfileCardProps) {
   ];
 
   return (
-    <div className={`w-full max-w-5xl mx-auto px-4 ${className || ''}`}>
+    <div className={`w-full max-w-full mx-auto ${className || ''}`}>
       {/* Desktop */}
       <div className={`hidden md:flex relative items-center ${flipped ? 'flex-row-reverse' : ''}`}>
         {/* Square Image */}
-        <div className='w-[470px] h-[470px] rounded-3xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex-shrink-0 flex items-center justify-center'>
+        <div className='w-[350px] h-[350px] rounded-3xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex-shrink-0 flex items-center justify-center'>
           <img
             src={imageUrl}
             alt={name}
-            width={470}
-            height={470}
+            width={350}
+            height={350}
             className='w-full h-full object-cover'
             draggable={false}
           />
         </div>
         {/* Overlapping Card */}
         <div
-          className={`bg-white dark:bg-card rounded-3xl shadow-2xl p-8 ${
-            flipped ? 'mr-[-80px]' : 'ml-[-80px]'
-          } z-10 max-w-xl flex-1`}
+          className={`bg-white dark:bg-card rounded-3xl shadow-2xl p-6 ${
+            flipped ? 'mr-[-60px]' : 'ml-[-60px]'
+          } z-10 flex-1`}
         >
-          <div className='mb-6'>
+          <div className='mb-4'>
             <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>
               {name}
             </h2>
@@ -136,7 +136,7 @@ export function ProfileCard(props: ProfileCardProps) {
               {title}
             </p>
           </div>
-          <p className='text-black dark:text-white text-base leading-relaxed mb-8'>
+          <p className='text-black dark:text-white text-base leading-relaxed mb-6'>
             {description}
           </p>
           <div className='flex space-x-4'>
