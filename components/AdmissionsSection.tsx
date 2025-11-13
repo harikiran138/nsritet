@@ -81,7 +81,7 @@ const AdmissionsNumbers = () => {
   ];
 
   return (
-    <section className="bg-white text-gray-900 pt-0 pb-24 w-full">
+    <section className="bg-white text-gray-900 py-24 w-full">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <p className="text-sm tracking-widest font-medium text-cyan-600 uppercase">
           ADMISSIONS 2025
