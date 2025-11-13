@@ -12,7 +12,23 @@ export default function Footer() {
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
+  const aboutLinks = [
+    'History',
+    'Vision & Mission',
+    'Management',
+    'Leadership',
+    'Nadimpalli Informatics',
+    'NSRIT (Autonomous)',
+  ];
 
+  const quickLinks = [
+    'Admissions',
+    'Why NSRIET?',
+    'Placements',
+    'Internships',
+    'Events',
+    'Campus Life',
+  ];
 
 
   return (
@@ -27,7 +43,7 @@ export default function Footer() {
       
       {/* Main Footer Content */}
       <div className="section-container px-4 sm:px-6 lg:px-8 pb-8 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 items-start justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start justify-between">
 
           {/* About Section */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
@@ -37,9 +53,35 @@ export default function Footer() {
             </p>
           </motion.div>
 
+          {/* About Links */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
+            <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
+              <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
+              About Us
+            </h4>
+            <ul className="space-y-3">
+              {aboutLinks.map((text) => (
+                <li key={text}>
+                  <span className="text-blue-100 text-sm cursor-default">{text}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
-
-
+          {/* Quick Links */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
+            <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
+              <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {quickLinks.map((text) => (
+                <li key={text}>
+                  <span className="text-blue-100 text-sm cursor-default">{text}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
           {/* Contact Info */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }}>
