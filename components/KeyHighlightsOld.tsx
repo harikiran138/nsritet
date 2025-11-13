@@ -54,7 +54,7 @@ const highlights = [
     title: 'Experienced Faculty',
     description: 'Learn from the best minds in the industry and academia.',
     meta: 'Expert Mentorship',
-    imgSrc: '/images/about/Faculty.jpeg',
+    imgSrc: '/images/about/IMG_1400.jpg',
   },
   {
     category: 'Training',
