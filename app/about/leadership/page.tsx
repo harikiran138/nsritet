@@ -1,21 +1,7 @@
 'use client';
 
 import ThreeSectionPage from '@/components/ThreeSectionPage';
-
-const leaders = [
-  {
-    name: 'Dr. Rajesh Kumar Sharma',
-    position: 'Principal',
-    qualification: 'Ph.D. Computer Science',
-    bio: 'Visionary leader with 20+ years of experience in higher education and research',
-  },
-  {
-    name: 'Prof. Priya Sharma',
-    position: 'Vice Principal (Academics)',
-    qualification: 'M.Tech, B.Tech',
-    bio: 'Experienced academician focused on curriculum development and faculty excellence',
-  },
-];
+import { ProfileCard } from '@/components/ProfileCard';
 
 export default function LeadershipPage() {
   return (
@@ -23,17 +9,19 @@ export default function LeadershipPage() {
       title="Leadership"
       subtitle="Visionary leaders driving NSRIET's mission of educational excellence"
       section1={{
-        title: 'Leadership Team',
+        title: '',
         content: (
-          <div className="grid md:grid-cols-2 gap-6">
-            {leaders.map((leader, idx) => (
-              <div key={idx} className="p-6 bg-white dark:bg-gray-700 rounded-lg border-2 border-gray-200 dark:border-gray-600 hover:border-corporate-blue transition-colors">
-                <h4 className="text-lg font-bold text-corporate-blue mb-1">{leader.name}</h4>
-                <p className="font-semibold text-corporate-navy dark:text-white mb-1">{leader.position}</p>
-                <p className="text-xs text-corporate-textSecondary dark:text-gray-400 mb-3">{leader.qualification}</p>
-                <p className="text-sm text-corporate-textSecondary dark:text-gray-400 leading-relaxed">{leader.bio}</p>
-              </div>
-            ))}
+          <div>
+            <ProfileCard
+              name="Dr. M. A. Khadar Baba"
+              title="Principal, NSRIET"
+              description="Dr. M. A. Khadar Baba is currently Principal of Nadimpalli Satyanarayana Raju Institute of Engineering and Technology, Visakhapatnam, Andhra Pradesh (India). He obtained Bachelor's Degree in ECE from Osmania University, Hyderabad, in 1988, Masters from University College Engineering, Osmania University, Hyderabad and PhD from GITAM, Deemed to be University, Visakhapatnam. He has published and presented about 40 research papers in various national, international journals and conferences related to Communication Engineering, GPS and GAGAN system, Embedded Systems, Signal Processing and 5G Communications. He has guided many students pursuing M.Tech in the above fields. He attended several training programs organized by NITs and other reputed organizations and professional societies. He has organized quite a good number of Conferences, Workshops, Symposia, Seminars related to communications Engineering VLSI Design, Microcontrollers, Embedded Systems and Signal Processing which includes AICTE, IETE and ISTE sponsored programs. He is a fellow of IETE and member of ISTE. Earlier he has worked in reputed organizations like GITAM, Visakhapatnam, Srinidhi Institute of Science and Technology, Hyderabad; CMR College of Engineering and Technology, Hyderabad; Guru Nanak Institutions, Hyderabad in various capacities such as Sr. Lecturer, Assistant professor, professor, Associate Professor, Professor and Head of the Department for about 30 years. He is the former principal of NS Raju Institute of Technology (Sontyam), served there for two years. Also served as a member and chairman Board of Studies in Faculty of ECE, of different institutions."
+              imageUrl="/images/KhadarBaba.jpeg"
+              githubUrl="#"
+              twitterUrl="#"
+              youtubeUrl="#"
+              linkedinUrl="#"
+            />
           </div>
         ),
       }}

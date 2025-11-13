@@ -110,7 +110,7 @@ export function ProfileCard(props: ProfileCardProps) {
   return (
     <div className={`w-full max-w-full mx-auto ${className || ''}`}>
       {/* Desktop */}
-      <div className={`hidden md:flex relative items-center ${flipped ? 'flex-row-reverse' : ''}`}>
+      <div className={`hidden md:flex relative items-center gap-0 ${flipped ? 'flex-row-reverse' : ''}`}>
         {/* Square Image */}
         <div className='w-[350px] h-[350px] rounded-3xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex-shrink-0 flex items-center justify-center'>
           <img
@@ -164,7 +164,7 @@ export function ProfileCard(props: ProfileCardProps) {
             alt={name}
             width={400}
             height={400}
-            className='w-full h-full object-cover'
+            className='w-full h-full object-contain'
             draggable={false}
           />
         </div>

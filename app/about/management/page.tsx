@@ -30,7 +30,7 @@ export default function ManagementPage() {
               name="Dr. N. Prasada Raju"
               title="Secretary, NSRIET"
               description="I am pleased to extend my warm greetings to all students, parents, faculty members, and well-wishers of Nadimpalli Satyanarayana Raju Institute of Technology (NSRIT) and N S Raju Institute of Engineering and Technology (NSRIET). Our institutions are committed to nurturing young minds with knowledge, discipline, and values that prepare them to excel in an ever-evolving global environment. At NSRIT and NSRIET, we believe that education must inspire curiosity, creativity, and a sense of purpose. Our efforts are focused on providing a holistic learning experience where students gain strong theoretical foundations, practical exposure, and the confidence to innovate and lead. I welcome all new members to our academic community and wish them a rewarding and transformative journey ahead."
-              imageUrl="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop"
+              imageUrl="/images/PrasadaRaju.jpeg"
               githubUrl="#"
               twitterUrl="#"
               youtubeUrl="#"
