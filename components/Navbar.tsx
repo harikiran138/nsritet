@@ -7,37 +7,15 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { navigationItems, MenuItem } from '@/lib/navigation';
 
 const NavLink = ({ item, onClick }: { item: MenuItem; onClick: () => void }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = (e: React.MouseEvent) => {
-    if (item.submenu) {
-      e.preventDefault();
-      setIsOpen(!isOpen);
-    } else {
-      onClick();
-    }
-  };
-
   return (
     <div className="relative">
       <Link
         href={item.href}
-        onClick={handleToggle}
+        onClick={onClick}
         className="flex items-center justify-between px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700"
       >
         {item.name}
-        {item.submenu && (
-          <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-        )}
       </Link>
-
-      {item.submenu && isOpen && (
-        <div className="pl-4">
-          {item.submenu.map((subItem) => (
-            <NavLink key={subItem.name} item={subItem} onClick={onClick} />
-          ))}
-        </div>
-      )}
     </div>
   );
 };
@@ -127,58 +105,15 @@ export default function Navbar() {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.submenu && handleMouseEnter(item.name)}
-                onMouseLeave={() => item.submenu && handleMouseLeave()}
               >
                 <Link
                   href={item.href}
                   className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-[7px] px-4 rounded-md hover:bg-white/10"
                 >
                   {item.name}
-                  {item.submenu && (
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform ${
-                        openDesktopMenu === item.name ? 'rotate-180' : ''
-                      }`}
-                    />
-                  )}
                 </Link>
 
-                {item.submenu && openDesktopMenu === item.name && (
-                  <div
-                    className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700"
-                    onMouseEnter={() => handleMouseEnter(item.name)}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {item.submenu.map((subItem) => (
-                      <div key={subItem.name} className="relative group/submenu">
-                        <Link
-                          href={subItem.href}
-                          className="block px-5 py-3 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors font-medium text-sm border-b border-gray-100 dark:border-gray-700 last:border-b-0 flex items-center justify-between"
-                        >
-                          {subItem.name}
-                          {subItem.submenu && (
-                            <ChevronDown className="w-3 h-3 opacity-50 ml-2" />
-                          )}
-                        </Link>
 
-                        {subItem.submenu && (
-                          <div className="absolute left-full top-0 ml-1 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden min-w-[280px] border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all">
-                            {subItem.submenu.map((subSubItem) => (
-                              <Link
-                                key={subSubItem.name}
-                                href={subSubItem.href}
-                                className="block px-4 py-2.5 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700"
-                              >
-                                {subSubItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
           </div>

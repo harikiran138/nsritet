@@ -12,24 +12,8 @@ export default function Footer() {
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
-  const footerLinks = {
-    quickLinks: [
-      { label: 'About Us', href: '/about' },
-      { label: 'Admissions', href: '/admissions' },
-      { label: 'Academics', href: '/academics' },
-      { label: 'Placements', href: '/cdc/placements' },
-      { label: 'Library', href: '/academics/krc' },
-      { label: 'Grievance', href: '/quick-links/grievance' },
-    ],
-    important: [
-      { label: 'Governance', href: '/governance' },
-      { label: 'Innovation Council', href: '/quick-links/innovation-council' },
-      { label: 'Industry Connect', href: '/industry-linkage' },
-      { label: 'Notifications', href: '/quick-links/notifications' },
-      { label: 'Events', href: '/cdc/events' },
-      { label: 'Careers', href: '/quick-links/careers' },
-    ],
-  };
+
+
 
   return (
     <footer className="relative text-white pt-12 pb-4">
@@ -44,7 +28,7 @@ export default function Footer() {
       
       {/* Main Footer Content */}
       <div className="section-container px-4 sm:px-6 lg:px-8 pb-8 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 items-start justify-between">
 
           {/* About Section */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
@@ -54,41 +38,9 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-            <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
-              <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
-              Quick Links
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {footerLinks.quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300">
-                    <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
 
-          {/* Important Links */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
-            <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
-              <span className="w-1 h-6 bg-blue-400 rounded-full"></span>
-              Important Links
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {footerLinks.important.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="group flex items-center gap-2 text-blue-100 hover:text-white transition-colors duration-300">
-                    <span className="w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+
+
 
           {/* Contact Info */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }}>
@@ -132,6 +84,8 @@ export default function Footer() {
                 ))}
               </div>
             </div>
+
+
           </motion.div>
         </div>
       </div>
@@ -153,24 +107,7 @@ export default function Footer() {
               <span className="font-medium">Engineering Excellence</span>
             </motion.p>
 
-            {/* Bottom Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap gap-4 md:gap-6 md:justify-end text-sm"
-            >
-              <Link href="/privacy" className="text-blue-200 hover:text-white hover:underline transition-colors group flex items-center gap-1">
-                Privacy Policy
-                <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
 
-              <Link href="/terms" className="text-blue-200 hover:text-white hover:underline transition-colors group flex items-center gap-1">
-                Terms of Service
-                <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
-            </motion.div>
           </div>
         </div>
       </div>

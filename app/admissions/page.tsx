@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AdmissionsPage() {
   return (
     <>
-      <AdmissionsSection />
+
       <ThreeSectionPage
         title="Admissions"
         subtitle="Start your journey with us"

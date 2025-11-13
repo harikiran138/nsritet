@@ -1,5 +1,6 @@
 'use client';
 
+import ClientOnly from '@/components/ClientOnly';
 import HeroSection from '@/components/HeroSection';
 import KeyHighlightsOld from '@/components/KeyHighlightsOld';
 import LatestStories from '@/components/LatestStories';
@@ -51,9 +52,11 @@ export default function Home() {
           - 4 equal-sized cards with auto-scroll
           - Smooth entrance animation
           ======================================== */}
-      <AnimatedSection className="py-24 md:py-28 lg:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
-        <LatestStories />
-      </AnimatedSection>
+      <ClientOnly>
+        <AnimatedSection className="py-24 md:py-28 lg:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+          <LatestStories />
+        </AnimatedSection>
+      </ClientOnly>
 
       {/* ========================================
           LOCATION & CONTACT SECTION
@@ -61,9 +64,11 @@ export default function Home() {
           - Contact form
           - Extra bottom spacing
           ======================================== */}
-      <AnimatedSection className="py-24 md:py-28 lg:py-32">
-        <NSRIETLocation />
-      </AnimatedSection>
+      <ClientOnly>
+        <AnimatedSection className="py-24 md:py-28 lg:py-32">
+          <NSRIETLocation />
+        </AnimatedSection>
+      </ClientOnly>
     </>
   );
 }
