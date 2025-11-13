@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import React from 'react';
+import Image from "next/image"; // Added Image import
 
 // --- Animation Variants ---
 const containerVariants = {
@@ -91,18 +92,25 @@ export default function Highlights() {
           {highlights.map((itemData, index) => (
             <motion.div key={index} variants={itemVariants} className="text-center">
               {/* WIX-STYLE ICON SHAPES */}
-              <div className="flex justify-center mb-6 relative h-20">
-                <div
-                  className="w-12 h-12 rounded-full absolute top-0 left-1/2 -ml-6"
-                  style={{ background: itemData.iconColor1 }}
-                ></div>
-                <div
-                  className="w-8 h-8 rounded-lg absolute top-6 left-1/2 -ml-2"
-                  style={{ background: itemData.iconColor2 }}
-                ></div>
-                <div className="w-2 h-2 rounded-full bg-slate-400 absolute top-16 left-1/2 -ml-1"></div>
-              </div>
-
+              
+              {index === 0 && ( // Conditionally render Image for the first item
+                <Image
+                  src="/images/about/AICTE.jpg" // Correct path for public assets
+                  alt="AICTE Logo"
+                  width={80}
+                  height={80}
+                  className="mx-auto mb-4"
+                />
+              )}
+              {index === 1 && ( // Conditionally render Image for the second item
+                <Image
+                  src="/images/about/JNTUGV.JPG" // Correct path for public assets
+                  alt="JNTU GV Logo"
+                  width={80}
+                  height={80}
+                  className="mx-auto mb-4"
+                />
+              )}
               <h3 className="text-xl font-semibold text-slate-800 dark:text-gray-100">
                 {itemData.title}
               </h3>
