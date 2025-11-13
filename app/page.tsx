@@ -1,7 +1,7 @@
 'use client';
 
 import HeroSection from '@/components/HeroSection';
-import Highlights from '@/components/Highlights';
+import KeyHighlightsOld from '@/components/KeyHighlightsOld';
 import LatestStories from '@/components/LatestStories';
 import AdmissionsSection from '@/components/AdmissionsSection';
 import OverviewSection from '@/components/OverviewSection';
@@ -18,9 +18,9 @@ export default function Home() {
 
             />
 
-      {/* --- Highlights Section --- */}
-      <AnimatedSection className="py-12 sm:py-16">
-        <Highlights />
+      {/* --- Key Highlights (Old Style with Images) --- */}
+      <AnimatedSection className="py-16 sm:py-20">
+        <KeyHighlightsOld />
       </AnimatedSection>
 
       {/* --- Admissions Section --- */}

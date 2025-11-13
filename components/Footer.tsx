@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -33,14 +34,22 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-16 pb-0 relative">
-      <div
-        className="absolute inset-0 h-[70%] w-full bg-cover bg-center opacity-10 text-transparent"
-        style={{ backgroundImage: 'url(/footer-bg.jpg)' }}
-      ></div>
+    <footer className="relative text-white pt-24 pb-0 overflow-hidden min-h-[580px]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/about-us-hero.jpg"
+          alt="Footer Background"
+          fill
+          className="object-cover"
+          priority={false}
+        />
+        {/* Blue overlay with reduced opacity */}
+        <div className="absolute inset-0 bg-blue-900/80"></div>
+      </div>
 
       {/* Main Footer Content */}
-      <div className="section-container px-4 sm:px-6 lg:px-8 pb-12 relative z-10">
+      <div className="section-container px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
 
           {/* About Section */}
