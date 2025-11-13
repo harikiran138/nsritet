@@ -56,7 +56,7 @@ export default function OverviewSection() {
             </motion.div>
 
             {/* Image Content */}
-            <motion.div variants={itemVariants} className="relative rounded-lg overflow-hidden shadow-lg -mb-8" style={{ height: '119%' }}>
+            <motion.div variants={itemVariants} className="relative rounded-lg overflow-hidden shadow-lg -mb-8" style={{ height: '119%', transform: 'scale(0.8)', transformOrigin: 'center' }}>
               <Image
                 src="/overviewhome.jpeg"
                 alt="NSRIET Campus Overview"
