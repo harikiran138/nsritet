@@ -78,34 +78,27 @@ const AdmissionsNumbers = () => {
     { number: 310, label: "CSM" },
     { number: 280, label: "ECE" },
     { number: 190, label: "EEE" },
+    { number: 250, label: "MECHANICAL" },
   ];
 
   return (
-    <section className="bg-white text-gray-900 py-24 w-full">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <p className="text-sm tracking-widest font-medium text-cyan-600 uppercase">
+    <section className="bg-white text-gray-900 py-12 w-full">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <p className="text-base tracking-widest font-medium text-cyan-600 uppercase">
           ADMISSIONS 2025
         </p>
 
-        <h2 className="text-3xl md:text-4xl font-semibold mt-2 text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-semibold mt-2 text-gray-900">
           Department-wise student intake capacity
         </h2>
 
-        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 md:gap-20 mt-16">
           {stats.map((item, index) => (
-            <div key={index} className="flex items-center gap-10">
-              <div className="text-center w-24">
-                <div className="text-5xl font-bold text-gray-900">
-                  <Counter target={item.number} />
-                </div>
-                <p className="text-sm mt-2 text-gray-600 uppercase">{item.label}</p>
+            <div key={index} className="text-center">
+              <div className="text-6xl font-bold text-gray-900">
+                <Counter target={item.number} />
               </div>
-
-              {index !== stats.length - 1 && (
-                <div className="hidden md:block text-4xl font-thin text-gray-400 opacity-50">
-                  •
-                </div>
-              )}
+              <p className="text-base mt-2 text-gray-600 uppercase">{item.label}</p>
             </div>
           ))}
         </div>

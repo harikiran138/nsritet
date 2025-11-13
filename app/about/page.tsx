@@ -49,7 +49,7 @@ export default function AboutPage() {
                     className="leading-relaxed text-justify"
                     style={{ lineHeight: '1.8' }} // Slightly increased line height for readability
                   >
-                    N S Raju Institute of Engineering & Technology (NSRIET), established in 2008, stands as a premier institution for higher education in engineering, technology, and management. Affiliated to Jawaharlal Nehru Technological University (JNTU-Kakinada) and approved by AICTE, New Delhi, NSRIET has consistently strived to bridge the gap between academic learning and real-world innovation.
+                    N S Raju Institute of Engineering & Technology (NSRIET), established in 2008, stands as a premier institution for higher education in engineering, technology, and management. Affiliated to Jawaharlal Nehru Technological University (JNTU-GV) and approved by AICTE, New Delhi, NSRIET has consistently strived to bridge the gap between academic learning and real-world innovation.
                     <br /><br />
                     With a sprawling 10-acre campus equipped with state-of-the-art laboratories, digital classrooms, research centers, and innovation hubs, the institute provides an environment that encourages creativity, collaboration, and critical thinking.
                   </p>

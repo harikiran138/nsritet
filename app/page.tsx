@@ -24,7 +24,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* --- Admissions Section --- */}
-      <AnimatedSection className="-mt-16 py-12 sm:py-16">
+      <AnimatedSection className="py-16 sm:py-20">
         <AdmissionsSection />
       </AnimatedSection>
 
@@ -39,7 +39,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* --- NSRIET Location Section --- */}
-      <AnimatedSection className="-mt-16 pb-12 sm:pb-16">
+      <AnimatedSection className="pb-12 sm:pb-16">
         <NSRIETLocation />
       </AnimatedSection>
     </>
