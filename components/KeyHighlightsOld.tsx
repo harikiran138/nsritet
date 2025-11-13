@@ -100,10 +100,10 @@ export default function ServicesSection() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+            className="bg-white/40 dark:bg-gray-800/40 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-white dark:border-gray-700 transition-all duration-500 cursor-pointer hover:scale-105 active:scale-95 active:rotate-[1.7deg]"
           >
             {/* Image */}
-            <div className="relative w-full h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <div className="relative w-full h-48 bg-gray-100/50 dark:bg-gray-700/50 flex items-center justify-center">
               <Image
                 src={item.imgSrc}
                 alt={item.title}
