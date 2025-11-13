@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Navigation } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 // --- Animation Variants ---
 const containerVariants = {
@@ -57,7 +57,7 @@ const NSRIETLocation = () => {
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Contact Us</h3>
             <p className="text-gray-600 mb-6">
-              Have questions? Fill out the form below and we'll get back to you soon.
+              Have questions? Fill out the form below and we&apos;ll get back to you soon.
             </p>
             
             <form className="space-y-5">

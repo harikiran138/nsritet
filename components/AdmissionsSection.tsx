@@ -30,7 +30,7 @@ const useInView = (options: IntersectionObserverInit & { triggerOnce?: boolean }
     observer.observe(node);
 
     return () => observer.disconnect();
-  }, [options.triggerOnce, options.threshold]);
+  }, [options]);
 
   return { ref, inView };
 };

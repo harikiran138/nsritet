@@ -1,8 +1,6 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
-import AnimatedSection from './AnimatedSection';
 
 interface ThreeSectionPageProps {
   title: string;
