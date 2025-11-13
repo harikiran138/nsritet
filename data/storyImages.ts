@@ -76,4 +76,3 @@ export const getImagePaths = (folder: keyof typeof storyImages) => {
     (filename) => `/images/stories/${folderMap[folder]}/${filename}`
   );
 };
-# Image paths verified and committed
