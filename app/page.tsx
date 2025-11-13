@@ -5,6 +5,7 @@ import Highlights from '@/components/Highlights';
 import LatestStories from '@/components/LatestStories';
 import AdmissionsSection from '@/components/AdmissionsSection';
 import OverviewSection from '@/components/OverviewSection';
+import NsritMap from '@/components/NsritMap';
 import NSRIETLocation from '@/components/NSRIETLocation';
 import AnimatedSection from '@/components/AnimatedSection';
 
@@ -23,11 +24,6 @@ export default function Home() {
         <Highlights />
       </AnimatedSection>
 
-      {/* --- Latest Stories & Events Section --- */}
-      <AnimatedSection className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
-        <LatestStories />
-      </AnimatedSection>
-
       {/* --- Admissions Section --- */}
       <AnimatedSection className="-mt-16 py-16 sm:py-20">
         <AdmissionsSection />
@@ -41,6 +37,11 @@ export default function Home() {
       {/* --- Latest Stories & Events Section --- */}
       <AnimatedSection className="py-16 sm:py-20 bg-white dark:bg-gray-900">
         <LatestStories />
+      </AnimatedSection>
+
+      {/* --- NSRIT Campus Map Section --- */}
+      <AnimatedSection className="py-16 sm:py-20">
+        <NsritMap />
       </AnimatedSection>
 
       {/* --- NSRIET Location Section --- */}
