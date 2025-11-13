@@ -109,12 +109,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Logo Section — Reduced to half size */}
-      <div className="w-full bg-white py-0.5 flex items-center justify-center">
-        <div className="relative h-10 w-full">
-          <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />
-        </div>
-      </div>
+      {/* Logo Section — Exactly like the screenshot */}
+<div className="w-full bg-white py-1 flex items-center justify-center">
+          <div className="relative h-20 w-full">
+            <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />
+          </div>
+</div>
 
 
 
