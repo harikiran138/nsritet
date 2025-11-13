@@ -82,10 +82,10 @@ export default function Navbar() {
     >
       {/* Top Bar */}
       <div className="bg-corporate-darkBlue">
-        <div className="section-container py-2 flex justify-between items-center text-sm text-white">
+        <div className="section-container py-1 flex justify-between items-center text-xs text-white">
           <div></div>
 
-          <div className="hidden lg:flex items-center space-x-4 text-base font-medium">
+          <div className="hidden lg:flex items-center space-x-2 text-sm font-medium">
             <Link href="#" className="hover:text-corporate-lightBlue transition-colors">
               Circular Notification
             </Link>
