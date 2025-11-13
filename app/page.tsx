@@ -20,12 +20,12 @@ export default function Home() {
             />
 
       {/* --- Highlights Section --- */}
-      <AnimatedSection className="py-16 sm:py-20">
+      <AnimatedSection className="py-12 sm:py-16">
         <Highlights />
       </AnimatedSection>
 
       {/* --- Admissions Section --- */}
-      <AnimatedSection className="-mt-16 py-16 sm:py-20">
+      <AnimatedSection className="-mt-16 py-12 sm:py-16">
         <AdmissionsSection />
       </AnimatedSection>
 
@@ -35,7 +35,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* --- Latest Stories & Events Section --- */}
-      <AnimatedSection className="py-16 sm:py-20 bg-white dark:bg-gray-900">
+      <AnimatedSection className="-mt-16 py-12 sm:py-16">
         <LatestStories />
       </AnimatedSection>
 
@@ -45,7 +45,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* --- NSRIET Location Section --- */}
-      <AnimatedSection className="-mt-16 pb-16 sm:pb-20">
+      <AnimatedSection className="-mt-16 pb-12 sm:pb-16">
         <NSRIETLocation />
       </AnimatedSection>
     </>
