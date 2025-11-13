@@ -5,15 +5,21 @@ export const storyImages = {
   fdp: [
     '1762843017460.gif',
     'Faculty.jpeg',
-
+    'IMG_1393.jpg',
+    'IMG_1394.jpg',
+    'IMG_1395.jpg',
+    'IMG_1396.jpg',
+    'IMG_1397.jpg',
+    'IMG_1400.jpg',
     // Add more FDP image filenames here
   ],
   hackathon: [
-    'sihimage.jpeg',
+    'Training.jpeg',
     // Add more Hackathon image filenames here
   ],
   engineersDay: [
     '1757935764672.jpeg',
+    'sihimage.jpeg',
     // Add more Engineer's Day image filenames here
   ],
 };
