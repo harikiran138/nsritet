@@ -143,7 +143,7 @@ const Label = styled.p`
   font-weight: 600;
 `;
 
-const FlipCounter = ({ target, duration, isVisible }: any) => {
+const FlipCounter = ({ target, duration, isVisible }: { target: number; duration: number; isVisible: boolean }) => {
   const [num, setNum] = useState(0);
 
   useEffect(() => {
@@ -162,7 +162,7 @@ const FlipCounter = ({ target, duration, isVisible }: any) => {
     }, 50);
 
     return () => clearInterval(interval);
-  }, [isVisible]);
+  }, [isVisible, target, duration]);
 
   const format = (n: number) => String(n).padStart(3, '0');
 
@@ -175,7 +175,7 @@ const FlipCounter = ({ target, duration, isVisible }: any) => {
   );
 };
 
-const AdmissionsFlipNumbers = ({ duration = 2000 }: any) => {
+const AdmissionsFlipNumbers = ({ duration = 2000 }: { duration?: number }) => {
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
