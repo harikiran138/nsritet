@@ -21,7 +21,7 @@ export const navigationItems: MenuItem[] = [
       { name: 'History', href: '/about/history' },
       { name: 'Management', href: '/about/management' },
       { name: 'Leadership', href: '/about/leadership' },
-      { name: 'Nadimpalli Informatics LLP', href: '/about/nadimpalli-informatics' },
+      { name: 'Nadimpalli Informatics LLP', href: '#' },
       { name: 'NSRIT (Autonomous)', href: 'https://www.nsrit.edu.in/' },
     ],
   },
