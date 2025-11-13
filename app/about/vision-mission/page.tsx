@@ -7,6 +7,7 @@ export default function VisionMissionPage() {
     <ThreeSectionPage
       title="Vision & Mission"
       subtitle="Our guiding principles and future aspirations"
+      heroImage="/images/banner.jpeg"
       section1={{
         title: 'Our Vision',
         content: (

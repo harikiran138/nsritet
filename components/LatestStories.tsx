@@ -16,6 +16,7 @@ const blogPosts = [
     desc: 'NSRIT (Autonomous) hosted a three-day FDP in collaboration with the Council for Skills and Competencies (CSC India) and Wadhwani Foundation. The program focused on innovative teaching methodologies, hands-on learning approaches, and skill-based education to enhance faculty engagement and classroom transformation.',
     images: getImagePaths('fdp'),
     buttonText: 'Read More',
+    large: false,
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const blogPosts = [
     desc: 'NSRIET Dakamarri proudly inaugurated the Internal Smart India Hackathon 2025. Students from CSE and CSE (AI & ML) departments showcased innovation and teamwork, developing real-world solutions in a vibrant 24-hour coding marathon.',
     images: getImagePaths('hackathon'),
     buttonText: 'View Highlights',
+    large: false,
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const blogPosts = [
     desc: "Highlights from various events and activities organized across the campus.",
     images: getImagePaths('engineersDay'),
     buttonText: 'Explore More',
+    large: false,
   },
   {
     id: 4,
@@ -49,6 +52,19 @@ const blogPosts = [
     desc: 'At NSRIET, we believe in nurturing not just technical excellence but also cultural values and spiritual growth. Our campus hosts various cultural events, traditional celebrations, and spiritual activities that help students develop a strong moral compass and appreciation for diverse cultures.',
     images: getImagePaths('cultural'),
     buttonText: 'Learn More',
+    large: false,
+  },
+  {
+    id: 5,
+    category: 'Induction Program',
+    categoryShort: 'Induction',
+    date: 'Academic Year 2025',
+    readTime: '',
+    title: 'NSRIET First Year Induction - Inauguration of Career Assures Program',
+    desc: '',
+    images: getImagePaths('induction'),
+    buttonText: 'Explore More',
+    large: true,
   },
 ];
 
@@ -59,6 +75,7 @@ const getCategoryColor = (category: string) => {
     'Hackathon': { bg: 'from-purple-500 to-purple-600', text: 'text-purple-600', badge: 'bg-purple-100' },
     'Celebration': { bg: 'from-amber-500 to-amber-600', text: 'text-amber-600', badge: 'bg-amber-100' },
     'Cultural Values': { bg: 'from-rose-500 to-rose-600', text: 'text-rose-600', badge: 'bg-rose-100' },
+    'Induction Program': { bg: 'from-emerald-500 to-emerald-600', text: 'text-emerald-600', badge: 'bg-emerald-100' },
   };
   return colors[category] || { bg: 'from-indigo-500 to-indigo-600', text: 'text-indigo-600', badge: 'bg-indigo-100' };
 };
@@ -163,6 +180,85 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   );
 };
 
+// Large Story Card Component (spans 2 columns) with image overlay
+const LargeStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
+  const colors = getCategoryColor(post.category);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-scroll through images every 3 seconds
+  useEffect(() => {
+    if (post.images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % post.images.length);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }
+  }, [post.images.length]);
+
+  return (
+    <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full lg:col-span-2 flex flex-col">
+      {/* Image Container with Carousel */}
+      <div className="relative overflow-hidden bg-gray-200 h-80 md:h-96 w-full">
+        {/* Images */}
+        {post.images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`${post.title} - Image ${index + 1}`}
+              width={800}
+              height={384}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+
+        {/* Image Indicators */}
+        {post.images.length > 1 && (
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+            {post.images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex
+                    ? 'bg-white w-6'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Category Badge Overlay */}
+        <div className="absolute top-4 left-4 z-10">
+          <span className={`inline-flex items-center gap-2 ${colors.badge} ${colors.text} px-4 py-2 rounded-full text-sm font-bold`}>
+            <div className={`w-2 h-2 rounded-full ${colors.text.replace('text-', 'bg-')}`}></div>
+            {post.categoryShort}
+          </span>
+        </div>
+      </div>
+
+      {/* Content Container - Below Image */}
+      <div className="flex flex-col p-6 flex-grow">
+        <h3 className="text-base md:text-lg font-semibold text-black mb-4 group-hover:text-blue-600 transition-colors duration-300">
+          {post.title}
+        </h3>
+        <button className={`inline-flex items-center gap-2 bg-gradient-to-r ${colors.bg} text-white px-6 py-3 rounded-lg font-semibold text-base hover:shadow-lg transition-all duration-300 group-hover:gap-4 w-fit`}>
+          {post.buttonText}
+          <ArrowRight className="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const LatestStories = () => {
   return (
     <section className="container mx-auto px-6 md:px-12 max-w-7xl">
@@ -191,12 +287,13 @@ const LatestStories = () => {
           STORIES GRID
           - Wider cards with reduced gap
           - 3 cards per row on desktop for larger size
+          - Large cards span 2 columns
           ======================================== */}
       {blogPosts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-4">
           {blogPosts.map((post) => (
-            <div key={post.id}>
-              <StoryCard post={post} />
+            <div key={post.id} className={post.large ? 'lg:col-span-2' : ''}>
+              {post.large ? <LargeStoryCard post={post} /> : <StoryCard post={post} />}
             </div>
           ))}
         </div>

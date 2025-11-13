@@ -12,9 +12,8 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
       <Image
         src={backgroundImage}
         alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
+        fill
+        className="z-0 object-cover"
       />
       <div className="relative z-20 text-white p-4">
       </div>

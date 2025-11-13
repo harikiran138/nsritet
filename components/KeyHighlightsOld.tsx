@@ -89,28 +89,33 @@ export default function ServicesSection() {
 
       {/* ========================================
           HIGHLIGHTS GRID
-          - 4 equal cards with images
-          - Consistent gap spacing
+          - 4 equal cards in single row
+          - Equal distribution spacing
+          - Increased card width
           ======================================== */}
       <motion.div
         variants={containerVariants}
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
       >
         {services.map((item, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+            className="backdrop-blur-md rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:scale-105 active:scale-95 active:rotate-[1.7deg] border border-white select-none font-bold text-black w-full"
+            style={{
+              background: 'rgba(217, 217, 217, 0.58)',
+              boxShadow: '12px 17px 51px rgba(0, 0, 0, 0.22)',
+            }}
           >
             {/* Image */}
-            <div className="relative w-full h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <div className="relative w-full h-[20px] bg-gray-100/50 dark:bg-gray-700/50 flex items-center justify-center">
               <Image
                 src={item.imgSrc}
                 alt={item.title}
                 fill
                 className={
                   item.category === 'Accreditation' || item.category === 'University'
-                    ? 'object-contain p-4'
+                    ? 'object-contain p-0.5'
                     : 'object-cover'
                 }
               />
