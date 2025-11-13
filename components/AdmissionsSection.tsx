@@ -81,13 +81,13 @@ const AdmissionsNumbers = () => {
   ];
 
   return (
-    <section className="bg-white text-gray-900 py-24 w-full">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <p className="text-sm tracking-widest font-medium text-cyan-600 uppercase">
+    <section className="bg-white text-gray-900 py-16 w-full">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <p className="text-base tracking-widest font-medium text-cyan-600 uppercase">
           ADMISSIONS 2025
         </p>
 
-        <h2 className="text-3xl md:text-4xl font-semibold mt-2 text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-semibold mt-2 text-gray-900">
           Department-wise student intake capacity
         </h2>
 
@@ -95,10 +95,10 @@ const AdmissionsNumbers = () => {
           {stats.map((item, index) => (
             <div key={index} className="flex items-center gap-10">
               <div className="text-center w-24">
-                <div className="text-5xl font-bold text-gray-900">
+                <div className="text-6xl font-bold text-gray-900">
                   <Counter target={item.number} />
                 </div>
-                <p className="text-sm mt-2 text-gray-600 uppercase">{item.label}</p>
+                <p className="text-base mt-2 text-gray-600 uppercase">{item.label}</p>
               </div>
 
               {index !== stats.length - 1 && (
