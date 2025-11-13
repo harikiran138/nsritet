@@ -23,11 +23,6 @@ export default function Home() {
         <Highlights />
       </AnimatedSection>
 
-      {/* --- Latest Stories & Events Section --- */}
-      <AnimatedSection className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
-        <LatestStories />
-      </AnimatedSection>
-
       {/* --- Admissions Section --- */}
       <AnimatedSection className="-mt-16 py-16 sm:py-20">
         <AdmissionsSection />
