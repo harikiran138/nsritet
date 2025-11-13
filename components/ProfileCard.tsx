@@ -84,6 +84,7 @@ export interface ProfileCardProps {
   linkedinUrl?: string;
   className?: string;
   flipped?: boolean;
+  imagePosition?: string;
 }
 
 export function ProfileCard(props: ProfileCardProps) {
@@ -98,6 +99,7 @@ export function ProfileCard(props: ProfileCardProps) {
     linkedinUrl = "#",
     className,
     flipped = false,
+    imagePosition = "center",
   } = props;
 
   const socialIcons = [
@@ -119,6 +121,7 @@ export function ProfileCard(props: ProfileCardProps) {
             width={350}
             height={350}
             className='w-full h-full object-cover'
+            style={{ objectPosition: imagePosition }}
             draggable={false}
           />
         </div>
@@ -164,7 +167,8 @@ export function ProfileCard(props: ProfileCardProps) {
             alt={name}
             width={400}
             height={400}
-            className='w-full h-full object-contain'
+            className='w-full h-full object-cover'
+            style={{ objectPosition: imagePosition }}
             draggable={false}
           />
         </div>
