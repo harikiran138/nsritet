@@ -39,6 +39,17 @@ const blogPosts = [
     images: getImagePaths('engineersDay'),
     buttonText: 'Explore More',
   },
+  {
+    id: 4,
+    category: 'Cultural Values',
+    categoryShort: 'Cultural',
+    date: 'Ongoing',
+    readTime: '4 min read',
+    title: 'Cultural Values and Divinity: Fostering Holistic Development',
+    desc: 'At NSRIET, we believe in nurturing not just technical excellence but also cultural values and spiritual growth. Our campus hosts various cultural events, traditional celebrations, and spiritual activities that help students develop a strong moral compass and appreciation for diverse cultures.',
+    images: getImagePaths('cultural'),
+    buttonText: 'Learn More',
+  },
 ];
 
 // Category Color Mapping
@@ -47,6 +58,7 @@ const getCategoryColor = (category: string) => {
     'Faculty Development': { bg: 'from-blue-500 to-blue-600', text: 'text-blue-600', badge: 'bg-blue-100' },
     'Hackathon': { bg: 'from-purple-500 to-purple-600', text: 'text-purple-600', badge: 'bg-purple-100' },
     'Celebration': { bg: 'from-amber-500 to-amber-600', text: 'text-amber-600', badge: 'bg-amber-100' },
+    'Cultural Values': { bg: 'from-rose-500 to-rose-600', text: 'text-rose-600', badge: 'bg-rose-100' },
   };
   return colors[category] || { bg: 'from-indigo-500 to-indigo-600', text: 'text-indigo-600', badge: 'bg-indigo-100' };
 };

@@ -22,6 +22,9 @@ export const storyImages = {
     'sihimage.jpeg',
     // Add more Engineer's Day image filenames here
   ],
+  cultural: [
+    // Add Cultural Values and Divinity image filenames here
+  ],
 };
 
 // Helper function to get full image paths
@@ -30,6 +33,7 @@ export const getImagePaths = (folder: keyof typeof storyImages) => {
     fdp: 'fdp',
     hackathon: 'hackathon',
     engineersDay: 'engineers-day',
+    cultural: 'cultural',
   };
   
   return storyImages[folder].map(
