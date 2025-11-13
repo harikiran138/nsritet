@@ -9,12 +9,9 @@ export default function ManagementPage() {
       title="Management"
       subtitle="Guided by experienced administrators and educational leaders"
       section1={{
-        title: 'Administrative Leadership',
+        title: '',
         content: (
-          <div className="space-y-16">
-            <p className="text-center mb-8">
-              NSRIET is led by a team of experienced administrators and educational professionals committed to institutional excellence and student success.
-            </p>
+          <div className="space-y-32">
             
             {/* First Profile Card - Normal Layout */}
             <ProfileCard
@@ -44,38 +41,21 @@ export default function ManagementPage() {
         ),
       }}
       section2={{
-        title: 'Contact & Policies',
-        content: (
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Administrative Offices</h3>
-              <ul className="space-y-4 text-corporate-navy dark:text-gray-200">
-                <li>• Principal&apos;s Office</li>
-                <li>• Academic Office</li>
-                <li>• Admissions Office</li>
-                <li>• Finance & Accounts</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-corporate-navy dark:text-white mb-4">Important Documents</h3>
-              <div className="space-y-4">
-                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Organizational Chart</a>
-                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Management Policies</a>
-                <a href="#" className="block text-corporate-blue hover:underline font-medium">📄 Contact Directory</a>
-              </div>
-            </div>
-          </div>
-        ),
-      }}
-      section3={{
-        title: 'Our Commitment',
+        title: '',
         content: (
           <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-corporate-navy dark:text-white mb-8">
+              Our Commitment
+            </h2>
             <p className="text-corporate-navy dark:text-gray-200 text-lg">
               Our management structure ensures efficient operations while maintaining focus on academic quality, research advancement, and student welfare.
             </p>
           </div>
         ),
+      }}
+      section3={{
+        title: '',
+        content: <div className="hidden"></div>,
       }}
     />
   );
