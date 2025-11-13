@@ -1,7 +1,30 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
 import KeyHighlights from '@/components/KeyHighlights';
+
+// --- Animation Variants ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
 
 export default function LMSPage() {
   return (
@@ -10,16 +33,38 @@ export default function LMSPage() {
         title="Learning Management System"
         subtitle="Digital platform for seamless learning and collaboration"
         section1={{
-          title: 'LMS Overview',
+          title: 'Overview',
           content: (
-            <div className="space-y-4">
-              <p>
-                Our Learning Management System (LMS) provides a comprehensive digital platform for course delivery, student-faculty interaction, and academic resource management.
-              </p>
-              <p>
-                The LMS facilitates both synchronous and asynchronous learning, enabling students to access course materials, submit assignments, take assessments, and communicate with instructors anytime, anywhere.
-              </p>
-            </div>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="space-y-8"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {/* Text Content */}
+                <motion.div variants={itemVariants}>
+                  <p
+                    className="leading-relaxed text-justify"
+                    style={{ lineHeight: '1.8' }}
+                  >
+                    Our Learning Management System (LMS) provides a comprehensive digital platform for course delivery, student-faculty interaction, and academic resource management. The system serves as a central hub for all educational activities, bringing together students, faculty, and content in one seamless environment.
+                    <br /><br />
+                    The LMS facilitates both synchronous and asynchronous learning, enabling students to access course materials, submit assignments, take assessments, and communicate with instructors anytime, anywhere. With advanced features like real-time collaboration, progress tracking, and interactive learning tools, our LMS transforms the traditional classroom into a dynamic digital learning experience.
+                  </p>
+                </motion.div>
+
+                {/* Image Content */}
+                <motion.div variants={itemVariants} className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/about/lms-overview.jpg"
+                    alt="LMS Platform Overview"
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
           ),
         }}
         section2={{
