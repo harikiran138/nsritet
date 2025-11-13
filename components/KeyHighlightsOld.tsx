@@ -52,7 +52,7 @@ const services = [
     title: 'Experienced Faculty',
     description: 'Learn from the best minds in industry and academia.',
     meta: 'Expert Mentorship',
-    imgSrc: '/images/about/Faculty.jpeg',
+    imgSrc: '/images/about/IMG_1400.jpg',
   },
   {
     category: 'Training',

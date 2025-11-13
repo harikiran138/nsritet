@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, ArrowRight, Bookmark } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePaths } from '@/data/storyImages';
 
 const blogPosts = [
   {
@@ -13,7 +14,7 @@ const blogPosts = [
     readTime: '5 min read',
     title: 'Three-Day FDP on 21st Century Pedagogy and Experiential Learning',
     desc: 'NSRIT (Autonomous) hosted a three-day FDP in collaboration with the Council for Skills and Competencies (CSC India) and Wadhwani Foundation. The program focused on innovative teaching methodologies, hands-on learning approaches, and skill-based education to enhance faculty engagement and classroom transformation.',
-    image: '/images/about/1762843017460.gif',
+    images: getImagePaths('fdp'),
     buttonText: 'Read More',
   },
   {
@@ -24,7 +25,7 @@ const blogPosts = [
     readTime: '4 min read',
     title: 'Inauguration of NSRIET Internal Smart India Hackathon 2025 (24-Hour Edition)',
     desc: 'NSRIET Dakamarri proudly inaugurated the Internal Smart India Hackathon 2025. Students from CSE and CSE (AI & ML) departments showcased innovation and teamwork, developing real-world solutions in a vibrant 24-hour coding marathon.',
-    image: '/images/about/sihimage.jpeg',
+    images: getImagePaths('hackathon'),
     buttonText: 'View Highlights',
   },
   {
@@ -35,7 +36,7 @@ const blogPosts = [
     readTime: '3 min read',
     title: "Engineer's Day Celebrations 2025 at NSRIET Dakamarri",
     desc: "Engineer's Day 2025 was celebrated with enthusiasm at NSRIET Dakamarri, in collaboration with JNTU Gurajada Vizianagaram and NSRIT's Industry-Institute Linkage and Training & Placement Cell.",
-    image: '/images/about/1757935764672.jpeg',
+    images: getImagePaths('engineersDay'),
     buttonText: 'Explore More',
   },
 ];
@@ -50,21 +51,61 @@ const getCategoryColor = (category: string) => {
   return colors[category] || { bg: 'from-indigo-500 to-indigo-600', text: 'text-indigo-600', badge: 'bg-indigo-100' };
 };
 
-// Featured Story Card Component
+// Featured Story Card Component with Auto-Scrolling Carousel
 const FeaturedStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   const colors = getCategoryColor(post.category);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-scroll through images every 3 seconds
+  useEffect(() => {
+    if (post.images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % post.images.length);
+      }, 3000); // Change image every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [post.images.length]);
 
   return (
     <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
-      {/* Image Container */}
+      {/* Image Container with Carousel */}
       <div className="relative overflow-hidden bg-gray-200 h-80 lg:h-96 w-full">
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={400}
-          height={500}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
+        {/* Images */}
+        {post.images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`${post.title} - Image ${index + 1}`}
+              width={400}
+              height={500}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+
+        {/* Image Indicators */}
+        {post.images.length > 1 && (
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+            {post.images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex
+                    ? 'bg-white w-6'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Category Badge - Top Left */}
         <div className="absolute top-4 left-4 z-10">
@@ -110,21 +151,61 @@ const FeaturedStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   );
 };
 
-// Regular Story Card Component
+// Regular Story Card Component with Auto-Scrolling
 const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   const colors = getCategoryColor(post.category);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-scroll through images every 3 seconds
+  useEffect(() => {
+    if (post.images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % post.images.length);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }
+  }, [post.images.length]);
 
   return (
     <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
-      {/* Image Container */}
+      {/* Image Container with Carousel */}
       <div className="relative overflow-hidden bg-gray-200 h-40 md:h-40 w-full">
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={320}
-          height={180}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
+        {/* Images */}
+        {post.images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`${post.title} - Image ${index + 1}`}
+              width={320}
+              height={180}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+
+        {/* Image Indicators */}
+        {post.images.length > 1 && (
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1.5 z-10">
+            {post.images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex
+                    ? 'bg-white w-4'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Category Badge Overlay */}
         <div className="absolute top-3 left-3 z-10">
