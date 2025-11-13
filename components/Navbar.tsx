@@ -7,15 +7,41 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { navigationItems, MenuItem } from '@/lib/navigation';
 
 const NavLink = ({ item, onClick }: { item: MenuItem; onClick: () => void }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="relative">
-      <Link
-        href={item.href}
-        onClick={onClick}
-        className="flex items-center justify-between px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700"
-      >
-        {item.name}
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link
+          href={item.href}
+          onClick={onClick}
+          className="flex-1 px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700"
+        >
+          {item.name}
+        </Link>
+        {item.submenu && (
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="px-4 py-2 text-gray-800 dark:text-gray-200"
+          >
+            <ChevronDown size={16} className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+          </button>
+        )}
+      </div>
+      {item.submenu && isOpen && (
+        <div className="pl-4 bg-gray-100 dark:bg-gray-800">
+          {item.submenu.map((subItem) => (
+            <Link
+              key={subItem.name}
+              href={subItem.href}
+              onClick={onClick}
+              className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
+            >
+              {subItem.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -105,15 +131,31 @@ export default function Navbar() {
               <div
                 key={item.name}
                 className="relative"
+                onMouseEnter={() => item.submenu && handleMouseEnter(item.name)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.href}
                   className="text-white hover:opacity-90 font-medium transition-all flex items-center gap-1 py-[7px] px-4 rounded-md hover:bg-white/10"
                 >
                   {item.name}
+                  {item.submenu && <ChevronDown size={16} />}
                 </Link>
 
-
+                {/* Dropdown Menu */}
+                {item.submenu && openDesktopMenu === item.name && (
+                  <div className="absolute left-0 top-full mt-0 bg-white dark:bg-gray-800 shadow-xl rounded-md border border-gray-200 dark:border-gray-700 min-w-[220px] py-2 z-50">
+                    {item.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors"
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
