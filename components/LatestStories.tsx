@@ -264,10 +264,6 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
 };
 
 const LatestStories = () => {
-  // Dynamic story distribution based on number of posts
-  const featuredPost = blogPosts[0];
-  const otherPosts = blogPosts.slice(1);
-
   return (
         <section className="pt-0 md:pt-0 bg-gradient-to-b from-white via-gray-50 to-white px-6 md:px-12">
         <div className="mb-8 md:mb-10 text-center">
@@ -286,22 +282,14 @@ const LatestStories = () => {
           <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mt-3 mx-auto"></div>
         </div>
 
-        {/* Main Grid Layout */}
+        {/* Main Grid Layout - All Cards Same Size in a Row */}
         {blogPosts.length > 0 ? (
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
-            {/* Featured Story - Left Side, Takes 2 Columns & 2 Rows Height */}
-            <div className="lg:col-span-2">
-              <FeaturedStoryCard post={featuredPost} />
-            </div>
-
-            {/* Secondary Stories Grid - Right Side, Stacked Vertically */}
-            <div className="lg:col-span-3 grid grid-cols-1 gap-4 md:gap-5">
-              {otherPosts.map((post) => (
-                <div key={post.id}>
-                  <StoryCard post={post} />
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+            {blogPosts.map((post) => (
+              <div key={post.id}>
+                <StoryCard post={post} />
+              </div>
+            ))}
           </div>
         ) : (
           /* Empty State */

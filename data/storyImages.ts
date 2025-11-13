@@ -23,6 +23,10 @@ export const storyImages = {
     // Add more Engineer's Day image filenames here
   ],
   cultural: [
+    'cultural-1.jpg',
+    'cultural-2.jpg',
+    'cultural-3.jpg',
+    'cultural-4.jpg',
     // Add Cultural Values and Divinity image filenames here
   ],
 };
