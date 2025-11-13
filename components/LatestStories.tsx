@@ -197,10 +197,10 @@ const LargeStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   }, [post.images.length]);
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full lg:col-span-2">
-      {/* Image Container with Carousel and Gray Tint */}
+    <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full lg:col-span-2 flex flex-col">
+      {/* Image Container with Carousel */}
       <div className="relative overflow-hidden bg-gray-200 h-80 md:h-96 w-full">
-        {/* Images with gray overlay */}
+        {/* Images */}
         {post.images.map((image, index) => (
           <div
             key={index}
@@ -215,8 +215,6 @@ const LargeStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
               height={384}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            {/* Gray tint overlay */}
-            <div className="absolute inset-0 bg-gray-900/40"></div>
           </div>
         ))}
 
@@ -245,17 +243,17 @@ const LargeStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
             {post.categoryShort}
           </span>
         </div>
+      </div>
 
-        {/* Title and Button overlaid on image */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-6 text-center">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            {post.title}
-          </h3>
-          <button className={`inline-flex items-center gap-2 bg-gradient-to-r ${colors.bg} text-white px-6 py-3 rounded-lg font-semibold text-base hover:shadow-lg transition-all duration-300 group-hover:gap-4`}>
-            {post.buttonText}
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
+      {/* Content Container - Below Image */}
+      <div className="flex flex-col p-6 flex-grow">
+        <h3 className="text-base md:text-lg font-semibold text-black mb-4 group-hover:text-blue-600 transition-colors duration-300">
+          {post.title}
+        </h3>
+        <button className={`inline-flex items-center gap-2 bg-gradient-to-r ${colors.bg} text-white px-6 py-3 rounded-lg font-semibold text-base hover:shadow-lg transition-all duration-300 group-hover:gap-4 w-fit`}>
+          {post.buttonText}
+          <ArrowRight className="w-5 h-5" />
+        </button>
       </div>
     </div>
   );
