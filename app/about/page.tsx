@@ -58,7 +58,7 @@ export default function AboutPage() {
                 {/* Image Content */}
                 <motion.div variants={itemVariants} className="relative h-80 rounded-lg overflow-hidden shadow-lg">
                   <Image
-                    src="/images/about/About us page.jpeg"
+                    src="/images/about/overviewhome.jpeg"
                     alt="NSRIET Campus Overview"
                     fill
                     className="object-cover"

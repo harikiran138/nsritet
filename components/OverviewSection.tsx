@@ -37,7 +37,7 @@ export default function OverviewSection() {
         >
           {/* Section Title */}
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-5xl md:text-4xl font-bold text-gray-900 dark:text-white">
               Overview
             </h2>
           </motion.div>
@@ -46,7 +46,7 @@ export default function OverviewSection() {
             {/* Text Content */}
             <motion.div variants={itemVariants}>
               <p
-                className="leading-relaxed text-justify text-gray-700 dark:text-gray-300"
+                className="text-lg md:text-xl leading-relaxed text-justify text-gray-700 dark:text-gray-300"
                 style={{ lineHeight: '1.8' }}
               >
                 N S Raju Institute of Engineering & Technology (NSRIET), established in 2008, stands as a premier institution for higher education in engineering, technology, and management. Affiliated to Jawaharlal Nehru Technological University (JNTU-GV) and approved by AICTE, New Delhi, NSRIET has consistently strived to bridge the gap between academic learning and real-world innovation.
@@ -56,9 +56,9 @@ export default function OverviewSection() {
             </motion.div>
 
             {/* Image Content */}
-            <motion.div variants={itemVariants} className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+            <motion.div variants={itemVariants} className="relative rounded-lg overflow-hidden shadow-lg" style={{ height: '119%' }}>
               <Image
-                src="/images/about/About us page.jpeg"
+                src="/overviewhome.jpeg"
                 alt="NSRIET Campus Overview"
                 fill
                 className="object-cover"
