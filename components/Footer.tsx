@@ -34,7 +34,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative text-white pt-24 pb-0 overflow-hidden min-h-[580px]">
+    <footer className="relative text-white pt-20 pb-0 overflow-hidden min-h-[540px]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="section-container px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
+      <div className="section-container px-4 sm:px-6 lg:px-8 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start">
 
           {/* About Section */}
