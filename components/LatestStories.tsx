@@ -82,7 +82,7 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   return (
     <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
       {/* Image Container with Carousel */}
-      <div className="relative overflow-hidden bg-gray-200 h-40 md:h-40 w-full">
+      <div className="relative overflow-hidden bg-gray-200 h-56 md:h-64 w-full">
         {/* Images */}
         {post.images.map((image, index) => (
           <div
@@ -94,8 +94,8 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
             <Image
               src={image}
               alt={`${post.title} - Image ${index + 1}`}
-              width={320}
-              height={180}
+              width={400}
+              height={256}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -134,29 +134,29 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
       </div>
 
       {/* Content Container */}
-      <div className="flex flex-col justify-between flex-grow p-4 md:p-4">
+      <div className="flex flex-col justify-between flex-grow p-5 md:p-6">
         {/* Metadata */}
-        <div className="flex items-center gap-2 text-xs text-gray-500 mb-1">
-          <Calendar className="w-3.5 h-3.5" />
-          <span className="font-medium text-xs">{post.date}</span>
+        <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+          <Calendar className="w-4 h-4" />
+          <span className="font-medium text-sm">{post.date}</span>
           <span className="text-gray-300">•</span>
-          <span className="text-xs">{post.readTime}</span>
+          <span className="text-sm">{post.readTime}</span>
         </div>
 
         {/* Title */}
-        <h4 className="text-sm md:text-base font-bold text-gray-900 mb-1 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+        <h4 className="text-base md:text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
           {post.title}
         </h4>
 
         {/* Description */}
-        <p className="text-gray-600 text-xs mb-3 line-clamp-2 flex-grow">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
           {post.desc}
         </p>
 
         {/* Action Button */}
-        <button className={`inline-flex items-center gap-1 bg-gradient-to-r ${colors.bg} text-white px-3 py-1.5 rounded-lg font-semibold text-xs hover:shadow-lg transition-all duration-300 group-hover:gap-2 w-fit`}>
+        <button className={`inline-flex items-center gap-2 bg-gradient-to-r ${colors.bg} text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 group-hover:gap-3 w-fit`}>
           {post.buttonText}
-          <ArrowRight className="w-3 h-3" />
+          <ArrowRight className="w-4 h-4" />
         </button>
       </div>
     </div>
