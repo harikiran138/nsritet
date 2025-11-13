@@ -143,15 +143,15 @@ const NSRIETLocation = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3 text-gray-700">
                   <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span>+91 98765 43210</span>
+                  <span className="whitespace-nowrap">+91 98765 43210</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
                   <Mail className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-                  <span>info@nsriet.edu.in</span>
+                  <span className="whitespace-nowrap">info@nsriet.edu.in</span>
                 </div>
-                <div className="flex items-start gap-3 text-gray-700">
-                  <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Sontyam, Visakhapatnam, Andhra Pradesh - 531173</span>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <span className="whitespace-nowrap">Sontyam, Visakhapatnam, Andhra Pradesh - 531173</span>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@ const NSRIETLocation = () => {
           {/* Google Map */}
           <motion.div
             variants={itemVariants}
-            className="relative group h-96 md:h-[480px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+            className="relative group h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
           >
             <iframe
               title="NSRIET Location"
