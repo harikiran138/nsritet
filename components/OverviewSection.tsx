@@ -26,8 +26,8 @@ const itemVariants = {
 
 export default function OverviewSection() {
   return (
-    <section className="bg-white dark:bg-gray-900 py-20">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="bg-white dark:bg-gray-900 py-20 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -56,12 +56,13 @@ export default function OverviewSection() {
             </motion.div>
 
             {/* Image Content */}
-            <motion.div variants={itemVariants} className="relative rounded-lg overflow-hidden shadow-lg -mb-8" style={{ height: '119%', transform: 'scale(0.35)', transformOrigin: 'center' }}>
+            <motion.div variants={itemVariants} className="relative w-full h-96 sm:h-[28rem] md:h-96 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/overviewhome.jpeg"
                 alt="NSRIET Campus Overview"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
           </div>

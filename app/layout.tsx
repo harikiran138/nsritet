@@ -48,13 +48,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.variable} font-sans antialiased min-h-screen flex flex-col bg-white`}>
+      <body className={`${poppins.variable} font-sans antialiased min-h-screen flex flex-col bg-white overflow-x-hidden`}>
         <StyledComponentsRegistry>
           <ThemeProvider>
-            <header className="sticky top-0 z-50 shadow-md">
+            <header className="relative z-50 shadow-md w-full">
               <Navbar />
             </header>
-            <main className="flex-grow">
+            <main className="flex-grow w-full">
               {children}
             </main>
             <Footer />

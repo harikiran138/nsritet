@@ -71,7 +71,7 @@ export default function ServicesSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="container mx-auto px-6 md:px-12 max-w-7xl"
+      className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl"
     >
       {/* ========================================
           SECTION HEADER

@@ -59,7 +59,7 @@ export default function ThreeSectionPage({
     <>
       {/* Hero Section */}
       {(heroImage || heroVideo) ? (
-        <div className="relative h-80 md:h-96 overflow-hidden">
+        <div className="relative h-80 md:h-96 overflow-hidden w-full">
           {heroVideo ? (
             <>
               {/* Video Background */}
@@ -69,7 +69,7 @@ export default function ThreeSectionPage({
                 muted
                 playsInline
                 preload="auto"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               >
                 <source src={heroVideo} type="video/webm" />
                 <source src={heroVideo.replace('.webm', '.mp4')} type="video/mp4" />
@@ -81,13 +81,13 @@ export default function ThreeSectionPage({
             <>
               {/* Image Background */}
               <div
-                className="absolute inset-0 bg-cover"
-                style={{ backgroundImage: `url(${heroImage})`, backgroundPosition: 'center 70%' }}
+                className="absolute inset-0 w-full h-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${heroImage})` }}
               ></div>
               <div className="absolute inset-0 bg-black/50"></div>
             </>
           )}
-          <div className="relative h-full flex items-center justify-center">
+          <div className="relative h-full flex items-center justify-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

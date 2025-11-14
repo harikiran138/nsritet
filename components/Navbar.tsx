@@ -115,8 +115,8 @@ export default function Navbar() {
 
       {/* Logo Section — Exactly like the screenshot */}
 <div className="w-full bg-white py-1 flex items-center justify-center">
-          <div className="relative h-20 w-full">
-            <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-cover" />
+          <div className="relative h-16 sm:h-20 w-full">
+            <Image src="/main-logo1.png" alt="NSRIET Logo" fill className="object-contain sm:object-cover" />
           </div>
 </div>
 
@@ -172,7 +172,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-          <div className="px-4 sm:px-6 py-4 space-y-2">
+          <div className="py-4 space-y-2">
             {navigationItems.map((item) => (
               <NavLink key={item.name} item={item} onClick={() => setIsMenuOpen(false)} />
             ))}
