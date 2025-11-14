@@ -36,7 +36,7 @@ const services = [
     title: 'AICTE Approved Programs',
     description: 'All our technical programs are approved by AICTE.',
     meta: 'Certified & Verified',
-    imgSrc: '/images/about/AICTE.jpg',
+    imgSrc: '/images/aictelogoke.svg',
   },
   {
     category: 'University',
@@ -44,7 +44,7 @@ const services = [
     title: 'JNTU GV Affiliation',
     description: 'University Affiliated JNTU GV.',
     meta: 'Academic Excellence',
-    imgSrc: '/images/about/JNTUGV.JPG',
+    imgSrc: '/images/JNTUGVKEY.jpg',
   },
   {
     category: 'Faculty',
