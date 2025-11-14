@@ -7,6 +7,7 @@ export default function MechanicalPage() {
     <ThreeSectionPage
       title="Mechanical Engineering"
       subtitle="Design and innovate the machines of the future"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Program Overview',
         content: (

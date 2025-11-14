@@ -7,6 +7,7 @@ export default function MBAPage() {
     <ThreeSectionPage
       title="Master of Business Administration"
       subtitle="Build leadership skills for the modern business world"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Program Overview',
         content: (

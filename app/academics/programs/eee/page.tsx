@@ -7,6 +7,7 @@ export default function EEEPage() {
     <ThreeSectionPage
       title="Electrical & Electronics Engineering"
       subtitle="Powering tomorrow's infrastructure and innovation"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Program Overview',
         content: (
