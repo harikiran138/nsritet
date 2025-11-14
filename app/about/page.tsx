@@ -32,7 +32,7 @@ export default function AboutPage() {
       <ThreeSectionPage
         title="About Us"
         subtitle="A legacy of excellence in engineering education"
-        heroImage="/images/banner.jpeg"
+        heroVideo="/images/unicorn-1763085417516.webm"
         section1={{
           title: 'Overview',
           content: (

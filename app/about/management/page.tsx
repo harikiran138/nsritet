@@ -8,7 +8,7 @@ export default function ManagementPage() {
     <ThreeSectionPage
       title="Management"
       subtitle="Guided by experienced administrators and educational leaders"
-      heroImage="/images/banner.jpeg"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: '',
         content: (

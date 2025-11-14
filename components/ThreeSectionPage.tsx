@@ -18,6 +18,7 @@ interface ThreeSectionPageProps {
     content: React.ReactNode;
   };
   heroImage?: string;
+  heroVideo?: string;
   customHeroClass?: string;
 }
 
@@ -51,17 +52,41 @@ export default function ThreeSectionPage({
   section2,
   section3,
   heroImage,
+  heroVideo,
   customHeroClass,
 }: ThreeSectionPageProps) {
   return (
     <>
       {/* Hero Section */}
-      {heroImage ? (
-        <div
-          className="relative h-80 md:h-96 bg-cover"
-          style={{ backgroundImage: `url(${heroImage})`, backgroundPosition: 'center 70%' }}
-        >
-          <div className="absolute inset-0 bg-black/50"></div>
+      {(heroImage || heroVideo) ? (
+        <div className="relative h-80 md:h-96 overflow-hidden">
+          {heroVideo ? (
+            <>
+              {/* Video Background */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src={heroVideo} type="video/webm" />
+                <source src={heroVideo.replace('.webm', '.mp4')} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 bg-black/50"></div>
+            </>
+          ) : (
+            <>
+              {/* Image Background */}
+              <div
+                className="absolute inset-0 bg-cover"
+                style={{ backgroundImage: `url(${heroImage})`, backgroundPosition: 'center 70%' }}
+              ></div>
+              <div className="absolute inset-0 bg-black/50"></div>
+            </>
+          )}
           <div className="relative h-full flex items-center justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

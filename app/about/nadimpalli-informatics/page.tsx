@@ -8,7 +8,7 @@ export default function NadimalliInformaticsPage() {
     <ThreeSectionPage
       title="Nadimpalli Informatics LLP"
       subtitle="The founding organization behind NSRIET"
-      heroImage="/images/banner.jpeg"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: '',
         content: (

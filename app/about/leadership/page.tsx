@@ -8,7 +8,7 @@ export default function LeadershipPage() {
     <ThreeSectionPage
       title="Leadership"
       subtitle="Visionary leaders driving NSRIET's mission of educational excellence"
-      heroImage="/images/banner.jpeg"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: '',
         content: (
