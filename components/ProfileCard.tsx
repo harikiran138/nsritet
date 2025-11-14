@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 // --- Icon Components (Replacing lucide-react) ---
 // We define simple SVG components here to replace the imported icons.
@@ -114,15 +115,17 @@ export function ProfileCard(props: ProfileCardProps) {
       {/* Desktop */}
       <div className={`hidden md:flex relative items-center gap-0 ${flipped ? 'flex-row-reverse' : ''}`}>
         {/* Square Image */}
-        <div className='w-[350px] h-[350px] rounded-3xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex-shrink-0 flex items-center justify-center'>
-          <img
+        <div className='relative w-[350px] h-[350px] rounded-3xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex-shrink-0'>
+          <Image
             src={imageUrl}
             alt={name}
-            width={350}
-            height={350}
-            className='w-full h-full object-cover'
+            fill
+            className='object-cover'
             style={{ objectPosition: imagePosition }}
             draggable={false}
+            sizes="350px"
+            quality={85}
+            priority={false}
           />
         </div>
         {/* Overlapping Card */}
@@ -161,15 +164,17 @@ export function ProfileCard(props: ProfileCardProps) {
       {/* Mobile */}
       <div className='md:hidden max-w-sm mx-auto text-center bg-transparent'>
         {/* Square Mobile Image */}
-        <div className='w-full aspect-square bg-gray-200 dark:bg-gray-700 rounded-3xl overflow-hidden mb-6 flex items-center justify-center'>
-          <img
+        <div className='relative w-full aspect-square bg-gray-200 dark:bg-gray-700 rounded-3xl overflow-hidden mb-6'>
+          <Image
             src={imageUrl}
             alt={name}
-            width={400}
-            height={400}
-            className='w-full h-full object-cover'
+            fill
+            className='object-cover'
             style={{ objectPosition: imagePosition }}
             draggable={false}
+            sizes="(max-width: 640px) 100vw, 400px"
+            quality={85}
+            priority={false}
           />
         </div>
         <div className='px-4'>

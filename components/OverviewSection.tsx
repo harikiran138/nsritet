@@ -56,12 +56,12 @@ export default function OverviewSection() {
             </motion.div>
 
             {/* Image Content */}
-            <motion.div variants={itemVariants} className="relative w-full h-96 sm:h-[28rem] md:h-96 rounded-lg overflow-hidden shadow-lg">
+            <motion.div variants={itemVariants} className="relative w-full h-[32rem] sm:h-[36rem] md:h-[40rem] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/overviewhome.jpeg"
                 alt="NSRIET Campus Overview"
                 fill
-                className="object-cover"
+                className="object-contain rounded-2xl"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
