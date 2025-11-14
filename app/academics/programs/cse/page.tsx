@@ -18,6 +18,7 @@ export default function CSEPage() {
     <ThreeSectionPage
       title="Computer Science & Engineering"
       subtitle="Building the future of software and computing technology"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Program Overview',
         content: (

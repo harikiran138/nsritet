@@ -12,6 +12,7 @@ export default function AcademicsPage() {
     <ThreeSectionPage
       title="Academics"
       subtitle="Fostering a culture of learning and innovation"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Introduction / Curriculum Overview',
         content: (

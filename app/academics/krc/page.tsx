@@ -7,6 +7,7 @@ export default function ResourcesPage() {
     <ThreeSectionPage
       title="Knowledge Resource Centre"
       subtitle="Comprehensive academic and learning resources for students"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Resource Overview',
         content: (

@@ -7,6 +7,7 @@ export default function BestPracticesPage() {
     <ThreeSectionPage
       title="Best Practices"
       subtitle="Institutional excellence through continuous improvement"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Academic Best Practices',
         content: (

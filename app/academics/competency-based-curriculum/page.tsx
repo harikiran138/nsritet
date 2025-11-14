@@ -7,6 +7,7 @@ export default function CurriculumPage() {
     <ThreeSectionPage
       title="Competency Based Curriculum"
       subtitle="Education focused on developing practical skills and competencies"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Curriculum Framework',
         content: (

@@ -7,6 +7,7 @@ export default function CSEAIMLPage() {
     <ThreeSectionPage
       title="CSE - Artificial Intelligence & Machine Learning"
       subtitle="Specialize in the most in-demand technology of tomorrow"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Program Overview',
         content: (

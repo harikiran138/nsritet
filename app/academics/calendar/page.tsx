@@ -7,6 +7,7 @@ export default function CalendarPage() {
     <ThreeSectionPage
       title="Academic Calendar"
       subtitle="Important dates and academic schedule for the current year"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Current Academic Year',
         content: (

@@ -7,6 +7,7 @@ export default function ECEPage() {
     <ThreeSectionPage
       title="Electronics & Communication Engineering"
       subtitle="Master the art of wireless and communication technologies"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Program Overview',
         content: (

@@ -48,6 +48,7 @@ export default function ProgramsPage() {
     <ThreeSectionPage
       title="Our Programs"
       subtitle="Comprehensive engineering and business education programs"
+      heroVideo="/images/unicorn-1763085417516.webm"
       section1={{
         title: 'Academic Programs Overview',
         content: (
