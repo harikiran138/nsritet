@@ -97,7 +97,7 @@ const StoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   }, [post.images.length]);
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
+    <div className="group relative rounded-lg overflow-hidden bg-white/70 backdrop-blur-md border border-white/20 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
       {/* Image Container with Carousel */}
       <div className="relative overflow-hidden bg-gray-200 h-56 md:h-64 w-full">
         {/* Images */}
@@ -197,7 +197,7 @@ const LargeStoryCard = ({ post }: { post: (typeof blogPosts)[0] }) => {
   }, [post.images.length]);
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full lg:col-span-2 flex flex-col">
+    <div className="group relative rounded-lg overflow-hidden bg-white/70 backdrop-blur-md border border-white/20 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 h-full lg:col-span-2 flex flex-col">
       {/* Image Container with Carousel */}
       <div className="relative overflow-hidden bg-gray-200 h-80 md:h-96 w-full">
         {/* Images */}
