@@ -101,7 +101,7 @@ export default function ProgramsPage() {
                     style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
                     <div className="absolute inset-0 bg-black/60 transition duration-300 group-hover/card:bg-black/90" />
-                    <div className="relative z-10 flex flex-col justify-end h-full p-6">
+                    <div className="relative z-10 flex flex-col justify-end h-full px-4 py-6 sm:px-5 md:px-6">
                       <h3 className={titleClassName}>
                         {program.displayName}
                       </h3>
