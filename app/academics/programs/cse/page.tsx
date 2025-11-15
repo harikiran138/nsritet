@@ -31,7 +31,7 @@ const heroHighlights = [
 const programStats = [
   { label: 'Program Duration', value: '4 years (8 semesters)' },
   { label: 'Intake', value: '120 students' },
-  { label: 'Approvals & Affiliation', value: 'AICTE Approved  JNTU GV Affiliated' },
+  { label: 'Approvals & Affiliation', value: 'AICTE And  JNTU GV Affiliated' },
 ];
 
 const coreSubjects = [
@@ -344,7 +344,12 @@ export default function CSEPage() {
                 Outcome-based curriculum covering core computing, emerging tech electives, and interdisciplinary pathways. Download the detailed syllabus and course outcomes below.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="#" className="px-4 py-2 rounded-full border border-corporate-blue text-corporate-blue font-semibold hover:bg-corporate-blue hover:text-white transition">
+                <Link
+                  href="/images/programs/cse/CSE%20Course%20Structure%20%26%20Syllabus-%20B.Tech%20CSE.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-full border border-corporate-blue text-corporate-blue font-semibold hover:bg-corporate-blue hover:text-white transition"
+                >
                   📄 CSE UG Syllabus
                 </Link>
                 <Link href="#" className="px-4 py-2 rounded-full border border-corporate-blue text-corporate-blue font-semibold hover:bg-corporate-blue hover:text-white transition">
