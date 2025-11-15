@@ -24,12 +24,21 @@ export default function MechanicalPage() {
                 { label: 'Program Duration', value: '4 years (8 semesters)' },
                 { label: 'Intake', value: '120 students' },
                 { label: 'Accreditation', value: 'AICTE approved, NBA accredited' },
-              ].map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-900 p-4 shadow-sm">
-                  <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
-                  <p className="text-sm sm:text-base font-semibold text-corporate-navy dark:text-white mt-1">{stat.value}</p>
-                </div>
-              ))}
+              ].map((stat) => {
+                const isProgramDuration = stat.label === 'Program Duration';
+                return (
+                  <div key={stat.label} className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-900 p-4 shadow-sm">
+                    <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
+                    <p
+                      className={`${
+                        isProgramDuration ? 'text-xs sm:text-sm md:text-base lg:text-base whitespace-nowrap' : 'text-sm sm:text-base'
+                      } font-semibold text-corporate-navy dark:text-white mt-1`}
+                    >
+                      {stat.value}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         ),
