@@ -31,11 +31,11 @@ const NSRIETLocation = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="pt-16 pb-20 md:pb-28 bg-gradient-to-b from-white to-zinc-100"
+      className="pt-[5px] pb-10 md:pb-16 bg-gradient-to-b from-white to-zinc-100"
     >
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-[90rem] mx-auto w-full px-4 md:px-6">
         {/* --- Header --- */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
+  <motion.div variants={itemVariants} className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-4">
             <MapPin className="w-5 h-5 text-blue-600" />
             <span className="text-sm font-semibold text-blue-600">Our Location</span>
@@ -48,8 +48,8 @@ const NSRIETLocation = () => {
           </p>
         </motion.div>
 
-        {/* --- Map + Info Section --- */}
-        <div className="mt-16 w-full bg-white shadow-2xl">
+  {/* --- Map + Info Section --- */}
+  <div className="mt-10 md:mt-12 w-full bg-white shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
             {/* Contact Form */}
             <motion.div
