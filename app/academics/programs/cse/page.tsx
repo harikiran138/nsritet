@@ -10,7 +10,6 @@ const sidebarLinks = [
   { id: 'vision-mission', label: 'Vision & Mission' },
   { id: 'peos', label: 'PEOs' },
   { id: 'pos-psos', label: 'POs & PSOs' },
-  { id: 'knowledge-attitude', label: 'Knowledge and Attitude Profile (WA)' },
   { id: 'curriculum', label: 'Curriculum & Syllabi' },
   { id: 'academic-calendar', label: 'Academic Calendar' },
   { id: 'laboratories', label: 'Laboratories' },
@@ -88,12 +87,6 @@ const pos = [
 const psos = [
   'PSO1: Design intelligent software using AI/ML and data engineering practices.',
   'PSO2: Build secure, scalable full-stack solutions for cloud and mobile platforms.',
-];
-
-const knowledgeAndAttitude = [
-  'WA1: Ability to integrate math, science, and computing fundamentals.',
-  'WA2: Professional ethics with strong communication and collaboration skills.',
-  'WA3: Entrepreneurial mindset with societal and environmental consciousness.',
 ];
 
 const mouPartners = [
@@ -250,14 +243,6 @@ export default function CSEPage() {
                     ))}
                   </ul>
                 </div>
-              </div>
-            </CSESection>
-
-            <CSESection id="knowledge-attitude" title="Knowledge &amp; Attitude Profile (WA)">
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                {knowledgeAndAttitude.map((item) => (
-                  <p key={item} className="border-l-4 border-corporate-blue pl-4">{item}</p>
-                ))}
               </div>
             </CSESection>
 
