@@ -195,7 +195,7 @@ export default function CSEPage() {
                     <li
                       key={item}
                       className={`rounded-2xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-medium backdrop-blur ${
-                        isCenterHighlight ? 'flex items-center justify-center text-center text-balance' : ''
+                        isCenterHighlight ? 'flex items-center justify-center text-center text-balance w-full mx-auto' : ''
                       }`}
                     >
                       {item}
