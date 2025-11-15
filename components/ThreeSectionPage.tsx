@@ -56,7 +56,7 @@ export default function ThreeSectionPage({
   customHeroClass,
 }: ThreeSectionPageProps) {
   return (
-    <>
+    <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
       {(heroImage || heroVideo) ? (
         <div className="relative h-80 md:h-96 overflow-hidden w-full">
@@ -87,22 +87,24 @@ export default function ThreeSectionPage({
               <div className="absolute inset-0 bg-black/50"></div>
             </>
           )}
-          <div className="relative h-full flex items-center justify-center px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center text-white px-4"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance">
-                {title}
-              </h1>
-              {subtitle && (
-                <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-                  {subtitle}
-                </p>
-              )}
-            </motion.div>
+          <div className="relative h-full flex flex-wrap items-center justify-center px-4">
+            <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center text-white"
+              >
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance">
+                  {title}
+                </h1>
+                {subtitle && (
+                  <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
+                    {subtitle}
+                  </p>
+                )}
+              </motion.div>
+            </div>
           </div>
         </div>
       ) : (
@@ -111,7 +113,7 @@ export default function ThreeSectionPage({
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -mr-32 -mt-32 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -ml-32 -mb-32 pointer-events-none"></div>
 
-          <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -133,7 +135,7 @@ export default function ThreeSectionPage({
 
       {/* Section 1: Overview / Introduction */}
       <section className="py-16 sm:py-20 bg-white dark:bg-gray-900">
-        <div className="section-container px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -160,7 +162,7 @@ export default function ThreeSectionPage({
             <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue rounded-full mix-blend-multiply filter blur-3xl"></div>
           </div>
 
-          <div className="section-container px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -184,7 +186,7 @@ export default function ThreeSectionPage({
       {/* Section 3: Resources / Contact / Downloads */}
       {section3.content && (
         <section className="py-16 sm:py-20 bg-white dark:bg-gray-900">
-          <div className="section-container px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -204,6 +206,6 @@ export default function ThreeSectionPage({
           </div>
         </section>
       )}
-    </>
+    </div>
   );
 }

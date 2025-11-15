@@ -4,11 +4,12 @@ import ThreeSectionPage from '@/components/ThreeSectionPage';
 
 export default function MechanicalPage() {
   return (
-    <ThreeSectionPage
-      title="Mechanical Engineering"
-      subtitle="Design and innovate the machines of the future"
-      heroVideo="/images/unicorn-1763085417516.webm"
-      section1={{
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <ThreeSectionPage
+        title="Mechanical Engineering"
+        subtitle="Design and innovate the machines of the future"
+        heroVideo="/images/unicorn-1763085417516.webm"
+        section1={{
         title: 'Program Overview',
         content: (
           <div className="space-y-4">
@@ -18,13 +19,22 @@ export default function MechanicalPage() {
             <p>
               Students learn thermodynamics, fluid mechanics, machine design, and manufacturing processes through theory, simulations, and hands-on project work.
             </p>
-            <p>
-              <strong>Program Duration:</strong> 4 years (8 semesters) | <strong>Intake:</strong> 120 students | <strong>Accreditation:</strong> AICTE approved, NBA accredited
-            </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { label: 'Program Duration', value: '4 years (8 semesters)' },
+                { label: 'Intake', value: '120 students' },
+                { label: 'Accreditation', value: 'AICTE approved, NBA accredited' },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-slate-900 p-4 shadow-sm">
+                  <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
+                  <p className="text-sm sm:text-base font-semibold text-corporate-navy dark:text-white mt-1">{stat.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         ),
       }}
-      section2={{
+        section2={{
         title: 'Curriculum Highlights',
         content: (
           <div className="space-y-6">
@@ -50,7 +60,7 @@ export default function MechanicalPage() {
           </div>
         ),
       }}
-      section3={{
+        section3={{
         title: 'Career & Resources',
         content: (
           <div className="grid md:grid-cols-2 gap-8">
@@ -77,6 +87,7 @@ export default function MechanicalPage() {
           </div>
         ),
       }}
-    />
+      />
+    </div>
   );
 }

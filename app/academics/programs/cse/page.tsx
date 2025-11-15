@@ -135,7 +135,7 @@ const photoGallery = [
     description: 'Hands-on R&D sprint where faculty prototype AI-driven classroom tools alongside industry mentors.',
   },
   {
-    src: '/images/about/IMG_1400.jpg',
+    src: '/images/programs/cse/StudentInnovationShowcasecse.jpeg',
     title: 'Student Innovation Showcase',
     description: 'CSE teams demo capstone prototypes, robotics rigs, and IoT dashboards to academic reviewers.',
   },
@@ -189,19 +189,30 @@ export default function CSEPage() {
 
             <div className="flex-1 space-y-6">
               <ul className="grid gap-4 sm:grid-cols-2">
-                {heroHighlights.map((item) => (
-                  <li key={item} className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-medium backdrop-blur">
-                    {item}
-                  </li>
-                ))}
+                {heroHighlights.map((item) => {
+                  const isCenterHighlight = item === 'Best Practices & Accomplishments';
+                  return (
+                    <li
+                      key={item}
+                      className={`rounded-2xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-medium backdrop-blur ${
+                        isCenterHighlight ? 'flex items-center justify-center text-center text-balance' : ''
+                      }`}
+                    >
+                      {item}
+                    </li>
+                  );
+                })}
               </ul>
               <div className="grid gap-4 sm:grid-cols-3">
-                {programStats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl bg-white/15 p-4 text-center">
-                    <p className="text-[11px] uppercase tracking-wide text-white/70">{stat.label}</p>
-                    <p className="text-lg font-bold">{stat.value}</p>
-                  </div>
-                ))}
+                {programStats.map((stat) => {
+                  const isProgramDuration = stat.label === 'Program Duration';
+                  return (
+                    <div key={stat.label} className="rounded-2xl bg-white/15 p-4 text-center">
+                      <p className="text-[11px] uppercase tracking-wide text-white/70">{stat.label}</p>
+                      <p className={`${isProgramDuration ? 'text-base sm:text-lg' : 'text-lg'} font-bold`}>{stat.value}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -219,12 +230,17 @@ export default function CSEPage() {
                   working on industry-relevant projects and research initiatives.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-3">
-                  {programStats.map((stat) => (
-                    <div key={stat.label} className="rounded-2xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-white/5 p-4">
-                      <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
-                      <p className="text-lg font-semibold text-corporate-navy dark:text-white">{stat.value}</p>
-                    </div>
-                  ))}
+                  {programStats.map((stat) => {
+                    const isProgramDuration = stat.label === 'Program Duration';
+                    return (
+                      <div key={stat.label} className="rounded-2xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-white/5 p-4">
+                        <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
+                        <p className={`${isProgramDuration ? 'text-base sm:text-lg' : 'text-lg'} font-semibold text-corporate-navy dark:text-white`}>
+                          {stat.value}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </CSESection>
