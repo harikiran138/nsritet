@@ -31,7 +31,9 @@ export default function MechanicalPage() {
                     <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
                     <p
                       className={`${
-                        isProgramDuration ? 'text-xs sm:text-sm md:text-base lg:text-base whitespace-nowrap' : 'text-sm sm:text-base'
+                        isProgramDuration
+                          ? 'text-[0.45rem] sm:text-[0.6rem] md:text-xs lg:text-xs whitespace-nowrap'
+                          : 'text-sm sm:text-base'
                       } font-semibold text-corporate-navy dark:text-white mt-1`}
                     >
                       {stat.value}

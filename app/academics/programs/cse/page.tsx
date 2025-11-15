@@ -94,11 +94,11 @@ const psos = [
 ];
 
 const mouPartners = [
-  'Infosys Springboard',
-  'AWS Academy',
-  'Google for Education',
-  'TCS iON',
-  'Red Hat Academy',
+  'NASSCOM',
+  'Council for Skills and Competencies',
+  'iGenuine',
+  'Teckybot',
+  'TeckTeam Solutions',
 ];
 
 const innovativePractices = [
