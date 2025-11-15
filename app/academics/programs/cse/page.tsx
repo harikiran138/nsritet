@@ -19,7 +19,7 @@ const sidebarLinks = [
 ];
 
 const heroHighlights = [
-  'AICTE Approved Programs',
+  'AICTE Approved Program',
   'Strategic partnerships with global tech leaders',
   'Experiential learning through hackathons & living labs',
 ];
