@@ -151,6 +151,17 @@ const photoGallery = [
   },
 ];
 
+const academicCalendars = [
+  {
+    label: '3rd Year 1st Semester',
+    file: '/images/programs/cse/31AcademicCalendar.pdf',
+  },
+  {
+    label: '2nd Year 1st Semester',
+    file: '/images/programs/cse/21AcademicCalendar.pdf',
+  },
+];
+
 export default function CSEPage() {
   return (
     <section className="bg-white dark:bg-[#040711] min-h-screen text-gray-900 dark:text-white">
@@ -195,7 +206,9 @@ export default function CSEPage() {
                     <li
                       key={item}
                       className={`rounded-2xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-medium backdrop-blur ${
-                        isCenterHighlight ? 'flex items-center justify-center text-center text-balance w-full mx-auto' : ''
+                        isCenterHighlight
+                          ? 'flex items-center justify-start text-left text-balance w-full mx-0 pl-2'
+                          : ''
                       }`}
                     >
                       {item}
@@ -362,9 +375,24 @@ export default function CSEPage() {
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 The department follows an activity-rich calendar with assessments, workshops, internships, and hackathons mapped semester-wise.
               </p>
-              <Link href="/academics/calendar" className="inline-flex items-center gap-2 rounded-full bg-corporate-blue px-5 py-2.5 text-white font-semibold">
-                View Calendar
-              </Link>
+              <details className="group w-full sm:w-auto rounded-3xl border border-corporate-blue/30 bg-white/80 dark:bg-white/5 px-5 py-4 shadow-lg">
+                <summary className="flex cursor-pointer items-center justify-between gap-3 text-corporate-navy dark:text-white font-semibold">
+                  <span>Select Academic Calendar</span>
+                </summary>
+                <div className="mt-4 space-y-3">
+                  {academicCalendars.map((calendar) => (
+                    <Link
+                      key={calendar.label}
+                      href={calendar.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 rounded-2xl border border-corporate-blue/20 px-4 py-2 text-sm font-medium text-corporate-blue hover:bg-corporate-blue hover:text-white transition"
+                    >
+                      📄 {calendar.label}
+                    </Link>
+                  ))}
+                </div>
+              </details>
             </CSESection>
 
             <CSESection id="laboratories" title="Laboratories">
