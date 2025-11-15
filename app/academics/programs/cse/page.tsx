@@ -125,7 +125,7 @@ export default function CSEPage() {
               <div>
                 <p className="uppercase tracking-[0.4em] text-[11px] text-white/70">Department of CSE</p>
                 <h1 className="text-[2rem] md:text-[2.75rem] font-black mt-3 drop-shadow-lg">Computer Science &amp; Engineering</h1>
-                <p className="text-lg text-white/90 mt-1.5">Building the future of software and computing technology</p>
+                <p className="text-lg text-white/90 mt-4">Building the future of software and computing technology</p>
               </div>
               <p className="text-white/85 max-w-2xl leading-relaxed">
                 Future-ready curriculum, outcome-based learning, and partnerships with leading technology companies empower NSRIET CSE students to
