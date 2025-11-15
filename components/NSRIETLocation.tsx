@@ -31,9 +31,9 @@ const NSRIETLocation = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
-      className="pt-0 pb-20 md:pb-28 bg-gradient-to-b from-white to-zinc-100"
+      className="pt-16 pb-20 md:pb-28 bg-gradient-to-b from-white to-zinc-100"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto w-full">
         {/* --- Header --- */}
         <motion.div variants={itemVariants} className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-4">
@@ -49,18 +49,19 @@ const NSRIETLocation = () => {
         </motion.div>
 
         {/* --- Map + Info Section --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Contact Us</h3>
-            <p className="text-gray-600 mb-6">
-              Have questions? Fill out the form below and we&apos;ll get back to you soon.
-            </p>
-            
-            <form className="space-y-5">
+        <div className="mt-16 w-full bg-white shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+            {/* Contact Form */}
+            <motion.div
+              variants={itemVariants}
+              className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-gray-100"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Contact Us</h3>
+              <p className="text-gray-600 mb-6">
+                Have questions? Fill out the form below and we&apos;ll get back to you soon.
+              </p>
+
+              <form className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                   Full Name *
@@ -155,28 +156,29 @@ const NSRIETLocation = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Google Map */}
-          <motion.div
-            variants={itemVariants}
-            className="relative group h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-          >
-            <iframe
-              title="NSRIET Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.902549590485!2d83.4178549751776!3d18.00097358309609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3be39390c34d0d%3A0x8a801b4088e3846f!2sNSRIET!5e1!3m2!1sen!2sin!4v1716886933388!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            ></iframe>
-            <div className="absolute top-4 left-4 bg-white rounded-full p-3 shadow-lg">
-              <MapPin className="w-6 h-6 text-blue-600" />
-            </div>
-          </motion.div>
+            {/* Google Map */}
+            <motion.div
+              variants={itemVariants}
+              className="relative min-h-[420px] h-full"
+            >
+              <iframe
+                title="NSRIET Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.902549590485!2d83.4178549751776!3d18.00097358309609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3be39390c34d0d%3A0x8a801b4088e3846f!2sNSRIET!5e1!3m2!1sen!2sin!4v1716886933388!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
+              <div className="absolute top-4 left-4 bg-white rounded-full p-3 shadow-lg">
+                <MapPin className="w-6 h-6 text-blue-600" />
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* --- Footer Note --- */}
