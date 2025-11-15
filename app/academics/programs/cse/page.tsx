@@ -11,13 +11,10 @@ const sidebarLinks = [
   { id: 'peos', label: 'PEOs' },
   { id: 'pos-psos', label: 'POs & PSOs' },
   { id: 'knowledge-attitude', label: 'Knowledge and Attitude Profile (WA)' },
-  { id: 'bos-members', label: 'BoS Members' },
   { id: 'curriculum', label: 'Curriculum & Syllabi' },
-  { id: 'career-resources', label: 'Career & Resources' },
   { id: 'academic-calendar', label: 'Academic Calendar' },
   { id: 'laboratories', label: 'Laboratories' },
   { id: 'industry-lab', label: 'Industry Sponsored Laboratory' },
-  { id: 'credentials', label: 'General Credentials' },
   { id: 'mous', label: 'MoUs' },
   { id: 'innovative-teaching', label: 'Innovative Teaching Methodologies' },
 ];
@@ -52,14 +49,6 @@ const learningOutcomes = [
   'Problem-solving skills for complex computational challenges',
 ];
 
-const bosMembers = [
-  'Dr. V. S. Raju – Former Director, IIT Delhi (Chairperson)',
-  'Dr. B. Rama – Professor, NIT Warangal (External Expert)',
-  'Mr. S. Vijaya Kumar – VP Engineering, TechWave',
-  'Dr. P. Lakshmi – HoD, CSE, NSRIET',
-  'Mr. K. Sandeep – Alumni Representative, Google',
-];
-
 const labs = [
   'Advanced Programming Lab',
   'AI & ML Exploration Lab',
@@ -76,10 +65,9 @@ const industryLabs = [
 ];
 
 const peos = [
-  'PEO1: Excel in professional careers or higher studies through strong fundamentals.',
-  'PEO2: Contribute to society by designing sustainable and ethical computing solutions.',
-  'PEO3: Demonstrate leadership, teamwork, and communication skills in multidisciplinary environments.',
-  'PEO4: Embrace lifelong learning to keep pace with emerging technologies.',
+  'PEO1: Demonstrate contemporary competencies that leverage critical thinking and problem-solving abilities, applying foundational and conceptual knowledge to fulfill client business needs in a rapidly evolving technological landscape.',
+  'PEO2: Foster a successful professional trajectory by launching startups or contributing as effective team members or leaders within the IT sector and related industries.',
+  'PEO3: Pursue self-directed learning and advanced academic endeavors aligned with industry demands to achieve professional excellence and sustained career advancement.',
 ];
 
 const pos = [
@@ -108,13 +96,6 @@ const knowledgeAndAttitude = [
   'WA3: Entrepreneurial mindset with societal and environmental consciousness.',
 ];
 
-const credentials = [
-  'NBA accredited (Tier-II) for CSE program.',
-  '100+ research publications in the last three academic years.',
-  '5+ patents filed with student-faculty collaboration.',
-  'Consistent 80%+ placements with top tech firms.',
-];
-
 const mouPartners = [
   'Infosys Springboard',
   'AWS Academy',
@@ -129,22 +110,6 @@ const innovativePractices = [
   'Peer teaching pods for advanced electives.',
   'Micro-credential courses integrated with MOOCs.',
   'Capstone studios reviewed by alumni and industry advisors.',
-];
-
-const careerOpportunities = [
-  'Software Developer',
-  'Full Stack Engineer',
-  'Data Scientist',
-  'Cloud Architect',
-  'Systems Engineer',
-  'DevOps Engineer',
-];
-
-const resourceLinks = [
-  { label: 'Program Syllabus', icon: '📄', href: '#' },
-  { label: 'Faculty Directory', icon: '📄', href: '#' },
-  { label: 'CDC Placements', icon: '👥', href: '/cdc/placements' },
-  { label: 'Learning Resources', icon: '📚', href: '#' },
 ];
 
 export default function CSEPage() {
@@ -175,10 +140,10 @@ export default function CSEPage() {
                   <span aria-hidden="true">→</span>
                 </Link>
                 <Link
-                  href="#career-resources"
+                  href="#academic-calendar"
                   className="inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2.5 font-semibold text-white/90 hover:bg-white/10"
                 >
-                  Career Pathways
+                  Academic Calendar
                 </Link>
               </div>
             </div>
@@ -257,7 +222,7 @@ export default function CSEPage() {
               </div>
             </CSESection>
 
-            <CSESection id="peos" title="Program Educational Objectives (PEOs)">
+            <CSESection id="peos" title="Program Educational Objectives (PEO's)">
               <ul className="space-y-3 text-gray-600 dark:text-gray-300 list-disc list-inside">
                 {peos.map((objective) => (
                   <li key={objective}>{objective}</li>
@@ -296,17 +261,6 @@ export default function CSEPage() {
               </div>
             </CSESection>
 
-            <CSESection id="bos-members" title="Board of Studies (BoS) Members">
-              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-                {bosMembers.map((member) => (
-                  <li key={member} className="flex items-start gap-3">
-                    <span className="text-corporate-blue">•</span>
-                    <span>{member}</span>
-                  </li>
-                ))}
-              </ul>
-            </CSESection>
-
             <CSESection id="curriculum" title="Curriculum Highlights &amp; Syllabi">
               <div className="grid gap-6 lg:grid-cols-2 mb-6">
                 <div className="rounded-2xl border border-gray-100 dark:border-white/10 p-6">
@@ -342,37 +296,6 @@ export default function CSEPage() {
               </div>
             </CSESection>
 
-            <CSESection id="career-resources" title="Career &amp; Resources">
-              <div className="grid gap-6 lg:grid-cols-2">
-                <div className="rounded-2xl border border-gray-100 dark:border-white/10 p-6">
-                  <h3 className="text-xl font-semibold text-corporate-navy dark:text-white mb-4">Career Opportunities</h3>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                    {careerOpportunities.map((role) => (
-                      <li key={role} className="flex items-start gap-3">
-                        <span className="text-corporate-blue">•</span>
-                        <span>{role}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-2xl border border-gray-100 dark:border-white/10 p-6">
-                  <h3 className="text-xl font-semibold text-corporate-navy dark:text-white mb-4">Downloads &amp; Links</h3>
-                  <div className="space-y-3">
-                    {resourceLinks.map((resource) => (
-                      <Link
-                        key={resource.label}
-                        href={resource.href}
-                        className="flex items-center justify-between rounded-2xl border border-corporate-blue/30 px-4 py-3 text-corporate-blue font-semibold hover:bg-corporate-blue hover:text-white transition"
-                      >
-                        <span>{`${resource.icon} ${resource.label}`}</span>
-                        <span aria-hidden="true">→</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </CSESection>
-
             <CSESection id="academic-calendar" title="Academic Calendar">
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 The department follows an activity-rich calendar with assessments, workshops, internships, and hackathons mapped semester-wise.
@@ -401,14 +324,6 @@ export default function CSEPage() {
                   </div>
                 ))}
               </div>
-            </CSESection>
-
-            <CSESection id="credentials" title="General Credentials">
-              <ul className="space-y-3 text-gray-600 dark:text-gray-300 list-disc list-inside">
-                {credentials.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
             </CSESection>
 
             <CSESection id="mous" title="Memoranda of Understanding (MoUs)">
