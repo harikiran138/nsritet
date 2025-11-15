@@ -28,7 +28,7 @@ const heroHighlights = [
 const programStats = [
   { label: 'Program Duration', value: '4 years (8 semesters)' },
   { label: 'Intake', value: '120 students' },
-  { label: 'Accreditation', value: 'AICTE approved, NBA accredited' },
+  { label: 'Approvals & Affiliation', value: 'AICTE Approved · JNTU GV Affiliated' },
 ];
 
 const coreSubjects = [
@@ -114,8 +114,8 @@ const innovativePractices = [
 
 export default function CSEPage() {
   return (
-    <section className="bg-white dark:bg-[#040711] min-h-screen">
-  <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8 pt-14 pb-12 space-y-12 md:pt-16">
+    <section className="bg-white dark:bg-[#040711] min-h-screen text-gray-900 dark:text-white">
+  <div className="section-container pt-16 pb-12 space-y-12 md:pt-20">
         <header className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-corporate-navy via-corporate-blue to-sky-400 px-8 py-12 text-white shadow-[0_35px_80px_-40px_rgba(15,23,42,0.9)]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.35),_transparent_55%)]" aria-hidden="true" />
           <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-white/20 blur-3xl" aria-hidden="true" />
@@ -125,7 +125,7 @@ export default function CSEPage() {
               <div>
                 <p className="uppercase tracking-[0.4em] text-[11px] text-white/70">Department of CSE</p>
                 <h1 className="text-3xl md:text-5xl font-black mt-3 drop-shadow-lg">Computer Science &amp; Engineering</h1>
-                <p className="text-xl text-white/90">Building the future of software and computing technology</p>
+                <p className="text-xl text-white/90 mt-2">Building the future of software and computing technology</p>
               </div>
               <p className="text-white/85 max-w-2xl leading-relaxed">
                 Future-ready curriculum, outcome-based learning, and partnerships with leading technology companies empower NSRIET CSE students to
