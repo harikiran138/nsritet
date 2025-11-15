@@ -76,12 +76,10 @@ export default function ProgramsPage() {
         title: 'Academic Programs Overview',
         content: (
           <div className="space-y-4">
-            <p>
-              NSRIET offers a diverse range of undergraduate and postgraduate programs designed to meet industry standards and prepare students for successful careers.
+            <p className="text-justify">
+              NSRIET offers a future-ready academic ecosystem through Computer Science and Engineering (CSE – 180 intake), Computer Science and Engineering (Artificial Intelligence & Machine Learning) [CSE (AI & ML) – 120], Computer Science and Engineering (CSM specialization – 60), Electronics and Communication Engineering (ECE – 120), Electrical and Electronics Engineering (EEE – 30), Mechanical Engineering (ME – 30), and the Master of Business Administration (MBA – 60). Each program blends rigorous theory with immersive labs, industry-focused assignments, and real-world project exposure, ensuring students build deep technical expertise, sharpen problem-solving skills, and graduate ready to thrive in today&apos;s dynamic professional landscape.
             </p>
-            <p>
-              Our curriculum emphasizes theoretical knowledge combined with practical experience, ensuring students graduate with both technical expertise and soft skills required in today&apos;s competitive job market.
-            </p>
+
           </div>
         ),
       }}
@@ -97,10 +95,10 @@ export default function ProgramsPage() {
               return (
                 <Link key={program.name} href={program.href} className="block group/card" aria-label={program.displayName || program.name}>
                   <div
-                    className="relative h-72 md:h-80 rounded-2xl overflow-hidden shadow-xl card transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corporate-blue"
+                    className="relative h-72 md:h-80 rounded-md overflow-hidden shadow-xl card transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corporate-blue"
                     style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
-                    <div className="absolute inset-0 bg-black/60 transition duration-300 group-hover/card:bg-black/90" />
+                    <div className="absolute inset-0 transition duration-300 opacity-60 group-hover/card:bg-black" />
                     <div className="relative z-10 flex flex-col justify-end h-full px-4 py-6 sm:px-5 md:px-6">
                       <h3 className={titleClassName}>
                         {program.displayName}
