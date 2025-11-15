@@ -150,7 +150,7 @@ const resourceLinks = [
 export default function CSEPage() {
   return (
     <section className="bg-white dark:bg-[#040711] min-h-screen">
-      <div className="section-container pt-28 pb-12 space-y-12 md:pt-32">
+  <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8 pt-14 pb-12 space-y-12 md:pt-16">
         <header className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-corporate-navy via-corporate-blue to-sky-400 px-8 py-12 text-white shadow-[0_35px_80px_-40px_rgba(15,23,42,0.9)]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.35),_transparent_55%)]" aria-hidden="true" />
           <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-white/20 blur-3xl" aria-hidden="true" />
