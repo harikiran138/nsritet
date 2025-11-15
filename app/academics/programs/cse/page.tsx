@@ -23,7 +23,7 @@ const sidebarLinks = [
 ];
 
 const heroHighlights = [
-  'NBA accredited, outcome-based curriculum',
+  'AICTE Approved Programs',
   'Strategic partnerships with global tech leaders',
   'Experiential learning through hackathons & living labs',
 ];
