@@ -143,7 +143,7 @@ const NSRIETLocation = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3 text-gray-700">
                   <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <span className="whitespace-nowrap">+91 98765 43210</span>
+                  <span className="whitespace-nowrap">+91 6303855066</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
                   <Mail className="w-5 h-5 text-indigo-600 flex-shrink-0" />
