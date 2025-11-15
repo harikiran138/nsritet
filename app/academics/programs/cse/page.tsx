@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
@@ -16,18 +17,21 @@ const sidebarLinks = [
   { id: 'industry-lab', label: 'Industry Sponsored Laboratory' },
   { id: 'mous', label: 'MoUs' },
   { id: 'innovative-teaching', label: 'Innovative Teaching Methodologies' },
+  { id: 'professional-development', label: 'Professional Development Activities' },
+  { id: 'photo-gallery', label: 'Photo Gallery' },
 ];
 
 const heroHighlights = [
-  'AICTE Approved Program',
-  'Strategic partnerships with global tech leaders',
-  'Experiential learning through hackathons & living labs',
+  'AICTE Approved ',
+  'Strategic Industry Partner with global tech leaders',
+  'Experiential learning through hackathons & sponsored labs',
+  'Best Practices & Accomplishments',
 ];
 
 const programStats = [
   { label: 'Program Duration', value: '4 years (8 semesters)' },
   { label: 'Intake', value: '120 students' },
-  { label: 'Approvals & Affiliation', value: 'AICTE Approved · JNTU GV Affiliated' },
+  { label: 'Approvals & Affiliation', value: 'AICTE Approved  JNTU GV Affiliated' },
 ];
 
 const coreSubjects = [
@@ -64,9 +68,9 @@ const industryLabs = [
 ];
 
 const peos = [
-  'PEO1: Demonstrate contemporary competencies that leverage critical thinking and problem-solving abilities, applying foundational and conceptual knowledge to fulfill client business needs in a rapidly evolving technological landscape.',
-  'PEO2: Foster a successful professional trajectory by launching startups or contributing as effective team members or leaders within the IT sector and related industries.',
-  'PEO3: Pursue self-directed learning and advanced academic endeavors aligned with industry demands to achieve professional excellence and sustained career advancement.',
+  'PEO1: Technical Excellence & Problem-Solving — Apply strong foundational and advanced knowledge in computer science to solve complex real-world problems using critical thinking, adapting to rapidly changing technologies to meet industry and client needs.',
+  'PEO2: Professional Success & Leadership — Build successful careers as entrepreneurs, team members, or leaders in IT and related industries, demonstrating professional competence and collaborative skills.',
+  'PEO3: Lifelong Learning & Career Growth — Engage in continuous self-learning and pursue higher education or certifications to stay current with industry trends and achieve sustained professional excellence.',
 ];
 
 const pos = [
@@ -103,6 +107,48 @@ const innovativePractices = [
   'Peer teaching pods for advanced electives.',
   'Micro-credential courses integrated with MOOCs.',
   'Capstone studios reviewed by alumni and industry advisors.',
+];
+
+const professionalDevelopmentHighlights = [
+  {
+    title: 'Faculty Development Program',
+    detail: 'Annual FDPs on AI/ML, cloud and cybersecurity run with industry mentors, ensuring faculty stay ahead of emerging tech.',
+  },
+  {
+    title: 'Industry Design Sprints',
+    detail: 'Four-week immersion where student-faculty squads ship prototypes for partner companies using agile methods.',
+  },
+  {
+    title: 'Innovation Showcases',
+    detail: 'Bi-semester showcases featuring student products, patent pitches, and investor feedback rounds.',
+  },
+  {
+    title: 'Peer Learning Studios',
+    detail: 'Community-of-practice circles where learners exchange toolkits, code recipes, and research insights.',
+  },
+];
+
+const photoGallery = [
+  {
+    src: '/images/about/FDP.JPG',
+    title: 'Faculty Upskilling in Progress',
+    description: 'Hands-on R&D sprint where faculty prototype AI-driven classroom tools alongside industry mentors.',
+  },
+  {
+    src: '/images/about/IMG_1400.jpg',
+    title: 'Student Innovation Showcase',
+    description: 'CSE teams demo capstone prototypes, robotics rigs, and IoT dashboards to academic reviewers.',
+  },
+  {
+    src: '/images/about/Training.jpeg',
+    title: 'Immersive Lab Practice',
+    description: 'Learners collaborate inside the Microsoft Center of Excellence to build cloud-native workloads.',
+  },
+  {
+    src: '/images/about/sihimage.jpeg',
+    title: 'Hackathon Excellence',
+    description: 'Smart India Hackathon finalists representing NSRIET on the national stage.',
+  },
 ];
 
 export default function CSEPage() {
@@ -215,7 +261,7 @@ export default function CSEPage() {
               </div>
             </CSESection>
 
-            <CSESection id="peos" title="Program Educational Objectives (PEO's)">
+            <CSESection id="peos" title="Program Educational Objectives (PEOs)">
               <ul className="space-y-3 text-gray-600 dark:text-gray-300 list-disc list-inside">
                 {peos.map((objective) => (
                   <li key={objective}>{objective}</li>
@@ -327,6 +373,50 @@ export default function CSEPage() {
                   <div key={practice} className="rounded-2xl border border-gray-100 dark:border-white/10 p-4">
                     {practice}
                   </div>
+                ))}
+              </div>
+            </CSESection>
+
+            <CSESection id="professional-development" title="Professional Development Activities">
+              <div className="grid gap-6 md:grid-cols-2">
+                {professionalDevelopmentHighlights.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-3xl border border-gray-100 dark:border-white/10 bg-white dark:bg-slate-900 p-6 shadow-lg flex flex-col gap-3"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-corporate-blue/10 text-corporate-blue font-semibold">
+                        ✦
+                      </span>
+                      <h3 className="text-lg font-semibold text-corporate-navy dark:text-white">{item.title}</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </CSESection>
+
+            <CSESection id="photo-gallery" title="Photo Gallery">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {photoGallery.map((photo) => (
+                  <figure
+                    key={photo.title}
+                    className="rounded-3xl border border-gray-100 dark:border-white/10 bg-slate-50 dark:bg-slate-900/40 p-4 shadow-lg"
+                  >
+                    <div className="relative mb-4 h-56 w-full overflow-hidden rounded-2xl">
+                      <Image
+                        src={photo.src}
+                        alt={photo.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption>
+                      <h3 className="text-lg font-semibold text-corporate-navy dark:text-white mb-1">{photo.title}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{photo.description}</p>
+                    </figcaption>
+                  </figure>
                 ))}
               </div>
             </CSESection>
