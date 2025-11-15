@@ -230,15 +230,28 @@ export default function CSEPage() {
                 <div className="p-6 rounded-2xl bg-blue-50 dark:bg-blue-900/30">
                   <h3 className="font-semibold text-corporate-navy dark:text-white mb-3">Vision</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    To be a center of excellence producing globally adaptable computing professionals with innovation, ethics, and sustainability at the core.
+                    To develop students as skilled computer science and engineering professionals ready to excel in industry, research, and contribute meaningfully to society.
                   </p>
                 </div>
                 <div className="p-6 rounded-2xl bg-blue-50 dark:bg-blue-900/30">
                   <h3 className="font-semibold text-corporate-navy dark:text-white mb-3">Mission</h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    <li>Deliver industry-aligned curriculum with experiential learning.</li>
-                    <li>Promote research, entrepreneurship, and community impact.</li>
-                    <li>Cultivate leadership with strong professional ethics.</li>
+                    <li>
+                      <span className="font-semibold text-corporate-navy dark:text-white">M1: Academic Excellence — </span>
+                      Provide comprehensive knowledge in computer science fundamentals and advanced concepts through effective teaching methods, with strong emphasis on practical software development skills.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-corporate-navy dark:text-white">M2: Industry-Ready Skills — </span>
+                      Equip students with hands-on training in cutting-edge tools, technologies, and emerging industry trends, preparing them for successful careers or entrepreneurship.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-corporate-navy dark:text-white">M3: Holistic Learning — </span>
+                      Foster interdisciplinary learning that combines technical expertise with broader perspectives, enabling students to solve real-world problems innovatively.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-corporate-navy dark:text-white">M4: Lifelong Learning & Ethics — </span>
+                      Nurture ethical, adaptable professionals committed to continuous learning and growth throughout their careers.
+                    </li>
                   </ul>
                 </div>
               </div>
