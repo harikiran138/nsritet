@@ -209,7 +209,13 @@ export default function CSEPage() {
                   return (
                     <div key={stat.label} className="rounded-2xl bg-white/15 p-4 text-center">
                       <p className="text-[11px] uppercase tracking-wide text-white/70">{stat.label}</p>
-                      <p className={`${isProgramDuration ? 'text-base sm:text-lg' : 'text-lg'} font-bold`}>{stat.value}</p>
+                      <p
+                        className={`${
+                          isProgramDuration ? 'text-sm sm:text-base whitespace-nowrap' : 'text-lg'
+                        } font-bold`}
+                      >
+                        {stat.value}
+                      </p>
                     </div>
                   );
                 })}
@@ -235,7 +241,11 @@ export default function CSEPage() {
                     return (
                       <div key={stat.label} className="rounded-2xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-white/5 p-4">
                         <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{stat.label}</p>
-                        <p className={`${isProgramDuration ? 'text-base sm:text-lg' : 'text-lg'} font-semibold text-corporate-navy dark:text-white`}>
+                        <p
+                          className={`${
+                            isProgramDuration ? 'text-sm sm:text-base whitespace-nowrap' : 'text-lg'
+                          } font-semibold text-corporate-navy dark:text-white`}
+                        >
                           {stat.value}
                         </p>
                       </div>
