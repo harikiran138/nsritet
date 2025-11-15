@@ -113,10 +113,10 @@ export default function ProgramsPage() {
               return (
                 <Link key={program.name} href={program.href} className="block group/card" aria-label={program.displayName || program.name}>
                   <div
-                    className="relative h-72 md:h-80 rounded-md overflow-hidden shadow-xl card transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corporate-blue"
+                    className="relative h-72 md:h-80 rounded-md overflow-hidden shadow-xl card"
                     style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
-                    <div className="absolute inset-0 transition duration-300 opacity-60 group-hover/card:bg-black" />
+                    <div className="absolute inset-0 bg-black/60" />
                     <div className="relative z-10 flex flex-col justify-end h-full px-4 py-6 sm:px-5 md:px-6">
                       <h3 className={titleClassName}>
                         {program.displayName}
