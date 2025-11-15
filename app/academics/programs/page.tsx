@@ -31,6 +31,20 @@ const programDetails: { [key: string]: { icon: React.ElementType; description: s
     description: 'Postgraduate business education for future leaders.',
   },
 };
+const DEFAULT_PROGRAM_IMAGE = '/images/programs/mba.jpeg';
+const programImages: Record<string, string> = {
+  '/academics/programs/mba': '/images/programs/mba.jpeg',
+  '/academics/programs/mechanical': '/images/programs/MechanicalEngineering.jpeg',
+  '/academics/programs/ece': '/images/programs/ElectronicsandCommunication.jpeg',
+  '/academics/programs/eee': '/images/programs/Electrical and Electronics Engineering.jpeg',
+};
+
+const programDisplayNames: Record<string, string> = {
+  '/academics/programs/ece': 'ECE · Electronics and Communication Engineering',
+  '/academics/programs/eee': 'EEE · Electrical and Electronics Engineering',
+  '/academics/programs/mba': 'MBA · Master of Business Administration',
+  '/academics/programs/cse-aiml': 'CSE (Artificial Intelligence & Machine Learning)',
+};
 
 const academicsMenu = navigationItems.find(item => item.href === '/academics');
 const programsMenu = academicsMenu?.submenu?.find(item => item.href === '/academics/programs');
@@ -40,6 +54,7 @@ const programs = programsMenu?.submenu?.map(item => {
   return {
     ...item,
     ...details,
+    displayName: programDisplayNames[item.href] || item.name,
   };
 }) || [];
 
@@ -66,21 +81,28 @@ export default function ProgramsPage() {
         title: 'Featured Programs',
         content: (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programs.map((program) => (
-              <Link key={program.name} href={program.href}>
-                <div className="card group hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer h-full">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <program.icon className="w-6 h-6 text-corporate-blue" />
+            {programs.map((program) => {
+              const backgroundImage = programImages[program.href] || DEFAULT_PROGRAM_IMAGE;
+
+              return (
+                <Link key={program.name} href={program.href} className="block group/card" aria-label={program.displayName || program.name}>
+                  <div
+                    className="relative h-72 md:h-80 rounded-2xl overflow-hidden shadow-xl card transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corporate-blue"
+                    style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  >
+                    <div className="absolute inset-0 bg-black/60 opacity-60 transition duration-300 group-hover/card:bg-black" />
+                    <div className="relative z-10 flex flex-col justify-end h-full p-6">
+                      <h3 className="text-2xl font-bold text-white leading-tight">
+                        {program.displayName}
+                      </h3>
+                      <p className="text-gray-200 text-sm mt-4 max-w-sm">
+                        {program.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-corporate-navy dark:text-white mb-2 group-hover:text-corporate-blue transition-colors">
-                    {program.name}
-                  </h3>
-                  <p className="text-corporate-textSecondary dark:text-gray-400 text-sm">
-                    {program.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         ),
       }}
