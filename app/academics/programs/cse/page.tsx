@@ -140,7 +140,7 @@ const photoGallery = [
     description: 'CSE teams demo capstone prototypes, robotics rigs, and IoT dashboards to academic reviewers.',
   },
   {
-    src: '/images/about/Training.jpeg',
+    src: '/images/programs/cse/ImmersiveLabPracticecse.jpeg',
     title: 'Immersive Lab Practice',
     description: 'Learners collaborate inside the Microsoft Center of Excellence to build cloud-native workloads.',
   },
