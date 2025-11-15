@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import ThreeSectionPage from '@/components/ThreeSectionPage';
-import AdmissionsSection from '@/components/AdmissionsSection';
 import { Download, Send } from 'lucide-react';
 
 export const metadata: Metadata = {

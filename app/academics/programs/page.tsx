@@ -76,10 +76,28 @@ export default function ProgramsPage() {
         title: 'Academic Programs Overview',
         content: (
           <div className="space-y-4">
-            <p className="text-justify">
-              NSRIET offers a future-ready academic ecosystem through Computer Science and Engineering (CSE – 180 intake), Computer Science and Engineering (Artificial Intelligence & Machine Learning) [CSE (AI & ML) – 120], Computer Science and Engineering (CSM specialization – 60), Electronics and Communication Engineering (ECE – 120), Electrical and Electronics Engineering (EEE – 30), Mechanical Engineering (ME – 30), and the Master of Business Administration (MBA – 60). Each program blends rigorous theory with immersive labs, industry-focused assignments, and real-world project exposure, ensuring students build deep technical expertise, sharpen problem-solving skills, and graduate ready to thrive in today&apos;s dynamic professional landscape.
+            <p
+              style={{
+                textAlign: 'justify',
+                fontFamily: '"Segoe UI", sans-serif',
+                lineHeight: 1.7,
+                fontSize: '16px',
+              }}
+            >
+              <strong>NSRIET</strong> offers a <strong>future-ready academic ecosystem</strong> aligned with evolving
+              industry standards and global career demands. With specialized programs such as
+              <strong> CSE (AI &amp; ML: 120)</strong>, <strong>CSM (60)</strong>, <strong>ECE (120)</strong>,
+              <strong> EEE (30)</strong>, <strong>Mechanical Engineering (30)</strong>, and <strong>MBA (60)</strong>,
+              the institute provides diverse opportunities for students to pursue their aspirations. Each program is
+              supported by a comprehensive academic framework that blends <strong>strong theoretical foundations</strong>
+              , <strong>hands-on laboratory learning</strong>, <strong>industry-driven assignments</strong>, and
+              <strong> real-time project exposure</strong>. Continuously updated curricula, along with a focus on
+              <strong> communication</strong>, <strong>leadership</strong>, <strong>teamwork</strong>, and
+              <strong> analytical skills</strong>, ensure students develop into well-rounded professionals. Backed by
+              <strong> experienced faculty</strong>, <strong>modern infrastructure</strong>, and a
+              <strong> vibrant learning environment</strong>, NSRIET empowers students to think critically, innovate
+              confidently, and excel in their careers.
             </p>
-
           </div>
         ),
       }}
