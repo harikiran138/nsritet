@@ -102,7 +102,7 @@ export default function Footer() {
 
               <li className="flex items-center gap-3 group hover:text-white transition-colors">
                 <Mail className="w-5 h-5 flex-shrink-0 text-blue-400 group-hover:scale-110 transition-transform" />
-                <span className="text-blue-100">info@nsriet.edu.in</span>
+                <span className="text-blue-100">office.nsriet@gmail.com</span>
               </li>
             </ul>
 

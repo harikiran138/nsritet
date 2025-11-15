@@ -151,23 +151,56 @@ export default function CSEPage() {
   return (
     <section className="bg-white dark:bg-[#040711] min-h-screen">
       <div className="section-container py-12 space-y-12">
-        <header className="rounded-3xl bg-gradient-to-r from-corporate-navy via-corporate-blue to-blue-400 text-white p-10 shadow-2xl space-y-6">
-          <div>
-            <p className="uppercase tracking-[0.3em] text-xs mb-3">Department of CSE</p>
-            <h1 className="text-3xl md:text-4xl font-black mb-4">Computer Science &amp; Engineering</h1>
-            <p className="text-lg text-white/90 mb-3">Building the future of software and computing technology</p>
-            <p className="text-white/80 max-w-3xl">
-              Future-ready curriculum, outcome-based learning, and partnerships with leading technology companies empower NSRIET CSE students
-              to innovate confidently and lead the next wave of digital transformation.
-            </p>
+        <header className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-corporate-navy via-corporate-blue to-sky-400 px-8 py-12 text-white shadow-[0_35px_80px_-40px_rgba(15,23,42,0.9)]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.35),_transparent_55%)]" aria-hidden="true" />
+          <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-white/20 blur-3xl" aria-hidden="true" />
+
+          <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center">
+            <div className="flex-1 space-y-6">
+              <div>
+                <p className="uppercase tracking-[0.4em] text-[11px] text-white/70">Department of CSE</p>
+                <h1 className="text-3xl md:text-5xl font-black mt-3 drop-shadow-lg">Computer Science &amp; Engineering</h1>
+                <p className="text-xl text-white/90">Building the future of software and computing technology</p>
+              </div>
+              <p className="text-white/85 max-w-2xl leading-relaxed">
+                Future-ready curriculum, outcome-based learning, and partnerships with leading technology companies empower NSRIET CSE students to
+                innovate confidently and lead the next wave of digital transformation.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="#curriculum"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 font-semibold text-corporate-navy shadow-lg shadow-black/10"
+                >
+                  Explore Curriculum
+                  <span aria-hidden="true">→</span>
+                </Link>
+                <Link
+                  href="#career-resources"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2.5 font-semibold text-white/90 hover:bg-white/10"
+                >
+                  Career Pathways
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex-1 space-y-6">
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {heroHighlights.map((item) => (
+                  <li key={item} className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-medium backdrop-blur">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {programStats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl bg-white/15 p-4 text-center">
+                    <p className="text-[11px] uppercase tracking-wide text-white/70">{stat.label}</p>
+                    <p className="text-lg font-bold">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <ul className="grid gap-4 md:grid-cols-3 text-sm text-white/90">
-            {heroHighlights.map((item) => (
-              <li key={item} className="rounded-2xl bg-white/10 px-4 py-3 backdrop-blur border border-white/20">
-                {item}
-              </li>
-            ))}
-          </ul>
         </header>
 
         <div className="flex flex-col lg:flex-row gap-10 items-start">

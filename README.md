@@ -174,7 +174,7 @@ This project is licensed under the MIT License.
 ## 📧 Contact
 
 For any queries, reach us at:
-- Email: info@nsriet.edu.in
+- Email: office.nsriet@gmail.com
 - Phone: +91 1234567890
 
 ---
